@@ -24,7 +24,7 @@
 </script>
 
 <style lang="scss" scoped>
-   @import '~@/assets/styles/mixin.scss';
+   @import "~@/assets/styles/mixin.scss";
   .pin-item-container {
     background: #fff;
     margin-bottom: px2rem(10);

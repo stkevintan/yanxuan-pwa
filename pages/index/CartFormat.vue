@@ -60,7 +60,7 @@
 </script>
 
 <style lang="scss">
-   @import '~@/assets/styles/mixin.scss';
+   @import "~@/assets/styles/mixin.scss";
   .cart-format-page {
     background: #fff;
     height: 100%;

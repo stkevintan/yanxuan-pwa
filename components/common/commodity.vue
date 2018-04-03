@@ -23,7 +23,7 @@
 </script>
 
 <style lang="scss" scoped>
-   @import '~@/assets/styles/mixin.scss';
+   @import "~@/assets/styles/mixin.scss";
   .commodity {
     width: 50%;
     padding: 0 px2rem(5) px2rem(16.5) px2rem(10);

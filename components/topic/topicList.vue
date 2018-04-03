@@ -16,7 +16,7 @@
 </template>
 
 <style lang="scss" scoped>
-   @import '~@/assets/styles/mixin.scss';
+   @import "~@/assets/styles/mixin.scss";
   .topic-list {
     height: px2rem(96);
     // width: 100%;

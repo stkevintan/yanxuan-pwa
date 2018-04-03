@@ -23,7 +23,7 @@
   }
 </script>
 <style lang="scss" scoped>
-   @import '~@/assets/styles/mixin.scss';
+   @import "~@/assets/styles/mixin.scss";
   .flashSale {
     padding: px2rem(15) px2rem(20) px2rem(15) px2rem(28);
     margin-bottom: px2rem(10);

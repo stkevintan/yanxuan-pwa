@@ -26,7 +26,7 @@
 </script>
 
 <style lang="scss" scoped>
-   @import '~@/assets/styles/mixin.scss';
+   @import "~@/assets/styles/mixin.scss";
   .attribute-container {
     background-color: #fff;
     padding: px2rem(15);

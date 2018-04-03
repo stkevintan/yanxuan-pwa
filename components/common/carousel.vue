@@ -133,7 +133,7 @@
 </script>
 
 <style lang="scss" scoped>
-   @import '~@/assets/styles/mixin.scss';
+   @import "~@/assets/styles/mixin.scss";
 
   .carousel-container {
     position: relative;

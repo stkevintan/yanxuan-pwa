@@ -41,7 +41,7 @@
 </script>
 
 <style lang="scss" scoped>
-   @import '~@/assets/styles/mixin.scss';
+   @import "~@/assets/styles/mixin.scss";
   .search-page {
     background-color: #fff;
     width: 100%;

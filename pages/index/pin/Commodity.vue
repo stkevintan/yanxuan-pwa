@@ -36,7 +36,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '~@/assets/styles/mixin.scss';
+  @import "~@/assets/styles/mixin.scss";
   // .pin-commodity-container {
   //   width: 100%;
   //   height: 100%;

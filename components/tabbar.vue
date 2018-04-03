@@ -20,7 +20,7 @@
 
 <style lang="scss">
 
-  @import '~@/assets/styles/mixin.scss';
+  @import "~@/assets/styles/mixin.scss";
 
   .tabbar {
     width: 100%;

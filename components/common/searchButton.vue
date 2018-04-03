@@ -12,7 +12,7 @@ export default {
 
 
 <style lang="scss" scoped>
-   @import '~@/assets/styles/mixin.scss';
+   @import "~@/assets/styles/mixin.scss";
   .search-btn {
     background-color: #ededed;
     border-radius: px2rem(4);

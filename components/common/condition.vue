@@ -27,7 +27,7 @@
 </script>
 
 <style lang="scss" scoped>
-   @import '~@/assets/styles/mixin.scss';
+   @import "~@/assets/styles/mixin.scss";
   .condition-container {
     height: px2rem(40);
     border-bottom: 1px solid $border_color;

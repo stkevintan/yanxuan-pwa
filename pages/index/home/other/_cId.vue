@@ -162,7 +162,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '~@/assets/styles/mixin.scss';
+  @import "~@/assets/styles/mixin.scss";
   .base-container {
     flex: 1;
     overflow-y: auto;

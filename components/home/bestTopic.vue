@@ -26,7 +26,7 @@
 </script>
 
 <style lang="scss" scoped>
-   @import '~@/assets/styles/mixin.scss';
+   @import "~@/assets/styles/mixin.scss";
   .bt-container {
     padding-bottom: px2rem(10);
     background-color: #fff;

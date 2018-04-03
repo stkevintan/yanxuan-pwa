@@ -25,7 +25,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '~@/assets/styles/mixin.scss';
+  @import "~@/assets/styles/mixin.scss";
   .my-pin-void {
     display: flex;
     flex-direction: column;

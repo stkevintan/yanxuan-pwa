@@ -33,7 +33,7 @@
 </script>
 
 <style lang="scss" scoped>
-   @import '~@/assets/styles/mixin.scss';
+   @import "~@/assets/styles/mixin.scss";
   .manufacturer-item {
     background-color: #fff;
     margin-bottom: px2rem(10);

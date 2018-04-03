@@ -57,7 +57,7 @@
 </script>
 
 <style lang="scss" scoped>
-   @import '~@/assets/styles/mixin.scss';
+   @import "~@/assets/styles/mixin.scss";
   .profile-page {
     width: 100%;
     height: 100%;

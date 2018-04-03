@@ -82,7 +82,7 @@
 </script>
 
 <style lang="scss" scpoed>
-  @import '~@/assets/styles/mixin.scss';
+  @import "~@/assets/styles/mixin.scss";
   .productor-container {
     background-color: #fff;
     width: 100%;

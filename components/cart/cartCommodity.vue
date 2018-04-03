@@ -87,7 +87,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '~@/assets/styles/mixin.scss';
+  @import "~@/assets/styles/mixin.scss";
   .cart-commodity {
     background-color: #fff;
     height: px2rem(92);

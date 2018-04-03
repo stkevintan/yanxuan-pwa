@@ -40,7 +40,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '~@/assets/styles/mixin.scss';
+  @import "~@/assets/styles/mixin.scss";
   .cateList-page {
     height: 100%;
     display: flex;

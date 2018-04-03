@@ -41,7 +41,7 @@
 </script>
 
 <style lang="scss" scoped>
-   @import '~@/assets/styles/mixin.scss';
+   @import "~@/assets/styles/mixin.scss";
   .common-issue-container {
     background-color: #fff;
     padding: 0 px2rem(15) px2rem(15);

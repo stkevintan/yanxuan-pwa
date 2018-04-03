@@ -11,7 +11,7 @@
 
 
 <style lang="scss" scoped>
-  @import '~@/assets/styles/mixin.scss';
+  @import "~@/assets/styles/mixin.scss";
   .bottom-footer {
     padding: px2rem(27) px2rem(10) px2rem(14);
     background-color: #414141;

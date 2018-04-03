@@ -35,7 +35,7 @@
 </script>
 
 <style lang="scss" scoped>
-   @import '~@/assets/styles/mixin.scss';
+   @import "~@/assets/styles/mixin.scss";
   .comment-item {
     padding: 0 px2rem(15) px2rem(15) 0;
     margin-left: px2rem(15);

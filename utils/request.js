@@ -1,4 +1,4 @@
-const host = 'http://localhost:3300'
+const host = 'https://localhost:443'
 
 const checkStatus = (res) => {
   if (res.status >= 200 && res.status < 300) {

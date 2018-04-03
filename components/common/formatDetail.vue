@@ -64,7 +64,7 @@
 </script>
 
 <style lang="scss">
-   @import '~@/assets/styles/mixin.scss';
+   @import "~@/assets/styles/mixin.scss";
   .format-container {
     flex: 1;
     overflow-y: auto;

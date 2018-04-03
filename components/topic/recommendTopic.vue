@@ -12,7 +12,7 @@
 </script>
 
 <style lang="scss" scoped>
-   @import '~@/assets/styles/mixin.scss';
+   @import "~@/assets/styles/mixin.scss";
   .recommend-topic-container {
     background: #fff;
     margin-top: px2rem(16);

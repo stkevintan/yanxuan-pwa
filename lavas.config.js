@@ -61,10 +61,5 @@ module.exports = {
         globIgnores: ["sw-register.js", "**/*.map"],
         appshellUrl: "/appshell",
         dontCacheBustUrlsMatching: /\.\w{8}\./
-    },
-
-    extend(config, { type, env }) {
-        if (type === "base") {
-        }
     }
 };

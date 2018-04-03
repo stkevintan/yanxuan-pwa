@@ -21,7 +21,7 @@
 </script>
 
 <style lang="scss">
-   @import '~@/assets/styles/mixin.scss';
+   @import "~@/assets/styles/mixin.scss";
   .productor-item {
     width: px2rem(175.5);
     height: px2rem(118);
