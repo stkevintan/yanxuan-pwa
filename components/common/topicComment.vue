@@ -29,7 +29,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '../../styles/mixin.scss';
+   @import '~@/assets/styles/mixin.scss';
   .comment-item {
     padding: 0 px2rem(15) px2rem(15) 0;
     border-top: 1px solid $border_color;
@@ -91,7 +91,7 @@
   .like i {
     width: px2rem(22);
     height: px2rem(22);
-    background: url('../../assets/images/like.png') no-repeat;
+    background: url('~@/assets/images/like.png') no-repeat;
     background-size: cover;
   }
 

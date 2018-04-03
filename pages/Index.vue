@@ -50,7 +50,7 @@ export default {
           icon: `-${25 / 37.5}rem`,
           selectedIcon: "0px",
           to: "/cart",
-          badge: this.$store.getters.cartCommodityCount
+          badge: this.$store.getters['main/cartCommodityCount']
         },
         {
           title: "个人",

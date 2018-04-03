@@ -18,7 +18,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '../../styles/mixin.scss';
+  @import '~@/assets/styles/mixin.scss';
   .order-bar {
     width: 100%;
     background-color: #fff;
@@ -36,13 +36,13 @@
     display: inline-block;
     width: px2rem(19);
     height:  px2rem(19);
-    background: url('../../assets/images/unselect.png') no-repeat;
+    background: url('~@/assets/images/unselect.png') no-repeat;
     background-size: cover;
     margin: 0 px2rem(15);
   }
 
   .bar-left .select {
-    background-image: url('../../assets/images/select.png');
+    background-image: url('~@/assets/images/select.png');
   }
   
   .bar-right .price {

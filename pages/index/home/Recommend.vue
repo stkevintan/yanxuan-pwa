@@ -21,12 +21,12 @@
 
 <script>
   import { fetchHome } from '@/utils/fetchData'
-  import newgoodsContainer from './newgoodsContainer'
-  import hotRecommend from './hotRecommend'
-  import commodityContainer from './commidityContainer'
-  import flashSale from './flashSale'
-  import bestTopic from './bestTopic'
-  import carouselContainer from './carouselContainer'
+  import newgoodsContainer from '@/components/home/newgoodsContainer'
+  import hotRecommend from '@/components/home/hotRecommend'
+  import commodityContainer from '@/components/home/commidityContainer'
+  import flashSale from '@/components/home/flashSale'
+  import bestTopic from '@/components/home/bestTopic'
+  import carouselContainer from '@/components/home/carouselContainer'
   import bottomFooter from '@/components/common/bottomFooter'
   import productorItem from '@/components/home/productorItem'
 
@@ -82,7 +82,7 @@
 </script>
 
 <style lang="scss" scpoed>
-  @import '../../styles/mixin.scss';
+  @import '~@/assets/styles/mixin.scss';
   .productor-container {
     background-color: #fff;
     width: 100%;
@@ -107,7 +107,7 @@
   .productor-header i {
     width: px2rem(15);
     height: px2rem(15);
-    background: url('../../assets/images/arrow.png') no-repeat 0 0;
+    background: url('~@/assets/images/arrow.png') no-repeat 0 0;
     background-size: cover;
   }
 

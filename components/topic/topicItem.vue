@@ -33,7 +33,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '../../styles/mixin.scss';
+   @import '~@/assets/styles/mixin.scss';
   .topic-item {
     background-color: #fff;
   }
@@ -86,7 +86,7 @@
     display: inline-block;
     width: px2rem(10.5);
     height: px2rem(7);
-    background: url('../../assets/images/eye.png') no-repeat;
+    background: url('~@/assets/images/eye.png') no-repeat;
     background-size: cover;
     margin-right: px2rem(2);
   }

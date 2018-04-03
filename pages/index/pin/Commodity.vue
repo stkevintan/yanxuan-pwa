@@ -1,6 +1,6 @@
 <template>
   <div class="pin-commodity-container">
-    <img src="../../assets/images/pin_bg.jpg" />
+    <img src="~@/assets/images/pin_bg.jpg" />
     <div class="pin-commodity-content">
       <h3>最新推荐</h3>
       <div class="pin-commodity-list">
@@ -36,7 +36,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '../../styles/mixin.scss';
+  @import '~@/assets/styles/mixin.scss';
   // .pin-commodity-container {
   //   width: 100%;
   //   height: 100%;

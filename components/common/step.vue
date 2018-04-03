@@ -49,7 +49,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '../../styles/mixin.scss';
+  @import '~@/assets/styles/mixin.scss';
   .step-container {
     display: inline-block;
     height: px2rem(35);

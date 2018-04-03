@@ -11,7 +11,7 @@
 </script>
 
 <style lang="scss" scoped>
-    @import '../../styles/mixin.scss';
+     @import '~@/assets/styles/mixin.scss';
    .tag {
       display: flex;
       overflow: hidden;

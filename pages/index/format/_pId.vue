@@ -25,11 +25,11 @@
     components: { navbar, step, formatDetail },
     data () {
       return {
-        count: this.$store.state.selectFormat.count || 1
+        count: this.$store.state['main/selectFormat'].count || 1
       }
     },
     computed: {
-      ...mapState({
+      ...mapState('main',{
         commodity: 'showCommodityDetail',
         selects: function (state) {
           const selectFormat = state.selectFormat[this.$route.params.pId] || {}
@@ -52,7 +52,7 @@
       next()
     },
     methods: {
-      ...mapActions([
+      ...mapActions('main',[
         'changeSelectFormat',
         'addToCart'
       ]),
@@ -108,7 +108,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '../../styles/mixin.scss';
+  @import '~@/assets/styles/mixin.scss';
   .format-page {
     height: 100%;
     display: flex;

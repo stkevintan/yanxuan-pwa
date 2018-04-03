@@ -52,7 +52,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '../../styles/mixin.scss';
+   @import '~@/assets/styles/mixin.scss';
   .item-recommend-page {
     display: flex;
     background-color: #fff;

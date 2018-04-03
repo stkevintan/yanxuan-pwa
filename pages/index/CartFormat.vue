@@ -21,12 +21,12 @@
     components: { formatDetail },
     data () {
       return {
-        selects: this.$store.state.currentCartCommodity.selectString.split(';'),
-        count: this.$store.state.currentCartCommodity.count
+        selects: this.$store.state['main/currentCartCommodity'].selectString.split(';'),
+        count: this.$store.state['main/currentCartCommodity'].count
       }
     },
     computed: {
-      ...mapState(['currentCartCommodity']),
+      ...mapState('main',['currentCartCommodity']),
       selectString () {
         return this.selects.join(' ')
       }
@@ -36,7 +36,7 @@
       next()
     },
     methods: {
-      ...mapActions(['changeCartEdit', 'changeRemoveCartCommodity']),
+      ...mapActions('main',['changeCartEdit', 'changeRemoveCartCommodity']),
       handleCountChange (currentVal) {
         this.count = currentVal
       },
@@ -60,7 +60,7 @@
 </script>
 
 <style lang="scss">
-  @import '../../styles/mixin.scss';
+   @import '~@/assets/styles/mixin.scss';
   .cart-format-page {
     background: #fff;
     height: 100%;

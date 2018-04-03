@@ -26,7 +26,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '../../styles/mixin.scss';
+   @import '~@/assets/styles/mixin.scss';
   .bt-container {
     padding-bottom: px2rem(10);
     background-color: #fff;
@@ -49,7 +49,7 @@
     height: px2rem(15);
     width: px2rem(15);
     margin-left: px2rem(5);
-    background: url('../../assets/images/arrow.png');
+    background: url('~@/assets/images/arrow.png');
     background-size: cover;
   }
 

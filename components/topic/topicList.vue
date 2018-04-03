@@ -16,7 +16,7 @@
 </template>
 
 <style lang="scss" scoped>
-  @import '../../styles/mixin.scss';
+   @import '~@/assets/styles/mixin.scss';
   .topic-list {
     height: px2rem(96);
     // width: 100%;
@@ -29,19 +29,19 @@
   }
 
   .dl {
-    background: url('../../assets/images/dinglei.jpg');
+    background: url('~@/assets/images/dinglei.jpg');
   }
 
   .yx {
-    background: url('../../assets/images/yanxuan.jpg');
+    background: url('~@/assets/images/yanxuan.jpg');
   }
 
   .txs {
-    background: url('../../assets/images/tuijianshi.png');
+    background: url('~@/assets/images/tuijianshi.png');
   }
 
   .mx {
-    background: url('../../assets/images/mingxing.png');
+    background: url('~@/assets/images/mingxing.png');
   }
 
   .topic-list-item {

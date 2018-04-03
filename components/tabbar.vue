@@ -20,7 +20,7 @@
 
 <style lang="scss">
 
-  @import '../styles/mixin.scss';
+  @import '~@/assets/styles/mixin.scss';
 
   .tabbar {
     width: 100%;
@@ -47,7 +47,7 @@
   .tabbar-item-icon {
     width: px2rem(20);
     height: px2rem(20);
-    background: url('../assets/images/tabbar.png') no-repeat 0 0;
+    background: url('~@/assets/images/tabbar.png') no-repeat 0 0;
     background-size: cover;
     position: relative;
   }

@@ -12,7 +12,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '../../styles/mixin.scss';
+  @import '~@/assets/styles/mixin.scss';
   .category-item {
     width: px2rem(72);
     margin-right: px2rem(17);

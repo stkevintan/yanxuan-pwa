@@ -21,7 +21,7 @@
 </script>
 
 <style lang="scss">
-  @import '../../styles/mixin.scss';
+   @import '~@/assets/styles/mixin.scss';
   .productor-item {
     width: px2rem(175.5);
     height: px2rem(118);
@@ -48,7 +48,7 @@
 
   .productor-item .new {
     display: inline-block;
-    background: url('../../assets/images/new.png') no-repeat 0 0;
+    background: url('~@/assets/images/new.png') no-repeat 0 0;
     background-size: cover;
     width: px2rem(32);
     height: px2rem(16);

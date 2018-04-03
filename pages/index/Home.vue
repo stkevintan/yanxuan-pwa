@@ -55,7 +55,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '../../styles/mixin.scss';
+   @import '~@/assets/styles/mixin.scss';
 
   .home-page {
     width: 100%;
@@ -76,7 +76,7 @@
   .home-page .search-input .logo {
     width: px2rem(69);
     height: px2rem(20);
-    background: url('../../assets/images/logo.png') no-repeat 0 0;
+    background: url('~@/assets/images/logo.png') no-repeat 0 0;
     background-size: cover;
     margin-right: px2rem(10);
     text-indent: -999px;

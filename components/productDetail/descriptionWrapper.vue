@@ -17,7 +17,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '../../styles/mixin.scss';
+   @import '~@/assets/styles/mixin.scss';
   .pd-description-container {
     padding: px2rem(12) px2rem(15);
     display: flex;

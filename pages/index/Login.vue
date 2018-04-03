@@ -35,7 +35,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '../../styles/mixin.scss';
+   @import '~@/assets/styles/mixin.scss';
   .login-page {
     background-color: #fff;
     width: 100%;
@@ -74,7 +74,7 @@
     position: absolute;
     width: px2rem(33);
     height: px2rem(52.5);
-    background: url('../../assets/images/close.png') no-repeat 50% 50%;
+    background: url('~@/assets/images/close.png') no-repeat 50% 50%;
     background-size: px2rem(22.5) px2rem(22.5);
     top: 0;
     right: 0;
@@ -128,12 +128,12 @@
   }
 
   .thirdlogin .qq i {
-    background: url('../../assets/images/qq.png') no-repeat;
+    background: url('~@/assets/images/qq.png') no-repeat;
     background-size: cover;
   }
 
   .thirdlogin .weibo i{
-    background: url('../../assets/images/weibo.png') no-repeat;
+    background: url('~@/assets/images/weibo.png') no-repeat;
     background-size: cover;
   }
 </style>

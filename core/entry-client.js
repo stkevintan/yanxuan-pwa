@@ -13,7 +13,7 @@ import arrayIncludesShim from 'array-includes';
 import {stringify} from 'querystring';
 
 import 'es6-promise/auto';
-import '@/assets/stylus/main.styl';
+// import '@/assets/stylus/main.styl';
 
 // Apply shim & polyfill.
 arrayFindShim.shim();

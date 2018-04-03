@@ -16,7 +16,7 @@
   import navbar from '@/components/common/navbar'
   import segment from '@/components/common/segment'
   import commodity from '@/components/common/commodity'
-  import noMore from './noMore'
+  import noMore from '@/components/category/noMore'
   import { fetchCategoryCommodity } from '@/utils/fetchData'
   export default {
     components: { navbar, segment, commodity, noMore },
@@ -42,7 +42,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '../../styles/mixin.scss';
+   @import '~@/assets/styles/mixin.scss';
   .categoryCommodity-page {
     display: flex;
     flex-direction: column;

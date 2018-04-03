@@ -24,7 +24,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '../../styles/mixin.scss';
+   @import '~@/assets/styles/mixin.scss';
   .ng-item {
     width: px2rem(140);
     margin-left: px2rem(15);

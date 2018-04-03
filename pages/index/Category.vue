@@ -12,8 +12,8 @@
 
 <script>
   import searchBtn from '@/components/common/searchButton'
-  import categoryItemContainer from './categoryItemContainer'
-  import sectionContainer from './sectionContainer'
+  import categoryItemContainer from '@/components/category/categoryItemContainer'
+  import sectionContainer from '@/components/category/sectionContainer'
   import { fecthCategory } from '@/utils/fetchData'
   export default {
     components: {
@@ -69,7 +69,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '../../styles/mixin.scss';
+   @import '~@/assets/styles/mixin.scss';
 
   .category-page {
     height: 100%;

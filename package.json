@@ -27,7 +27,9 @@
         "http-proxy-middleware": "^0.17.4",
         "http2": "^3.3.7",
         "koa": "^2.5.0",
-        "koa-router": "^7.4.0"
+        "koa-router": "^7.4.0",
+        "node-sass": "^4.8.3",
+        "sass-loader": "^6.0.7"
     },
     "engines": {
         "node": ">= 6.9.0",

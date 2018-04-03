@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import topicList from '@/containers/topicList'
+  import topicList from '@/components/topic/topicList'
   import topicItem from '@/components/topic/topicItem'
   import { fetchCateList } from '@/utils/fetchData'
   export default {

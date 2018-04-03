@@ -82,17 +82,17 @@
   import carousel from '@/components/common/carousel'
   import descriptionWrapper from '@/components/productDetail/descriptionWrapper'
   import comment from '@/components/common/comment'
-  import attributeContainer from './attributeContainer.vue'
+  import attributeContainer from '@/components/productDetail/attributeContainer.vue'
   import commonIssue from '@/components/common/commonIssue'
   import { fetchProductDetail } from '@/utils/fetchData'
   import { mapState, mapActions } from 'vuex'
   export default {
     computed: {
-      // ...mapState(['selectFormat'])
+      // ...mapState('main',['selectFormat'])
       selectFormat () {
         console.log('------')
-        console.log(this.$store.state.selectFormat)
-        const selectFormat = this.$store.state.selectFormat
+        console.log(this.$store.state['main/selectFormat'])
+        const selectFormat = this.$store.state['main/selectFormat']
         return selectFormat[this.$route.params.id] || {}
       },
       commentCountString () {
@@ -109,7 +109,7 @@
       commonIssue
     },
     methods: {
-      ...mapActions(['showCommodityDetail', 'addToCart']),
+      ...mapActions('main',['showCommodityDetail', 'addToCart']),
       pushToComment () {
         this.$router.push('/comment')
       },
@@ -169,7 +169,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '../../styles/mixin.scss';
+  @import '~@/assets/styles/mixin.scss';
   .pd-page {
     width: 100%;
     height: 100%;
@@ -290,7 +290,7 @@
   .tag i {
     width: px2rem(5);
     height: px2rem(9);
-    background: url('../../assets/images/yellow_arrow.png') no-repeat;
+    background: url('~@/assets/images/yellow_arrow.png') no-repeat;
     background-size: cover;
     vertical-align: middle;
     margin-left: px2rem(4);
@@ -306,7 +306,7 @@
     display: inline-block;
     width: px2rem(25);
     height: px2rem(25);
-    background: url('../../assets/images/more.png') no-repeat;
+    background: url('~@/assets/images/more.png') no-repeat;
     background-size: cover;
     margin-right: pxrem(8);
   }
@@ -427,7 +427,7 @@
     display: inline-block;
     width: px2rem(30);
     height: px2rem(30);
-    background: url('../../assets/images/kefu.png') no-repeat;
+    background: url('~@/assets/images/kefu.png') no-repeat;
     background-size: cover;
   }
 

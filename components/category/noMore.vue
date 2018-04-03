@@ -6,7 +6,7 @@
 
 
 <style lang="scss" scoped>
-  @import '../../styles/mixin.scss';
+   @import '~@/assets/styles/mixin.scss';
   .listnomore {
     height: px2rem(40);
     display: flex;

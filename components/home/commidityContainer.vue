@@ -32,7 +32,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '../../styles/mixin.scss';
+   @import '~@/assets/styles/mixin.scss';
 
   .com-container {
     width: 100%;
@@ -76,7 +76,7 @@
   }
 
   .more i {
-    background: url('../../assets/images/homemore.png') no-repeat;
+    background: url('~@/assets/images/homemore.png') no-repeat;
     width: px2rem(33.5);
     height: px2rem(33.5);
     background-size: cover;

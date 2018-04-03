@@ -75,7 +75,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '../../styles/mixin.scss';
+   @import '~@/assets/styles/mixin.scss';
   .topic-detail-page {
     height: 100%;
     overflow: hidden;
@@ -165,7 +165,7 @@
   .write-comment {
     width: px2rem(17.5);
     height: px2rem(17);
-    background: url('../../assets/images/write.png') no-repeat;
+    background: url('~@/assets/images/write.png') no-repeat;
     background-size: cover;
   }
 

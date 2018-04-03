@@ -14,7 +14,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '../../styles/mixin.scss';
+   @import '~@/assets/styles/mixin.scss';
   .headerselect-container {
     display: flex;
     height: px2rem(41);

@@ -57,7 +57,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '../../styles/mixin.scss';
+   @import '~@/assets/styles/mixin.scss';
   .profile-page {
     width: 100%;
     height: 100%;
@@ -67,7 +67,7 @@
   .header {
     height: px2rem(135);
     width: 100%;
-    background: url('../../assets/images/profile_header.jpg') no-repeat;
+    background: url('~@/assets/images/profile_header.jpg') no-repeat;
     background-size: cover;
     display: flex;
     align-items: center;

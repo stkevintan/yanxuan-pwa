@@ -15,7 +15,7 @@
 
 <script>
   import navbar from '@/components/common/navbar'
-  import headerSelect from './headerSelect'
+  import headerSelect from '@/components/comment/headerSelect'
   import comment from '@/components/common/comment'
   export default {
     data () {
@@ -39,7 +39,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '../../styles/mixin.scss';
+   @import '~@/assets/styles/mixin.scss';
   .comment-page {
     width: 100%;
     height: 100%;

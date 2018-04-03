@@ -11,7 +11,7 @@
 </script>
 
 <style lang="scss">
-  @import '../../styles/mixin.scss';
+  @import '~@/assets/styles/mixin.scss';
   .section-item {
     width: 100%;
     height: px2rem(25);

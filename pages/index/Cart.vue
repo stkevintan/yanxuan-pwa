@@ -64,7 +64,7 @@
       next()
     },
     computed: {
-      ...mapState({
+      ...mapState('main',{
         // cartCommodities: 'cartList',
         cartCommodities: state => {
           console.log('--------')
@@ -92,10 +92,10 @@
           return total
         }
       }),
-      ...mapGetters(['cartCommodityCount', 'removeCommodityCount'])
+      ...mapGetters('main',['cartCommodityCount', 'removeCommodityCount'])
     },
     methods: {
-      ...mapActions([
+      ...mapActions('main',[
         'selectCartCommodity', 'selectAllCartCommodity', 'getRemoveCartCommodity',
         'selectRemoveAllCartCommodity', 'removeCartCommodity', 'pushToCartFormat',
         'changeCartEdit', 'changeRemoveCartCommodity', 'finishEditCartCommodity',
@@ -159,7 +159,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '../../styles/mixin.scss';
+   @import '~@/assets/styles/mixin.scss';
   .cart-page {
     width: 100%;
     height: 100%;
@@ -221,7 +221,7 @@
     display: inline-block;
     width: px2rem(5);
     height: px2rem(5);
-    background: url('../../assets/images/dot.png') no-repeat;
+    background: url('~@/assets/images/dot.png') no-repeat;
     background-size: cover;
     margin-right: px2rem(3);
   }
@@ -239,7 +239,7 @@
   .nothing-cart-img {
     width: px2rem(124);
     height: px2rem(124);
-    background: url('../../assets/images/cart_nothing.png') no-repeat;
+    background: url('~@/assets/images/cart_nothing.png') no-repeat;
     background-size: cover;
   }
 

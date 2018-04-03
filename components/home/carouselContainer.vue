@@ -18,7 +18,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '../../styles/mixin.scss';
+   @import '~@/assets/styles/mixin.scss';
   .c-container {
     width: 100%;
     display: flex;
@@ -42,7 +42,7 @@
   }
 
   .cc-bottom li i {
-    background: url('../../assets/images/checkbox.png');
+    background: url('~@/assets/images/checkbox.png');
     background-size: cover;
     width: px2rem(16);
     height: px2rem(16);

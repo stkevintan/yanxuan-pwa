@@ -127,7 +127,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '../../styles/mixin.scss';
+  @import '~@/assets/styles/mixin.scss';
   .single-manufacturer-info {
     background-color: #fff;
     margin-bottom: px2rem(10);

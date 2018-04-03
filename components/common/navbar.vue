@@ -34,7 +34,7 @@
       }
     },
     computed: {
-      ...mapGetters(['cartCommodityCount'])
+      ...mapGetters('main',['cartCommodityCount'])
     },
     methods: {
       handleLeftItemClick () {
@@ -49,7 +49,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '../../styles/mixin.scss';
+  @import '~@/assets/styles/mixin.scss';
 
   .navbar-container {
     position: relative;

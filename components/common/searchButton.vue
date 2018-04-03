@@ -12,7 +12,7 @@ export default {
 
 
 <style lang="scss" scoped>
-  @import '../../styles/mixin.scss';
+   @import '~@/assets/styles/mixin.scss';
   .search-btn {
     background-color: #ededed;
     border-radius: px2rem(4);
@@ -29,7 +29,7 @@ export default {
     width: px2rem(14);
     height: px2rem(14);
     margin-right: px2rem(5);
-    background: url('../../assets/images/searchIcon.png') no-repeat 0 0;
+    background: url('~@/assets/images/searchIcon.png') no-repeat 0 0;
     background-size: cover;
   }
   .search-btn span {

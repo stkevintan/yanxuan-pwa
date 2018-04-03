@@ -26,7 +26,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import '../../styles/mixin.scss';
+   @import '~@/assets/styles/mixin.scss';
   .category-item-container {
     flex: 1;
     height: 100%;
