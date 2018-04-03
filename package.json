@@ -24,7 +24,10 @@
     },
     "devDependencies": {
         "express": "^4.16.2",
-        "http-proxy-middleware": "^0.17.4"
+        "http-proxy-middleware": "^0.17.4",
+        "http2": "^3.3.7",
+        "koa": "^2.5.0",
+        "koa-router": "^7.4.0"
     },
     "engines": {
         "node": ">= 6.9.0",

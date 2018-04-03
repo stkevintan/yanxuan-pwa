@@ -5,10 +5,10 @@
 export default {
     name: 'appshell',
     metaInfo: {
-        title: 'Lavas',
+        title: '网易严选',
         meta: [
-            {name: 'keywords', content: 'lavas PWA'},
-            {name: 'description', content: '基于 Vue 的 PWA 解决方案，帮助开发者快速搭建 PWA 应用，解决接入 PWA 的各种问题'}
+            {name: 'keywords', content: 'YanXuan PWA  Netease'},
+            {name: 'description', content: '网易严选 PWA'}
         ],
         bodyAttrs: {
             'empty-appshell': undefined

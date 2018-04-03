@@ -1,40 +1,79 @@
 <template>
-    <div class="page-index">
-        <h2>LAVAS</h2>
-        <h4>[ˈlɑ:vəz]</h4>
-    </div>
+  <div id="main">
+    <router-view class="content"></router-view>
+    <tabbar :items="items" />
+  </div>
 </template>
 
 <script>
 function setState(store) {}
-
+import tabbar from "@/components/tabbar";
 export default {
-    name: 'index',
-    metaInfo: {
-        title: 'Home',
-        titleTemplate: '%s - Lavas',
-        meta: [
-            {name: 'keywords', content: 'lavas PWA'},
-            {name: 'description', content: '基于 Vue 的 PWA 解决方案，帮助开发者快速搭建 PWA 应用，解决接入 PWA 的各种问题'}
-        ]
-    },
-    async asyncData({store, route}) {
-        setState(store);
+  name: "index",
+  metaInfo: {
+    title: "Home",
+    titleTemplate: "%s - 网易严选",
+    meta: [
+      { name: "keywords", content: "YanXuan PWA  Netease" },
+      { name: "description", content: "网易严选 PWA" }
+    ]
+  },
+  async asyncData({ store, route }) {
+    setState(store);
+  },
+  components: {
+    tabbar
+  },
+  computed: {
+    items() {
+      const barItems = [
+        {
+          title: "首页",
+          icon: `-${125 / 37.5}rem`,
+          selectedIcon: `-${100 / 37.5}rem`,
+          to: "/home"
+        },
+        {
+          title: "专题",
+          icon: `-${175 / 37.5}rem`,
+          selectedIcon: `-${150 / 37.5}rem`,
+          to: "/topic"
+        },
+        {
+          title: "分类",
+          icon: `-${75 / 37.5}rem`,
+          selectedIcon: `-${50 / 37.5}rem`,
+          to: "/category"
+        },
+        {
+          title: "购物车",
+          icon: `-${25 / 37.5}rem`,
+          selectedIcon: "0px",
+          to: "/cart",
+          badge: this.$store.getters.cartCommodityCount
+        },
+        {
+          title: "个人",
+          icon: `-${225 / 37.5}rem`,
+          selectedIcon: `-${200 / 37.5}rem`,
+          to: "/profile"
+        }
+      ];
+      return barItems;
     }
+  }
 };
 </script>
 
-<style lang="stylus" scoped>
+<style lang="scss" scoped>
+  #main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
 
-.page-index
-    display flex
-    justify-content center
-    align-items center
-    flex-direction column
-
-    h2
-        font-size 46px
-        font-weight 500
-        margin-bottom 0
-
+  .content {
+    flex: 1;
+  }
 </style>
