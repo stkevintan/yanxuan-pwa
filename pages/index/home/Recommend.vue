@@ -58,13 +58,13 @@
         this.$router.push(`/home/other/${this.categoryId[this.titles.indexOf(title)]}`)
       },
       pushToMenufacturerList () {
-        this.$router.push('/manufacturerList')
+        this.$router.push('/manufacturer-list')
       },
       pushToItemRecommend () {
-        this.$router.push('/itemRecommend')
+        this.$router.push('/item-recommend')
       },
       pushToNewItem () {
-        this.$router.push('/newItem')
+        this.$router.push('/new-item')
       },
       pushToTopic () {
         this.$router.push('/topic')

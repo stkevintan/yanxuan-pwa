@@ -1,5 +1,5 @@
 <template>
-  <router-link v-bind:to="'/productDetail/' + commodity.pId" class="commodity">
+  <router-link v-bind:to="'/product/' + commodity.pId" class="commodity">
     <div class="wrapper">
       <div class="specification" v-if="commodity.specification">{{ commodity.specification }}</div>
       <img v-bind:src="commodity.pic" /><p>{{ commodity.description }}</p>

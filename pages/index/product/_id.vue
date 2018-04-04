@@ -2,23 +2,23 @@
   <div class="pd-page">
     <navbar />
     <div class="pd-content">
-      <div class="carousel-wrapper"  v-if="productDetail.pics">
-        <carousel v-bind:hideIndicator="true" v-bind:pics="productDetail.pics" v-bind:onPicChange="handleCarouselChange" />
-        <p class="indicator">{{ currentPic }}/{{ productDetail.pics.length }}</p>
+      <div class="carousel-wrapper"  v-if="product.pics">
+        <carousel v-bind:hideIndicator="true" v-bind:pics="product.pics" v-bind:onPicChange="handleCarouselChange" />
+        <p class="indicator">{{ currentPic }}/{{ product.pics.length }}</p>
       </div>
-      <descriptionWrapper v-bind:characteristics="productDetail.characteristics" />
+      <descriptionWrapper v-bind:characteristics="product.characteristics" />
       <div class="content">
         <div class="info">
-          <h3 class="title">{{ productDetail.title }}</h3>
-          <p class="description">{{ productDetail.description }}</p>
-          <p class="price">¥{{ productDetail.price }}</p>
+          <h3 class="title">{{ product.title }}</h3>
+          <p class="description">{{ product.description }}</p>
+          <p class="price">¥{{ product.price }}</p>
           <div class="tag-wrapper">
-            <span class="tag" v-for="tag in productDetail.tags">
+            <span class="tag" v-for="tag in product.tags">
               {{ tag.name }}<i />
             </span>
           </div>
         </div>
-        <div class="comment" v-if="productDetail.commentCount > 0">
+        <div class="comment" v-if="product.commentCount > 0">
           <p class="count">{{ commentCountString }}</p>
           <p class="com">用户评价</p>
           <div class="checkBtn">查看</div>
@@ -47,14 +47,14 @@
             <span>服务:</span>            
           </div>
           <div class="service-content">
-            <span class="service-item" v-for="service in productDetail.services">
+            <span class="service-item" v-for="service in product.services">
               {{ service }}
             </span>
           </div>
           <i class="more" />
         </div>
       </div>
-      <div class="comment-wrapper" v-if="productDetail.commentCount > 0">
+      <div class="comment-wrapper" v-if="product.commentCount > 0">
         <div class="header" v-on:click="pushToComment">
           <span>评价({{ commentCountString }})</span>
           <div class="comment-more">查看全部<i class="more" /></div>
@@ -63,7 +63,7 @@
       </div>
       <attribute-container />
       <div class="product-detail">
-        <p v-for="detailPic in productDetail.detailPics">
+        <p v-for="detailPic in product.detailPics">
           <img v-bind:src="detailPic" />
         </p>
       </div>
@@ -80,11 +80,11 @@
 <script>
   import navbar from '@/components/common/navbar'
   import carousel from '@/components/common/carousel'
-  import descriptionWrapper from '@/components/productDetail/descriptionWrapper'
+  import descriptionWrapper from '@/components/product/descriptionWrapper'
   import comment from '@/components/common/comment'
-  import attributeContainer from '@/components/productDetail/attributeContainer.vue'
+  import attributeContainer from '@/components/product/attributeContainer.vue'
   import commonIssue from '@/components/common/commonIssue'
-  import { fetchProductDetail } from '@/utils/fetchData'
+  import { fetchProduct } from '@/utils/fetchData'
   import { mapState, mapActions } from 'vuex'
   export default {
     computed: {
@@ -96,7 +96,7 @@
         return selectFormat[this.$route.params.id] || {}
       },
       commentCountString () {
-        const count = this.productDetail.commentCount
+        const count = this.product.commentCount
         return count > 999 ? '999+' : count
       }
     },
@@ -114,21 +114,20 @@
         this.$router.push('/comment')
       },
       fetchData () {
-        fetchProductDetail()
+        const pId = this.$route.params.id
+        fetchProduct(pId)
           .then(r => {
-            console.log(r)
-            const pId = this.$route.params.id
-            this.productDetail = r[pId]
+            this.product = r;
           })
       },
       handlePickFormat () {
         const pId = this.$route.params.id
         this.showCommodityDetail({
           pId: pId,
-          title: this.productDetail.title,
-          price: this.productDetail.price,
-          pic: this.productDetail.pics[0],
-          formats: this.productDetail.format
+          title: this.product.title,
+          price: this.product.price,
+          pic: this.product.pics[0],
+          formats: this.product.format
         })
         this.$router.push(`/format/${pId}`)
       },
@@ -142,13 +141,13 @@
         const format = this.selectFormat.format
         if (format && format.length) {
           this.addToCart({
-            pId: this.productDetail.pId,
-            title: this.productDetail.title,
-            price: this.productDetail.price,
-            pic: this.productDetail.pics[0],
+            pId: this.product.pId,
+            title: this.product.title,
+            price: this.product.price,
+            pic: this.product.pics[0],
             selectd: true,
             count: this.selectFormat.count,
-            formats: this.productDetail.formats,
+            formats: this.product.formats,
             selectString: this.selectFormat.format.join(';')
           })
         } else {
@@ -161,7 +160,7 @@
     },
     data () {
       return {
-        productDetail: {},
+        product: {},
         currentPic: 1
       }
     }

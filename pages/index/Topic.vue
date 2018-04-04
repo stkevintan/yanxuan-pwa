@@ -32,7 +32,7 @@
       },
       handlePush (topic) {
         console.log(topic)
-        this.$router.push('/topicDetail')
+        this.$router.push('/topic-detail')
       }
     },
     mounted () {

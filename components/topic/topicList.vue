@@ -1,15 +1,15 @@
 <template>
   <div class="topic-list">
-     <router-link class="topic-list-item dl" to="/cateList/0">
+     <router-link class="topic-list-item dl" to="/cate-list/0">
       <p>丁磊私物推荐</p>
     </router-link>
-    <router-link class="topic-list-item yx" to="/cateList/1">
+    <router-link class="topic-list-item yx" to="/cate-list/1">
       <p>严选推荐</p>
     </router-link>
-    <router-link class="topic-list-item txs" to="/cateList/2">
+    <router-link class="topic-list-item txs" to="/cate-list/2">
       <p>挑选师推荐</p>
     </router-link>
-    <router-link class="topic-list-item mx" to="/cateList/3">
+    <router-link class="topic-list-item mx" to="/cate-list/3">
       <p>明星商品</p>
     </router-link>
   </div>

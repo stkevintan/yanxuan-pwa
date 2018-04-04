@@ -21,7 +21,7 @@
           v-for="commodity in cartCommodities"
           v-bind:key="commodity.pId"
           v-bind:commodity="commodity"
-          v-bind:handlePush="pushToProductDetail"
+          v-bind:handlePush="pushToProduct"
           v-bind:handleSelect="handleSelect"
           v-bind:isEdit="isEdit"
           v-bind:handleRemove="handleRemove"
@@ -101,8 +101,8 @@
         'changeCartEdit', 'changeRemoveCartCommodity', 'finishEditCartCommodity',
         'resetCartCommodity'
       ]),
-      pushToProductDetail (pId) {
-        this.$router.push(`/productDetail/${pId}`)
+      pushToProduct (pId) {
+        this.$router.push(`/product/${pId}`)
       },
       handleSelect (commodity) {
         this.selectCartCommodity(commodity)
@@ -149,7 +149,7 @@
       },
       handleToFormat (commodity) {
         this.pushToCartFormat(commodity)
-        this.$router.push('/cartFormat')
+        this.$router.push('/cart-format')
       },
       handleLogin () {
         this.$router.push('/login')

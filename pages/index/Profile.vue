@@ -26,7 +26,7 @@
       return {
         user: {},
         items: [
-          { title: '我的订单', to: '/myOrder', positionY: `${-240 / 37.5}rem`},
+          { title: '我的订单', to: '/my-order', positionY: `${-240 / 37.5}rem`},
           { title: '周六一起拼', to: '/pin', positionY: `${-296 / 37.5}rem`},
           { title: '售后服务', to: '/postsales', positionY: `${-30 / 37.5}rem`},
           { title: '优惠券', to: '/coupon', positionY: `${-60 / 37.5}rem`},

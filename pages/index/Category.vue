@@ -39,7 +39,7 @@
       handlePushToCommodity (section, commodity) {
         console.log(section)
         console.log(commodity)
-        this.$router.push('/categoryCommodity')
+        this.$router.push('/category-commodity')
       }
     },
     data () {

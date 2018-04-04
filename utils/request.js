@@ -1,22 +1,31 @@
-const host = 'https://localhost:443'
+import axios from "axios";
 
-const checkStatus = (res) => {
-  if (res.status >= 200 && res.status < 300) {
-    return res
-  }
-  const err = new Error(res.statusText)
-  err.res = res
-  return err
-}
+const _request = axios.create({
+  baseURL: "https://localhost:3300/api", 
+  // timeout: 1000
+});
 
-const parseJSON = (res) => {
-  return res.json()
-}
+const checkStatus = res => {
+    if (res.status >= 200 && res.status < 300) {
+        return res;
+    }
+    const err = new Error(res.statusText);
+    err.res = res;
+    throw err;
+};
 
-const request = (url, options = {}) => {
-  return window.fetch(host + url, options)
-          .then(checkStatus)
-          .then(parseJSON)
-}
+const parseJSON = res => {
+    return res.json();
+};
 
-export default request
+const request = async (url, params = {}) => {
+    try {
+        const res = await _request.get(url, { params });
+        checkStatus(res);
+      return await res.data;
+    } catch (err) {
+        console.error("request failed with error:", err);
+    }
+};
+
+export default request;

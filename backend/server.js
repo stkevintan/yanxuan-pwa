@@ -19,6 +19,7 @@ class KoaOnHttps extends Koa {
         return server.listen.apply(server, arguments);
     }
 }
+
 const app = new KoaOnHttps();
 // x-response-time
 app.use(async function(ctx, next) {
@@ -33,8 +34,15 @@ app.use(async function(ctx, next) {
     await next();
     const ms = new Date() - start;
     console.log(`${ctx.method} ${ctx.url} - ${ms}`);
-    ctx.res.type = "json";
 });
+// set cors header
+app.use(async function (ctx, next) {
+    await next();
+    ctx.set({
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Credentials": true
+    })
+})
 
 app.use(router.routes()).use(router.allowedMethods());
 

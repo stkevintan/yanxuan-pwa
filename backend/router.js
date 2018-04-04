@@ -2,51 +2,43 @@ const Router = require("koa-router");
 const low = require("lowdb");
 const FileSync = require("lowdb/adapters/FileSync");
 
-const adapter = new FileSync("./data.json");
+const adapter = new FileSync(require.resolve("./data.json"));
 const db = low(adapter);
 
 const router = new Router();
 
-router.get("/home", (ctx, next) => {
-  console.log('home');
-  ctx.res.body = db.get("home").value();
-  next();
+router.get("/api/product/:id", (ctx, next) => {
+    const { id } = ctx.params;
+    console.log("Current Request id:", id);
+    const regRet = /([^_]+)/.exec(id);
+    if (regRet == null) ctx.throw(404);
+    const ret = db
+        .get("product")
+        .get(regRet[0])
+        .value();
+    if (ret == undefined) ctx.throw(404);
+    ctx.body = ret;
 });
-router.get("/userInfo", (ctx, next) => {
-    ctx.res.body = db.get("userInfo").value();
-    next();
+
+
+// common
+router.get("/api/:domain", (ctx, next) => {
+    const { domain } = ctx.params;
+    console.log("Current Request Params:", domain);
+    const ret = db.get(domain).value();
+    if (ret == undefined) ctx.status = 404;
+    else ctx.body = ret;
 });
-router.get("/manufacturers", (ctx, next) => {
-    ctx.res.body = db.get("manufacturers").value();
-    next();
-});
-router.get("/itemRecommend", (ctx, next) => {
-    ctx.res.body = db.get("itemRecommend").value();
-    next();
-});
-router.get("/cateList", (ctx, next) => {
-    ctx.res.body = db.get("cateList").value();
-    next();
-});
-router.get("/productDetail", (ctx, next) => {
-    ctx.res.body = db.get("productDetail").value();
-    next();
-});
-router.get("/section", (ctx, next) => {
-    ctx.res.body = db.get("section").value();
-    next();
-});
-router.get("/categoryCommodity", (ctx, next) => {
-    ctx.res.body = db.get("categoryCommodity").value();
-    next();
-});
-router.get("/commodityFormat", (ctx, next) => {
-    ctx.res.body = db.get("commodityFormat").value();
-    next();
-});
-router.get("/topicDetail", (ctx, next) => {
-    ctx.res.body = db.get("topicDetail").value();
-    next();
+
+router.get("/api/:domain/:type", (ctx, next) => {
+    const { domain, type } = ctx.params;
+    console.log("Current Request Params2:", domain, type);
+    const ret = db
+        .get(domain)
+        .get(type)
+        .value();
+    if (ret == undefined) ctx.status = 404;
+    else ctx.body = ret;
 });
 
 module.exports = router;

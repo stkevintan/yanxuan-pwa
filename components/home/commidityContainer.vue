@@ -22,7 +22,7 @@
     },
     methods: {
       handleClick (cId) {
-        this.$router.push(`/productDetail/${cId}`)
+        this.$router.push(`/product/${cId}`)
       },
       handleMore () {
           this.$router.push(`/home/other/${this.categoryCommodity.categoryId}`)

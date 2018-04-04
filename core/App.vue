@@ -62,7 +62,7 @@ export default {
     };
   },
   mounted() {
-    this.$store.dispatch( ["main/getCartCommodity"]);
+    this.$store.dispatch("main/getCartCommodity");
   }
 };
 </script>

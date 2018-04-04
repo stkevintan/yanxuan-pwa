@@ -17,7 +17,7 @@
     props: ['good'],
     computed: {
       toPath () {
-        return '/productDetail/' + this.good.pId
+        return '/product/' + this.good.pId
       }
     }
   }

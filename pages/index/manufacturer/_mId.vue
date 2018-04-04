@@ -34,7 +34,7 @@
         this.select = condition.condition
       },
       pushToCommodityDetail (commodity) {
-        this.$router.push(`/productDetail/${commodity.pId}`)
+        this.$router.push(`/product/${commodity.pId}`)
       }
     },
     data () {
