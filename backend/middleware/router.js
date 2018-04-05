@@ -68,9 +68,9 @@ router.get('/mimg/:filename', async (ctx, next) => {
     }
 });
 
-router.get(/(\.html|\/[\w-]*)$/, async (ctx, next) => {
+router.get(/(\.html|\/[\w-]*|\/sw-register)$/, async (ctx, next) => {
     // disable cache
-    ctx.res.setHeader('Cache-Control', 'public, max-age=0');
+    ctx.res.setHeader('Cache-Control', 'no-store');
     await next();
 });
 module.exports = router;

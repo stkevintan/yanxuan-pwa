@@ -20,7 +20,7 @@ module.exports = {
     addDep(item, key = this.currentKey) {
         if (!key) return;
         key = this.stripDot(key);
-        item = Object.assign({}, item);
+        item = { relPath: item.relPath, filePath: item.filePath };
         if (!db.has(key).value()) {
             db
                 .set(key, [])

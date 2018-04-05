@@ -25,7 +25,10 @@ module.exports = (root = '') => {
             if (/(\.html|\/[\w-]*)([?#]\S*)?$/.test(ctx.path)) {
                 //server push
                 for (const dep of depTree.getDep()) {
-                    push(ctx.res.stream, dep);
+                    push(ctx.res.stream, {
+                        relPath: dep.relPath,
+                        filePath: dep.filePath
+                    });
                 }
             }
         }
