@@ -127,7 +127,7 @@
     display: inline-block;
     width: px2rem(25);
     height: px2rem(25);
-    background-image: url('http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/sprites/ucenter-s75fa4432cf-c67f6f862a.png');
+    background-image: url('https://gbzhu.cn/mimg/ucenter-s75fa4432cf-c67f6f862a.png');
     background-repeat: no-repeat;
     background-size: px2rem(25) px2rem(381);
     margin-bottom: px2rem(8);

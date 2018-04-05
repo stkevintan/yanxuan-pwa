@@ -45,21 +45,21 @@
     data () {
       return {
         sections: [
-          { name: '推荐区', categoryId: '1000001', pic: 'http://yanxuan.nosdn.127.net/bd17c985bacb9b9ab1ab6e9d66ee343c.png?imageView&quality=85&thumbnail=144x144' },
-          { name: '夏凉区', categoryId: '1000002', pic: 'http://yanxuan.nosdn.127.net/bd17c985bacb9b9ab1ab6e9d66ee343c.png?imageView&quality=85&thumbnail=144x144' },
-          { name: '家装区', categoryId: '1000003', pic: 'http://yanxuan.nosdn.127.net/bd17c985bacb9b9ab1ab6e9d66ee343c.png?imageView&quality=85&thumbnail=144x144' },
-          { name: '居家', categoryId: '1000004', pic: 'http://yanxuan.nosdn.127.net/bd17c985bacb9b9ab1ab6e9d66ee343c.png?imageView&quality=85&thumbnail=144x144' },
-          { name: '餐厨', categoryId: '1000001', pic: 'http://yanxuan.nosdn.127.net/bd17c985bacb9b9ab1ab6e9d66ee343c.png?imageView&quality=85&thumbnail=144x144' },
-          { name: '配件', categoryId: '1000002', pic: 'http://yanxuan.nosdn.127.net/bd17c985bacb9b9ab1ab6e9d66ee343c.png?imageView&quality=85&thumbnail=144x144' },
-          { name: '服装', categoryId: '1000003', pic: 'http://yanxuan.nosdn.127.net/bd17c985bacb9b9ab1ab6e9d66ee343c.png?imageView&quality=85&thumbnail=144x144' },
-          { name: '洗护', categoryId: '1000004', pic: 'http://yanxuan.nosdn.127.net/bd17c985bacb9b9ab1ab6e9d66ee343c.png?imageView&quality=85&thumbnail=144x144' },
-          { name: '婴童', categoryId: '1000001', pic: 'http://yanxuan.nosdn.127.net/bd17c985bacb9b9ab1ab6e9d66ee343c.png?imageView&quality=85&thumbnail=144x144' },
-          { name: '杂货', categoryId: '1000002', pic: 'http://yanxuan.nosdn.127.net/bd17c985bacb9b9ab1ab6e9d66ee343c.png?imageView&quality=85&thumbnail=144x144' },
-          { name: '饮食', categoryId: '1000003', pic: 'http://yanxuan.nosdn.127.net/bd17c985bacb9b9ab1ab6e9d66ee343c.png?imageView&quality=85&thumbnail=144x144' },
-          { name: '志趣', categoryId: '1000004', pic: 'http://yanxuan.nosdn.127.net/bd17c985bacb9b9ab1ab6e9d66ee343c.png?imageView&quality=85&thumbnail=144x144' }
+          { name: '推荐区', categoryId: '1000001', pic: 'https://gbzhu.cn/mimg/bd17c985bacb9b9ab1ab6e9d66ee343c.png?imageView&quality=85&thumbnail=144x144' },
+          { name: '夏凉区', categoryId: '1000002', pic: 'https://gbzhu.cn/mimg/bd17c985bacb9b9ab1ab6e9d66ee343c.png?imageView&quality=85&thumbnail=144x144' },
+          { name: '家装区', categoryId: '1000003', pic: 'https://gbzhu.cn/mimg/bd17c985bacb9b9ab1ab6e9d66ee343c.png?imageView&quality=85&thumbnail=144x144' },
+          { name: '居家', categoryId: '1000004', pic: 'https://gbzhu.cn/mimg/bd17c985bacb9b9ab1ab6e9d66ee343c.png?imageView&quality=85&thumbnail=144x144' },
+          { name: '餐厨', categoryId: '1000001', pic: 'https://gbzhu.cn/mimg/bd17c985bacb9b9ab1ab6e9d66ee343c.png?imageView&quality=85&thumbnail=144x144' },
+          { name: '配件', categoryId: '1000002', pic: 'https://gbzhu.cn/mimg/bd17c985bacb9b9ab1ab6e9d66ee343c.png?imageView&quality=85&thumbnail=144x144' },
+          { name: '服装', categoryId: '1000003', pic: 'https://gbzhu.cn/mimg/bd17c985bacb9b9ab1ab6e9d66ee343c.png?imageView&quality=85&thumbnail=144x144' },
+          { name: '洗护', categoryId: '1000004', pic: 'https://gbzhu.cn/mimg/bd17c985bacb9b9ab1ab6e9d66ee343c.png?imageView&quality=85&thumbnail=144x144' },
+          { name: '婴童', categoryId: '1000001', pic: 'https://gbzhu.cn/mimg/bd17c985bacb9b9ab1ab6e9d66ee343c.png?imageView&quality=85&thumbnail=144x144' },
+          { name: '杂货', categoryId: '1000002', pic: 'https://gbzhu.cn/mimg/bd17c985bacb9b9ab1ab6e9d66ee343c.png?imageView&quality=85&thumbnail=144x144' },
+          { name: '饮食', categoryId: '1000003', pic: 'https://gbzhu.cn/mimg/bd17c985bacb9b9ab1ab6e9d66ee343c.png?imageView&quality=85&thumbnail=144x144' },
+          { name: '志趣', categoryId: '1000004', pic: 'https://gbzhu.cn/mimg/bd17c985bacb9b9ab1ab6e9d66ee343c.png?imageView&quality=85&thumbnail=144x144' }
         ],
         section: {
-          pic: 'http://yanxuan.nosdn.127.net/e8bf0cf08cf7eda21606ab191762e35c.png',
+          pic: 'https://gbzhu.cn/mimg/e8bf0cf08cf7eda21606ab191762e35c.png',
           name: '居家',
           section: {}
         }

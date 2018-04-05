@@ -1,15 +1,15 @@
 const Router = require("koa-router");
 const low = require("lowdb");
 const FileSync = require("lowdb/adapters/FileSync");
-
-const adapter = new FileSync(require.resolve("./db.json"));
+const logger = require("../util/logger");
+const adapter = new FileSync(require.resolve("../db.json"));
 const db = low(adapter);
 
 const router = new Router();
 
 router.get("/api/product/:id", (ctx, next) => {
     const { id } = ctx.params;
-    console.log("Current Request id:", id);
+    logger.info("Current Request id:", id);
     const regRet = /([^_]+)/.exec(id);
     if (regRet == null) ctx.throw(404);
     const ret = db
@@ -24,7 +24,7 @@ router.get("/api/product/:id", (ctx, next) => {
 // common
 router.get("/api/:domain", (ctx, next) => {
     const { domain } = ctx.params;
-    console.log("Current Request Params:", domain);
+    logger.info("Current Request Params:", domain);
     const ret = db.get(domain).value();
     if (ret == undefined) ctx.status = 404;
     else ctx.body = ret;
@@ -32,7 +32,7 @@ router.get("/api/:domain", (ctx, next) => {
 
 router.get("/api/:domain/:type", (ctx, next) => {
     const { domain, type } = ctx.params;
-    console.log("Current Request Params2:", domain, type);
+    logger.info("Current Request Params2:", domain, type);
     const ret = db
         .get(domain)
         .get(type)

@@ -21,6 +21,11 @@ npm run start
 npm run lint
 ```
 
+
+allow bind 443: 
+```
+sudo setcap 'cap_net_bind_service=+ep' /usr/local/bin/node
+```
 Lavas 工程模版基于 [vue-template-vue](https://github.com/lavas-project/lavas-template-vue/) 模版的 `release-*` 分支创建。
 如果想要了解具体如何玩转整个 Lavas 创建的 PWA 工程, 请查看[Lavas 官网教程](https://lavas.baidu.com/guide)。
 

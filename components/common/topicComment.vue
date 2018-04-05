@@ -68,7 +68,7 @@
   .profile i {
     display: inline-block;
     vertical-align: middle;
-    background-image: url(http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/sprites/membership-sc86699d936-cc4229a2e5.png);
+    background-image: url(https://gbzhu.cn/mimg/membership-sc86699d936-cc4229a2e5.png);
     background-repeat: no-repeat;
     background-position: 0 px2rem(-2636);
     background-size: px2rem(60) px2rem(2671);

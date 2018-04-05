@@ -1,8 +1,12 @@
 const Koa = require("koa");
 const fs = require("fs");
+const path = require('path');
 const http2 = require("http2");
-const router = require("./router");
-const cors = require("koa-cors");
+
+const router = require("./middleware/router");
+const rewriter = require('./middleware/rewriter');
+const static = require('./middleware/static');
+const logger = require("./util/logger");
 
 class KoaOnHttps extends Koa {
     constructor() {
@@ -10,8 +14,8 @@ class KoaOnHttps extends Koa {
     }
     get options() {
         return {
-            key: fs.readFileSync(require.resolve("./keys/server.key")),
-            cert: fs.readFileSync(require.resolve("./keys/server.crt"))
+            key: fs.readFileSync(require.resolve("./keys/www.gbzhu.cn.key")),
+            cert: fs.readFileSync(require.resolve("./keys/www.gbzhu.cn.crt"))
         };
     }
     listen() {
@@ -33,19 +37,23 @@ app.use(async function(ctx, next) {
     const start = new Date();
     await next();
     const ms = new Date() - start;
-    console.log(`${ctx.method} ${ctx.url} - ${ms}`);
+    logger.info(`${ctx.method} ${ctx.url} - ${ms}`);
 });
+
 // set cors header
-app.use(async function (ctx, next) {
+app.use(async function(ctx, next) {
     await next();
     ctx.set({
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Credentials": true
-    })
-})
+    });
+});
 
+app.use(rewriter({ whiteList: ["/api","/static"] }));
+app.use(static(path.resolve(__dirname, "../dist")));
 app.use(router.routes()).use(router.allowedMethods());
 
-app.listen(3300, () => {
-    console.log("app start at:", `https://localhost:3300`);
+
+app.listen(443, () => {
+    logger.ok("app start at:", `https://gbzhu.cn`);
 });

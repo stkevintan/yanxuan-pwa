@@ -54,7 +54,7 @@
     display: inline-block;
     height: px2rem(35);
     width: px2rem(155);
-    // background-image: url('http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/sprites/selnum-s2aa5e4fbe0-14d469f19a.png');
+    // background-image: url('https://gbzhu.cn/mimg/selnum-s2aa5e4fbe0-14d469f19a.png');
     // background-repeat: no-repeat;
     // background-size: cover;
     border: 1px solid #e7e7e7; // #b1b1b1

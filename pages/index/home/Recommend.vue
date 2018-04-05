@@ -43,7 +43,7 @@
     },
     data () {
       return {
-        imgs: ['http://yanxuan.nosdn.127.net/2a1259567d45f6d56cd377b9f6e8f4fd.jpg', 'http://yanxuan.nosdn.127.net/615e5f7727d1d2831e24a3453eeac4ca.jpg', 'http://yanxuan.nosdn.127.net/0ad986128e62d4f16a385de809f23dca.jpg', 'http://yanxuan.nosdn.127.net/8869a3d10800efca5670432bc0070707.jpg', 'http://yanxuan.nosdn.127.net/dda365946a8d8b09adebbd74e9cfb830.jpg'],
+        imgs: ['https://gbzhu.cn/mimg/2a1259567d45f6d56cd377b9f6e8f4fd.jpg', 'https://gbzhu.cn/mimg/615e5f7727d1d2831e24a3453eeac4ca.jpg', 'https://gbzhu.cn/mimg/0ad986128e62d4f16a385de809f23dca.jpg', 'https://gbzhu.cn/mimg/8869a3d10800efca5670432bc0070707.jpg', 'https://gbzhu.cn/mimg/dda365946a8d8b09adebbd74e9cfb830.jpg'],
         data: {}
       }
     },

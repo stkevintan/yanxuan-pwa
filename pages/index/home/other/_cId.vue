@@ -23,14 +23,14 @@
     },
     data () {
       return {
-        bannerPic: 'http://yanxuan.nosdn.127.net/a7115426117678372c9c51f03068d132.jpg?quality=85&thumbnail=750x0&imageView',
+        bannerPic: 'https://gbzhu.cn/mimg/a7115426117678372c9c51f03068d132.jpg?quality=85&thumbnail=750x0&imageView',
         allItems: [
           {
             type: '夏凉',
             desc: '夏凉床品，舒适一夏',
             commodities: [
               {
-                pic: 'http://yanxuan.nosdn.127.net/a0affc69c097af33926118db4eb79a82.png?imageView&quality=85&thumbnail=330x330',
+                pic: 'https://gbzhu.cn/mimg/a0affc69c097af33926118db4eb79a82.png?imageView&quality=85&thumbnail=330x330',
                 title: '日式针织羽丝绒夏凉被',
                 description: '亲肤透气，裸睡空调房好搭档',
                 price: '168',
@@ -42,12 +42,12 @@
                 title: "全棉针织条纹四件套 新款",
                 description: "裸睡享受，柔软透气有弹性",
                 price: "219",
-                pic: "http://yanxuan.nosdn.127.net/376086180e5c3c7641669036217e7f95.png?imageView&quality=85&thumbnail=330x330",
+                pic: "https://gbzhu.cn/mimg/376086180e5c3c7641669036217e7f95.png?imageView&quality=85&thumbnail=330x330",
                 activity: [{ "type": 0, "tag": "爆品"}],
                 pId: "10000024"
               },
                {
-                pic: 'http://yanxuan.nosdn.127.net/a0affc69c097af33926118db4eb79a82.png?imageView&quality=85&thumbnail=330x330',
+                pic: 'https://gbzhu.cn/mimg/a0affc69c097af33926118db4eb79a82.png?imageView&quality=85&thumbnail=330x330',
                 title: '日式针织羽丝绒夏凉被',
                 description: '亲肤透气，裸睡空调房好搭档',
                 price: '168',
@@ -59,7 +59,7 @@
                 title: "全棉针织条纹四件套 新款",
                 description: "裸睡享受，柔软透气有弹性",
                 price: "219",
-                pic: "http://yanxuan.nosdn.127.net/376086180e5c3c7641669036217e7f95.png?imageView&quality=85&thumbnail=330x330",
+                pic: "https://gbzhu.cn/mimg/376086180e5c3c7641669036217e7f95.png?imageView&quality=85&thumbnail=330x330",
                 activity: [{ "type": 0, "tag": "爆品"}],
                 pId: "10000024"
               },
@@ -67,12 +67,12 @@
                 title: "全棉针织条纹四件套 新款",
                 description: "裸睡享受，柔软透气有弹性",
                 price: "219",
-                pic: "http://yanxuan.nosdn.127.net/376086180e5c3c7641669036217e7f95.png?imageView&quality=85&thumbnail=330x330",
+                pic: "https://gbzhu.cn/mimg/376086180e5c3c7641669036217e7f95.png?imageView&quality=85&thumbnail=330x330",
                 activity: [{ "type": 0, "tag": "爆品"}],
                 pId: "10000024"
               },
                {
-                pic: 'http://yanxuan.nosdn.127.net/a0affc69c097af33926118db4eb79a82.png?imageView&quality=85&thumbnail=330x330',
+                pic: 'https://gbzhu.cn/mimg/a0affc69c097af33926118db4eb79a82.png?imageView&quality=85&thumbnail=330x330',
                 title: '日式针织羽丝绒夏凉被',
                 description: '亲肤透气，裸睡空调房好搭档',
                 price: '168',
@@ -84,7 +84,7 @@
                 title: "全棉针织条纹四件套 新款",
                 description: "裸睡享受，柔软透气有弹性",
                 price: "219",
-                pic: "http://yanxuan.nosdn.127.net/376086180e5c3c7641669036217e7f95.png?imageView&quality=85&thumbnail=330x330",
+                pic: "https://gbzhu.cn/mimg/376086180e5c3c7641669036217e7f95.png?imageView&quality=85&thumbnail=330x330",
                 activity: [{ "type": 0, "tag": "爆品"}],
                 pId: "10000024"
               }
@@ -95,7 +95,7 @@
             desc: '守护你的睡眠时光',
             commodities: [
               {
-                pic: 'http://yanxuan.nosdn.127.net/a0affc69c097af33926118db4eb79a82.png?imageView&quality=85&thumbnail=330x330',
+                pic: 'https://gbzhu.cn/mimg/a0affc69c097af33926118db4eb79a82.png?imageView&quality=85&thumbnail=330x330',
                 title: '日式针织羽丝绒夏凉被',
                 description: '亲肤透气，裸睡空调房好搭档',
                 price: '168',
@@ -107,12 +107,12 @@
                 title: "全棉针织条纹四件套 新款",
                 description: "裸睡享受，柔软透气有弹性",
                 price: "219",
-                pic: "http://yanxuan.nosdn.127.net/376086180e5c3c7641669036217e7f95.png?imageView&quality=85&thumbnail=330x330",
+                pic: "https://gbzhu.cn/mimg/376086180e5c3c7641669036217e7f95.png?imageView&quality=85&thumbnail=330x330",
                 activity: [{ "type": 0, "tag": "爆品"}],
                 pId: "10000024"
               },
                {
-                pic: 'http://yanxuan.nosdn.127.net/a0affc69c097af33926118db4eb79a82.png?imageView&quality=85&thumbnail=330x330',
+                pic: 'https://gbzhu.cn/mimg/a0affc69c097af33926118db4eb79a82.png?imageView&quality=85&thumbnail=330x330',
                 title: '日式针织羽丝绒夏凉被',
                 description: '亲肤透气，裸睡空调房好搭档',
                 price: '168',
@@ -124,7 +124,7 @@
                 title: "全棉针织条纹四件套 新款",
                 description: "裸睡享受，柔软透气有弹性",
                 price: "219",
-                pic: "http://yanxuan.nosdn.127.net/376086180e5c3c7641669036217e7f95.png?imageView&quality=85&thumbnail=330x330",
+                pic: "https://gbzhu.cn/mimg/376086180e5c3c7641669036217e7f95.png?imageView&quality=85&thumbnail=330x330",
                 activity: [{ "type": 0, "tag": "爆品"}],
                 pId: "10000024"
               },
@@ -132,12 +132,12 @@
                 title: "全棉针织条纹四件套 新款",
                 description: "裸睡享受，柔软透气有弹性",
                 price: "219",
-                pic: "http://yanxuan.nosdn.127.net/376086180e5c3c7641669036217e7f95.png?imageView&quality=85&thumbnail=330x330",
+                pic: "https://gbzhu.cn/mimg/376086180e5c3c7641669036217e7f95.png?imageView&quality=85&thumbnail=330x330",
                 activity: [{ "type": 0, "tag": "爆品"}],
                 pId: "10000024"
               },
                {
-                pic: 'http://yanxuan.nosdn.127.net/a0affc69c097af33926118db4eb79a82.png?imageView&quality=85&thumbnail=330x330',
+                pic: 'https://gbzhu.cn/mimg/a0affc69c097af33926118db4eb79a82.png?imageView&quality=85&thumbnail=330x330',
                 title: '日式针织羽丝绒夏凉被',
                 description: '亲肤透气，裸睡空调房好搭档',
                 price: '168',
@@ -149,7 +149,7 @@
                 title: "全棉针织条纹四件套 新款",
                 description: "裸睡享受，柔软透气有弹性",
                 price: "219",
-                pic: "http://yanxuan.nosdn.127.net/376086180e5c3c7641669036217e7f95.png?imageView&quality=85&thumbnail=330x330",
+                pic: "https://gbzhu.cn/mimg/376086180e5c3c7641669036217e7f95.png?imageView&quality=85&thumbnail=330x330",
                 activity: [{ "type": 0, "tag": "爆品"}],
                 pId: "10000024"
               }
