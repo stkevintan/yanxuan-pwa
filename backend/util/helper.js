@@ -8,8 +8,6 @@ const { HTTP2_HEADER_PATH } = http2.constants;
 const baseDir = './mimg';
 const fileMap = new Map();
 
-
-
 function getFileHeaders(path, fd) {
     const stat = fs.fstatSync(fd);
     const contentType = mime.getType(path);
@@ -47,15 +45,15 @@ exports.push = function(stream, file) {
             queryRet.headers ||
             getFileHeaders(file.filePath, file.fd);
     }
-    const pushHeaders = { [HTTP2_HEADER_PATH]: file.relPath };
-    stream.pushStream(pushHeaders, (err, pushStream) => {
-        if (err) {
-            logger.error('server push error');
-            throw err;
-        }
-        logger.ok('Server Push Resource:', file.filePath);
-        pushStream.respondWithFD(file.fd, file.headers);
+    process.nextTick(() => {
+        const pushHeaders = { [HTTP2_HEADER_PATH]: file.relPath };
+        stream.pushStream(pushHeaders, (err, pushStream) => {
+            if (err) {
+                logger.error('server push error');
+                throw err;
+            }
+            logger.ok('Server Push Resource:', file.filePath);
+            pushStream.respondWithFD(file.fd, file.headers);
+        });
     });
 };
-
-

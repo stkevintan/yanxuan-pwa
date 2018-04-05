@@ -22,14 +22,16 @@ module.exports = {
         key = this.stripDot(key);
         item = { relPath: item.relPath, filePath: item.filePath };
         if (!db.has(key).value()) {
-            db
-                .set(key, [])
-                .get(key)
-                .push(item)
-                .write();
-            return true;
+            db.set(key, []).write();
         }
+
         const keyDb = db.get(key);
+
+        if (keyDb.size().value() >= 10) {
+            logger.warning('Push resource limit exceeded');
+            return;
+        }
+
         const isInArr = keyDb.find({ relPath: item.relPath }).value();
 
         if (!isInArr) {

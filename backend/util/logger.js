@@ -1,7 +1,7 @@
-const { format } = require("util");
-const chalk = require("chalk");
+const { format } = require('util');
+const chalk = require('chalk');
 
-const TAG = "[yanxuan %s]";
+const TAG = '[yanxuan %s]';
 class Logger {
     constructor(logger = console.log.bind(console)) {
         this.logger = logger;
@@ -11,13 +11,16 @@ class Logger {
         this.logger(chalk.bold[color](prefix), ...args);
     }
     info(...args) {
-        this.log("info", "white", ...args);
+        this.log('info', 'white', ...args);
     }
     ok(...args) {
-        this.log("ok", "green", ...args.map(arg => chalk.bold(arg)));
+        this.log('ok', 'green', ...args.map(arg => chalk.bold(arg)));
+    }
+    warning(...args) {
+        this.log('warning', 'yellow', ...args);
     }
     error(...args) {
-        this.log("error", "red", ...args);
+        this.log('error', 'red', ...args);
     }
 }
 

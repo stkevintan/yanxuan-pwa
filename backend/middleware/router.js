@@ -43,13 +43,13 @@ router.get('/api/:domain/:type', (ctx, next) => {
     else ctx.body = ret;
 });
 
-router.get(/\.(js|css|png|jpg|jpeg)$/, async (ctx, next) => {
+router.get(/\.(js|css)$/, async (ctx, next) => {
     let filePath = ctx.path;
-    if (/^\/mimg\//.test(filePath)) filePath =filePath.substr(1);
+    if (/\/sw-register\.js/.test(filePath)) return await next();
+    if (/^\/mimg\//.test(filePath)) filePath = filePath.substr(1);
     else filePath = path.resolve('../dist', filePath.substr(1));
-    logger.ok(filePath);
     depTree.addDep({
-        relPath: ctx.path,
+        relPath: ctx.url,
         filePath
     });
     await next();
