@@ -1,6 +1,6 @@
 const data = require("./data");
 const fs = require("fs");
-
+const path = require('path');
 let id = 0;
 for (const m of data.home.manufacturer) {
     m.mId += `_${id++}`;
@@ -77,6 +77,6 @@ for (const m of data.pinCommodity) {
     m.pinId += `_${id++}`;
 }
 
-fs.writeFileSync("db.json", JSON.stringify(data), {
+fs.writeFileSync(path.resolve(__dirname,'../db.json'), JSON.stringify(data), {
     encoding: "utf8"
 });

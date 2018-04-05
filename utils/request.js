@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const _request = axios.create({
-  baseURL: "https://localhost:3300/api", 
+  baseURL: "https://gbzhu.cn/api", 
   // timeout: 1000
 });
 

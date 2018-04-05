@@ -22,12 +22,12 @@
   export default {
     data () {
       return {
-        avatar: 'http://yanxuan.nosdn.127.net/f68aa22ba166d841cb9123a06992f501',
+        avatar: 'https://gbzhu.cn/mimg/f68aa22ba166d841cb9123a06992f501',
         name: '苏以',
         vip: 1,
         time: '2017-06-18 16:51:43',
         content: '防蓝光的效果非常不错，值得推荐。',
-        pics: ['https://yanxuan.nosdn.127.net/1a4058853ed6927344dec73e1ef03d8c.jpg', 'https://yanxuan.nosdn.127.net/76e25b48d7573f154258fc367ed0791e.jpg', 'https://yanxuan.nosdn.127.net/a4b711e203bdb327d2c3b0743b67acff.jpg', 'https://yanxuan.nosdn.127.net/11a15fc6d4cb175690a563fca3128b8a.jpg'],
+        pics: ['https://gbzhu.cn/mimg/1a4058853ed6927344dec73e1ef03d8c.jpg', 'https://gbzhu.cn/mimg/76e25b48d7573f154258fc367ed0791e.jpg', 'https://gbzhu.cn/mimg/a4b711e203bdb327d2c3b0743b67acff.jpg', 'https://gbzhu.cn/mimg/11a15fc6d4cb175690a563fca3128b8a.jpg'],
         norm: '茶香粉（床笠款）; 1.8M（床尺寸）'
       }
     }
@@ -68,7 +68,7 @@
   .profile i {
     display: inline-block;
     vertical-align: middle;
-    background-image: url(http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/sprites/membership-sc86699d936-cc4229a2e5.png);
+    background-image: url(https://gbzhu.cn/mimg/membership-sc86699d936-cc4229a2e5.png);
     background-repeat: no-repeat;
     background-position: 0 px2rem(-2636);
     background-size: px2rem(60) px2rem(2671);

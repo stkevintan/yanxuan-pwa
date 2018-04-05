@@ -1,12 +1,16 @@
 const send = require('koa-send');
 const logger = require('../util/logger');
-
-module.exports = (root = "") => {
+const { fileMap, push } = require('../util/helper');
+const depTree = require('../util/depTree');
+module.exports = (root = '') => {
     return async function serve(ctx, next) {
         let done = false;
-        if (ctx.method === "HEAD" || ctx.method === "GET") {
+        if (ctx.method === 'HEAD' || ctx.method === 'GET') {
             try {
                 logger.info('Send Path', ctx.path);
+                if (/(\.html|\/[\w-]*)([?#]\S*)?$/.test(ctx.path)) {
+                    depTree.currentKey = ctx.path;
+                }
                 done = await send(ctx, ctx.path, { root });
             } catch (err) {
                 if (err.status !== 404) {
@@ -17,6 +21,13 @@ module.exports = (root = "") => {
         }
         if (!done) {
             await next();
+        } else {
+            if (/(\.html|\/[\w-]*)([?#]\S*)?$/.test(ctx.path)) {
+                //server push
+                for (const dep of depTree.getDep()) {
+                    push(ctx.res.stream, dep);
+                }
+            }
         }
     };
 };

@@ -15,7 +15,7 @@ entries.forEach(pos => {
     });
 });
 
-const pattern = /http:\/\/yanxuan\.nosdn\.127\.net\/[\w-./]*/gm;
+const pattern = /http(s?):\/\/yanxuan\.nosdn\.127\.net\/[\w-.\/]*/gm;
 function handleFile(filePath) {
     // console.log(path.basename(filePath));
     const content = fs.readFileSync(filePath, { encoding: "utf8" });

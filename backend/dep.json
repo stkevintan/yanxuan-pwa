@@ -1,0 +1,156 @@
+{
+  "/": [
+    {
+      "relPath": "/static/js/manifest.7253881e.js",
+      "filePath": "/home/kevin/Project/yx-pwa/dist/static/js/manifest.7253881e.js"
+    },
+    {
+      "relPath": "/static/js/vue.38669167.js",
+      "filePath": "/home/kevin/Project/yx-pwa/dist/static/js/vue.38669167.js"
+    },
+    {
+      "relPath": "/static/css/index.56780056.css",
+      "filePath": "/home/kevin/Project/yx-pwa/dist/static/css/index.56780056.css"
+    },
+    {
+      "relPath": "/static/js/vendor.28ee66fd.js",
+      "filePath": "/home/kevin/Project/yx-pwa/dist/static/js/vendor.28ee66fd.js"
+    },
+    {
+      "relPath": "/static/js/index.43629611.js",
+      "filePath": "/home/kevin/Project/yx-pwa/dist/static/js/index.43629611.js"
+    },
+    {
+      "relPath": "/mimg/cfb2c1b12cbd752424709480e48ede1a.png",
+      "filePath": "mimg/cfb2c1b12cbd752424709480e48ede1a.png"
+    },
+    {
+      "relPath": "/mimg/149dfa87a7324e184c5526ead81de9ad.png",
+      "filePath": "mimg/149dfa87a7324e184c5526ead81de9ad.png"
+    },
+    {
+      "relPath": "/mimg/583812520c68ca7995b6fac4c67ae2c7.png",
+      "filePath": "mimg/583812520c68ca7995b6fac4c67ae2c7.png"
+    },
+    {
+      "relPath": "/mimg/6ad1813d123f7a80f84c2cfa5f8c7caf.png",
+      "filePath": "mimg/6ad1813d123f7a80f84c2cfa5f8c7caf.png"
+    },
+    {
+      "relPath": "/mimg/56e72b84a9bb66687c003ecdaba73816.png",
+      "filePath": "mimg/56e72b84a9bb66687c003ecdaba73816.png"
+    },
+    {
+      "relPath": "/mimg/39dea35a3ea2361e4b054ee2f421af53.png",
+      "filePath": "mimg/39dea35a3ea2361e4b054ee2f421af53.png"
+    },
+    {
+      "relPath": "/mimg/376086180e5c3c7641669036217e7f95.png",
+      "filePath": "mimg/376086180e5c3c7641669036217e7f95.png"
+    },
+    {
+      "relPath": "/mimg/f1dbf1d9967c478ee6def81ed40734a2.png",
+      "filePath": "mimg/f1dbf1d9967c478ee6def81ed40734a2.png"
+    },
+    {
+      "relPath": "/mimg/054b5bc3a4b733a36a6b90ff2270df93.png",
+      "filePath": "mimg/054b5bc3a4b733a36a6b90ff2270df93.png"
+    },
+    {
+      "relPath": "/mimg/569539637653da2c635212847f322e7a.png",
+      "filePath": "mimg/569539637653da2c635212847f322e7a.png"
+    },
+    {
+      "relPath": "/mimg/22b832ace6eb10c7b0057eb6eae6c3c9.png",
+      "filePath": "mimg/22b832ace6eb10c7b0057eb6eae6c3c9.png"
+    },
+    {
+      "relPath": "/mimg/6257825bfc4143b5367c99fdd0d7b5e2.png",
+      "filePath": "mimg/6257825bfc4143b5367c99fdd0d7b5e2.png"
+    },
+    {
+      "relPath": "/mimg/e22178ec1fbbf5d29a4c5f5558595789.png",
+      "filePath": "mimg/e22178ec1fbbf5d29a4c5f5558595789.png"
+    },
+    {
+      "relPath": "/mimg/05affdfb69e563b78179811bf0033d1e.png",
+      "filePath": "mimg/05affdfb69e563b78179811bf0033d1e.png"
+    },
+    {
+      "relPath": "/mimg/c915b9ce94c6b3812480aa3040fe7c50.png",
+      "filePath": "mimg/c915b9ce94c6b3812480aa3040fe7c50.png"
+    },
+    {
+      "relPath": "/mimg/8bbac1295b237f2204171321e1c1c446.png",
+      "filePath": "mimg/8bbac1295b237f2204171321e1c1c446.png"
+    },
+    {
+      "relPath": "/mimg/a81f768e5a310d03211bb19ebf6089dc.png",
+      "filePath": "mimg/a81f768e5a310d03211bb19ebf6089dc.png"
+    },
+    {
+      "relPath": "/mimg/667fedf6e76843c199f47e1dc6fdf077.png",
+      "filePath": "mimg/667fedf6e76843c199f47e1dc6fdf077.png"
+    },
+    {
+      "relPath": "/mimg/7f2c07000e78240afca6c531bf4d828f.png",
+      "filePath": "mimg/7f2c07000e78240afca6c531bf4d828f.png"
+    },
+    {
+      "relPath": "/mimg/7ea875e46ea109238445cdc0f6126bd8.png",
+      "filePath": "mimg/7ea875e46ea109238445cdc0f6126bd8.png"
+    },
+    {
+      "relPath": "/mimg/28fc360e623e981f96e9114b3cf04baa.png",
+      "filePath": "mimg/28fc360e623e981f96e9114b3cf04baa.png"
+    },
+    {
+      "relPath": "/mimg/534aa5bfc31d690c0cebf31f9710e5af.png",
+      "filePath": "mimg/534aa5bfc31d690c0cebf31f9710e5af.png"
+    },
+    {
+      "relPath": "/mimg/7dbfe657e1c7640d17fbd812dbd2e7e2.png",
+      "filePath": "mimg/7dbfe657e1c7640d17fbd812dbd2e7e2.png"
+    },
+    {
+      "relPath": "/mimg/3108aaae80416b1cf27c3d7cc5661cea.png",
+      "filePath": "mimg/3108aaae80416b1cf27c3d7cc5661cea.png"
+    },
+    {
+      "relPath": "/mimg/c70ef66f7c2251a47f0a2cdf8ebd83b7.png",
+      "filePath": "mimg/c70ef66f7c2251a47f0a2cdf8ebd83b7.png"
+    },
+    {
+      "relPath": "/mimg/e5474a8f4fd5748079e2ba2ead806b51.png",
+      "filePath": "mimg/e5474a8f4fd5748079e2ba2ead806b51.png"
+    },
+    {
+      "relPath": "/mimg/a2cf3b86ecfd35b2d270cd17ff264cbd.png",
+      "filePath": "mimg/a2cf3b86ecfd35b2d270cd17ff264cbd.png"
+    },
+    {
+      "relPath": "/mimg/7d1c130c7d80edf824e4218c6829b7c8.png",
+      "filePath": "mimg/7d1c130c7d80edf824e4218c6829b7c8.png"
+    },
+    {
+      "relPath": "/mimg/97ad483a94ed88216a989df83e39cbf0.png",
+      "filePath": "mimg/97ad483a94ed88216a989df83e39cbf0.png"
+    },
+    {
+      "relPath": "/mimg/14956187480922543.jpg",
+      "filePath": "mimg/14956187480922543.jpg"
+    },
+    {
+      "relPath": "/sw-register.js",
+      "filePath": "/home/kevin/Project/yx-pwa/dist/sw-register.js"
+    },
+    {
+      "relPath": "/service-worker.js",
+      "filePath": "/home/kevin/Project/yx-pwa/dist/service-worker.js"
+    },
+    {
+      "relPath": "/static/js/workbox-sw.prod.v2.1.3.js",
+      "filePath": "/home/kevin/Project/yx-pwa/dist/static/js/workbox-sw.prod.v2.1.3.js"
+    }
+  ]
+}
