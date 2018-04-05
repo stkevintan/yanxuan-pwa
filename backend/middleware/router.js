@@ -62,7 +62,7 @@ router.get('/mimg/:filename', async (ctx, next) => {
         ctx.body = fs.createReadStream(filepath);
         const ext = path.extname(filepath) || 'jpg';
         ctx.type = `image/${ext}`;
-        ctx.setHeader('Cache-Control', 'max-age=31536000');
+        ctx.set('Cache-Control', 'max-age=31536000');
     } else {
         logger.error('Image not found:', filepath);
         await next();
@@ -71,7 +71,7 @@ router.get('/mimg/:filename', async (ctx, next) => {
 
 router.get(/(\.html|\/[\w-]*|\/sw-register)$/, async (ctx, next) => {
     // disable cache
-    ctx.res.setHeader('Cache-Control', 'no-store');
+    ctx.set('Cache-Control', 'no-store');
     await next();
 });
 module.exports = router;
