@@ -40,3 +40,17 @@ workboxSW.precache([]);
 //         }
 //     })
 // );
+
+
+workboxSW.router.registerRoute(
+    /^https:\/\/gbzhu\.cn\/mimg\//,
+    workboxSW.strategies.cacheFirst({
+        cacheName: 'images',
+        plugins: [
+            new workbox.expiration.Plugin({
+                maxEntries: 60,
+                maxAgeSeconds: 30 * 24 * 60 * 60 // 30 Days
+            })
+        ]
+    })
+);
