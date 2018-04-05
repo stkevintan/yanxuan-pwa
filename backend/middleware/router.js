@@ -62,6 +62,7 @@ router.get('/mimg/:filename', async (ctx, next) => {
         ctx.body = fs.createReadStream(filepath);
         const ext = path.extname(filepath) || 'jpg';
         ctx.type = `image/${ext}`;
+        ctx.setHeader('Cache-Control', 'max-age=31536000');
     } else {
         logger.error('Image not found:', filepath);
         await next();
