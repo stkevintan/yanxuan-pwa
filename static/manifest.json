@@ -14,17 +14,17 @@
             "sizes": "192x192"
         },
         {
-            "src": "img/icons/apple-touch-icon-180x180.png",
+            "src": "img/icons/apple-touch-icon-72x72.png",
             "type": "image/png",
-            "sizes": "180x180"
+            "sizes": "72x72"
         },
         {
-            "src": "img/icons/apple-touch-icon-152x152.png",
+            "src": "img/icons/apple-touch-icon-114x114.png",
             "type": "image/png",
-            "sizes": "152x152"
+            "sizes": "114x114"
         }
     ],
     "display": "standalone",
-    "background_color": "#000000",
-    "theme_color": "#278fef"
+    "background_color": "#fff",
+    "theme_color": "#B62429"
 }
