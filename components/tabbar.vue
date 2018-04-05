@@ -25,6 +25,7 @@
   .tabbar {
     width: 100%;
     height: px2rem(49);
+    flex: 0 0 auto;
     background-color: #fafafa;
     border-top: 1px solid $border_color;
     display: flex;

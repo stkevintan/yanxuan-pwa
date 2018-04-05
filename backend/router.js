@@ -2,7 +2,7 @@ const Router = require("koa-router");
 const low = require("lowdb");
 const FileSync = require("lowdb/adapters/FileSync");
 
-const adapter = new FileSync(require.resolve("./data.json"));
+const adapter = new FileSync(require.resolve("./db.json"));
 const db = low(adapter);
 
 const router = new Router();
