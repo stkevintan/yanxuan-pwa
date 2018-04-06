@@ -92,7 +92,7 @@ router.get('/api/:domain/:type', (ctx, next) => {
     else ctx.body = ret;
 });
 
-router.get(/\.(js|css|png|jpg)$/, async (ctx, next) => {
+router.get(/\.(js|css)$/, async (ctx, next) => {
     let filePath = ctx.path;
     if (/\/sw-register\.js/.test(filePath)) return await next();
 
