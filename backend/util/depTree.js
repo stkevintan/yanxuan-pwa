@@ -27,10 +27,10 @@ module.exports = {
 
         const keyDb = db.get(key);
 
-        if (keyDb.size().value() >= 10) {
-            logger.warning('Push resource limit exceeded');
-            return;
-        }
+        // if (keyDb.size().value() >= 20) {
+        //     logger.warning('Push resource limit exceeded');
+        //     return;
+        // }
 
         const val = keyDb.find({ filePath: item.filePath });
 
@@ -38,7 +38,7 @@ module.exports = {
             keyDb.push(item).write();
         } else {
             //re new relPath
-            val.assign(item);
+            val.assign(item).write();
         }
     },
     getDep(key = this.currentKey) {
