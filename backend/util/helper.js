@@ -58,7 +58,7 @@ exports.push = function(stream, file) {
     // });
 };
 
-exports.acceptsHtml = (header, options) => {
+exports.acceptsHtml = (header, options = {}) => {
     options.htmlAcceptHeaders = options.htmlAcceptHeaders || [
         'text/html',
         '*/*'
