@@ -22,7 +22,6 @@ workboxSW.precache([]);
 // workboxSW.router.registerRoute(/^https:\/\/lavas\.baidu\.com\/some\/api/,
 //     workboxSW.strategies.networkFirst());
 
-
 /**
  * example runningCache with resources from CDN
  * including maxAge, maxEntries
@@ -41,16 +40,16 @@ workboxSW.precache([]);
 //     })
 // );
 
-
 workboxSW.router.registerRoute(
     /^https:\/\/gbzhu\.cn\/mimg\//,
     workboxSW.strategies.cacheFirst({
         cacheName: 'images',
-        plugins: [
-            new workbox.expiration.Plugin({
-                maxEntries: 60,
-                maxAgeSeconds: 30 * 24 * 60 * 60 // 30 Days
-            })
-        ]
+        cacheExpiration: {
+            maxEntries: 100,
+            maxAgeSeconds: 7 * 24 * 60 * 60
+        },
+        cacheableResponse: {
+            statuses: [0, 200]
+        }
     })
 );
