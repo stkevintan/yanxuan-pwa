@@ -1,7 +1,7 @@
 {
     "start_url": "/?utm_source=homescreen",
-    "name": "yx-pwa",
-    "short_name": "yx-pwa",
+    "name": "网易严选 - 好的生活，没那么贵！",
+    "short_name": "网易严选",
     "icons": [
         {
             "src": "img/icons/android-chrome-512x512.png",

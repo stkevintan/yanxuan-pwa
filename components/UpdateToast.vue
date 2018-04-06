@@ -56,6 +56,8 @@ $close-btn-height = 28px
     align-items center
     background-color #333
     color #ffffff
+    span,i
+        color: #fff
     font-size 16px
     height $height
     line-height $height

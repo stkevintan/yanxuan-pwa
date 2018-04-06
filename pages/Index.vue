@@ -11,11 +11,11 @@ import tabbar from "@/components/tabbar";
 export default {
   name: "index",
   metaInfo: {
-    title: "Home",
-    titleTemplate: "%s - 网易严选",
+    title: "网易严选",
+    titleTemplate: "%s - 以严谨的态度，为中国消费者甄选天下优品",
     meta: [
-      { name: "keywords", content: "YanXuan PWA  Netease" },
-      { name: "description", content: "网易严选 PWA" }
+      { name: "keywords", content: "网易严选,严选,电子商务,网购,居家,厨房,饮食,甄选家,有态度,一流制造商,匠心打造,源头把控,绿色,安全,舒适,健康,品质,严格甄选,出口品质" },
+      { name: "description", content: "网易严选秉承网易一贯的严谨态度，深入世界各地，严格把关所有商品的产地、工艺、原材料，甄选居家、厨房、饮食等各类商品，力求给你最优质的商品。" }
     ]
   },
   async asyncData({ store, route }) {
