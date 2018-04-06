@@ -118,7 +118,7 @@ router.get('/mimg/:filename', async (ctx, next) => {
     }
 });
 
-router.get(/(\.html|\/[\w-]*|)$|\/sw-register/, async (ctx, next) => {
+router.get(/(\.html|\/[\w-]*)$|\/sw-register/, async (ctx, next) => {
     // disable html and sw-register cache
     ctx.set('Cache-Control', 'private, no-cache, no-store');
     await next();

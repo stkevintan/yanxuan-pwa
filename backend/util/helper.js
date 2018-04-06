@@ -59,6 +59,7 @@ exports.push = function(stream, file) {
 };
 
 exports.acceptsHtml = (header, options = {}) => {
+    if (!header || typeof header !== 'string') return false;
     options.htmlAcceptHeaders = options.htmlAcceptHeaders || [
         'text/html',
         '*/*'

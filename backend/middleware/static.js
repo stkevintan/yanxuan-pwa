@@ -8,7 +8,7 @@ module.exports = (root = '') => {
         if (ctx.method === 'HEAD' || ctx.method === 'GET') {
             try {
                 // 当希望收到html时，推送额外资源。
-                if (acceptsHtml(ctx.header.accept)) {
+                if (/(\.html|\/[\w-]*)$/.text(ctx.path)) {
                     logger.info('Send Path', ctx.path);
                     depTree.currentKey = ctx.path;
                     //server push
