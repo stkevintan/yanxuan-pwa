@@ -96,12 +96,8 @@ router.get('/api/:domain/:type', (ctx, next) => {
 router.get(/\.(js|css)$/, async (ctx, next) => {
     let filePath = ctx.path;
     if (/\/sw-register\.js/.test(filePath)) return await next();
-
-    if (/\/service-worker\.js/.test(filePath)) {
-        // remove old service-worker from dep json
-    } else
-        // if (/^\/mimg\//.test(filePath)) filePath = filePath.substr(1);
-        filePath = path.resolve('../dist', filePath.substr(1));
+    // if (/^\/mimg\//.test(filePath)) filePath = filePath.substr(1);
+    filePath = path.resolve('../dist', filePath.substr(1));
     depTree.addDep({
         relPath: ctx.url,
         filePath
