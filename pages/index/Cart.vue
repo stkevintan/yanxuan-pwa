@@ -13,7 +13,7 @@
       <div v-if="cartCommodities.length === 0" class="cart-nothing">
         <div class="nothing-login">
           <div class="nothing-cart-img"></div>
-          <button class="login" v-on:click="handleLogin">登录</button>
+          <button class="login" v-show="!islogged()" v-on:click="handleLogin">登录</button>
         </div>
       </div>
       <div v-if="cartCommodities.length > 0" class="cart-commodity">
@@ -45,213 +45,227 @@
 </template>
 
 <script>
-  import cartCommodity from '@/components/cart/cartCommodity'
-  import orderBar from '@/components/cart/orderBar'
-  import { mapState, mapActions, mapGetters } from 'vuex'
-  export default {
-    data () {
-      return {
-        selectRemoveAll: false
+import { getLoginUserInfo } from '@/utils/storage';
+import cartCommodity from '@/components/cart/cartCommodity';
+import orderBar from '@/components/cart/orderBar';
+import { mapState, mapActions, mapGetters } from 'vuex';
+export default {
+  data() {
+    return {
+      selectRemoveAll: false
+    };
+  },
+  components: {
+    cartCommodity,
+    orderBar
+  },
+  beforeRouteLeave(to, from, next) {
+    this.changeCartEdit(false);
+    this.resetCartCommodity();
+    next();
+  },
+  computed: {
+    ...mapState('main', {
+      // cartCommodities: 'cartList',
+      cartCommodities: state => {
+        console.log('--------');
+        console.log(state.cartList);
+        return state.cartList;
+      },
+      // removeCartList: 'removeCartList',
+      removeCartList: state => {
+        console.log('========');
+        console.log(state.removeCartList);
+        return state.removeCartList;
+      },
+      isEdit: 'cartIsEdit',
+      totalPrice: state => {
+        const total = state.cartList
+          .filter(c => c.selected)
+          .reduce((total, commodity, index) => {
+            return total + Number(commodity.price) * Number(commodity.count);
+          }, 0);
+        return total;
+      },
+      selectedCount: state => {
+        const total = state.cartList.reduce((total, c) => {
+          total += c.selected ? Number(c.count) : 0;
+          return total;
+        }, 0);
+        return total;
+      }
+    }),
+    ...mapGetters('main', ['cartCommodityCount', 'removeCommodityCount'])
+  },
+  methods: {
+    ...mapActions('main', [
+      'selectCartCommodity',
+      'selectAllCartCommodity',
+      'getRemoveCartCommodity',
+      'selectRemoveAllCartCommodity',
+      'removeCartCommodity',
+      'pushToCartFormat',
+      'changeCartEdit',
+      'changeRemoveCartCommodity',
+      'finishEditCartCommodity',
+      'resetCartCommodity'
+    ]),
+    pushToProduct(pId) {
+      this.$router.push(`/product/${pId}`);
+    },
+    handleSelect(commodity) {
+      this.selectCartCommodity(commodity);
+    },
+    handleSelectAll() {
+      if (!this.isEdit) {
+        this.selectAllCartCommodity();
+      } else {
+        const selectCount = this.removeCartList.length;
+        let selected = false;
+        if (selectCount !== this.cartCommodities.length) {
+          selected = true;
+        }
+        this.selectRemoveAllCartCommodity(selected);
       }
     },
-    components: {
-      cartCommodity,
-      orderBar
-    },
-    beforeRouteLeave (to, from, next) {
-      this.changeCartEdit(false)
-      this.resetCartCommodity()
-      next()
-    },
-    computed: {
-      ...mapState('main',{
-        // cartCommodities: 'cartList',
-        cartCommodities: state => {
-          console.log('--------')
-          console.log(state.cartList)
-          return state.cartList
-        },
-        // removeCartList: 'removeCartList',
-        removeCartList: state => {
-          console.log('========')
-          console.log(state.removeCartList)
-          return state.removeCartList
-        },
-        isEdit: 'cartIsEdit',
-        totalPrice: state => {
-          const total = state.cartList.filter(c => c.selected).reduce((total, commodity, index) => {
-            return total + Number(commodity.price) * Number(commodity.count)
-          }, 0)
-          return total
-        },
-        selectedCount: state => {
-          const total = state.cartList.reduce((total, c) => {
-            total += c.selected ? Number(c.count) : 0
-            return total
-          }, 0)
-          return total
-        }
-      }),
-      ...mapGetters('main',['cartCommodityCount', 'removeCommodityCount'])
-    },
-    methods: {
-      ...mapActions('main',[
-        'selectCartCommodity', 'selectAllCartCommodity', 'getRemoveCartCommodity',
-        'selectRemoveAllCartCommodity', 'removeCartCommodity', 'pushToCartFormat',
-        'changeCartEdit', 'changeRemoveCartCommodity', 'finishEditCartCommodity',
-        'resetCartCommodity'
-      ]),
-      pushToProduct (pId) {
-        this.$router.push(`/product/${pId}`)
-      },
-      handleSelect (commodity) {
-        this.selectCartCommodity(commodity)
-      },
-      handleSelectAll () {
-        if (!this.isEdit) {
-          this.selectAllCartCommodity()
-        } else {
-          const selectCount = this.removeCartList.length
-          let selected = false
-          if (selectCount !== this.cartCommodities.length) {
-            selected = true
-          }
-          this.selectRemoveAllCartCommodity(selected)
-        }
-      },
-      handleEdit () {
-        if (this.isEdit) {
-          this.finishEditCartCommodity()
-        } else {
-          this.selectRemoveAllCartCommodity(false)
-        }
-        this.changeCartEdit(!this.isEdit)
-      },
-      handleRemove (commodity) {
-        this.getRemoveCartCommodity(commodity)
-      },
-      handleAction () {
-        console.log('delete')
-        console.log(this.removeCartList)
-        if (!this.isEdit) {
-          // order
-          console.log('下单')
-        } else {
-          // remove
-          this.selectRemoveAll = false
-          this.removeCartCommodity(this.removeCartList)
-        }
-      },
-      handleChangeCount (commodity, currentValue) {
-        console.log(commodity, currentValue)
-        this.pushToCartFormat(commodity)
-        this.changeRemoveCartCommodity({ count: currentValue })
-      },
-      handleToFormat (commodity) {
-        this.pushToCartFormat(commodity)
-        this.$router.push('/cart-format')
-      },
-      handleLogin () {
-        this.$router.push('/login')
+    handleEdit() {
+      if (this.isEdit) {
+        this.finishEditCartCommodity();
+      } else {
+        this.selectRemoveAllCartCommodity(false);
       }
+      this.changeCartEdit(!this.isEdit);
+    },
+    handleRemove(commodity) {
+      this.getRemoveCartCommodity(commodity);
+    },
+    handleAction() {
+      console.log('delete');
+      console.log(this.removeCartList);
+      if (!this.isEdit) {
+        // order
+        console.log('下单');
+      } else {
+        // remove
+        this.selectRemoveAll = false;
+        this.removeCartCommodity(this.removeCartList);
+      }
+    },
+    handleChangeCount(commodity, currentValue) {
+      console.log(commodity, currentValue);
+      this.pushToCartFormat(commodity);
+      this.changeRemoveCartCommodity({ count: currentValue });
+    },
+    handleToFormat(commodity) {
+      this.pushToCartFormat(commodity);
+      this.$router.push('/cart-format');
+    },
+    handleLogin() {
+      this.$router.push('/login');
+    },
+    islogged() {
+      const userInfo = getLoginUserInfo();
+      if (userInfo && userInfo.uId) return true;
+      return false;
     }
   }
+};
 </script>
 
 <style lang="scss" scoped>
-   @import "~@/assets/styles/mixin.scss";
-  .cart-page {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-  }
+@import '~@/assets/styles/mixin.scss';
+.cart-page {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
 
-  .cart-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-  }
+.cart-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
 
-  .cart-header {
-    height: px2rem(44);
-    line-height: px2rem(44);
-    background-color: #fff;
-    position: relative;
-    border-bottom: 1px solid $border_color;
-  }
+.cart-header {
+  height: px2rem(44);
+  line-height: px2rem(44);
+  background-color: #fff;
+  position: relative;
+  border-bottom: 1px solid $border_color;
+}
 
-  .cart-header h3 {
-    font-weight: normal;
-    font-size: px2rem(18);
-    text-align: center;
-  }
+.cart-header h3 {
+  font-weight: normal;
+  font-size: px2rem(18);
+  text-align: center;
+}
 
-  .cart-edit {
-    position: absolute;
-    font-size: px2rem(15);
-    height: px2rem(44);
-    right: px2rem(15);
-    bottom: 0;
-  }
+.cart-edit {
+  position: absolute;
+  font-size: px2rem(15);
+  height: px2rem(44);
+  right: px2rem(15);
+  bottom: 0;
+}
 
-  .cart-nothing {
-    width: 100%;
-    flex: 1;
-    position: relative;
-  }
+.cart-nothing {
+  width: 100%;
+  flex: 1;
+  position: relative;
+}
 
-  .nothing-policy {
-    height: px2rem(35);
-    padding: 0 px2rem(15);
-    width: 100%;
-    display: flex;
-  }
+.nothing-policy {
+  height: px2rem(35);
+  padding: 0 px2rem(15);
+  width: 100%;
+  display: flex;
+}
 
-  .nothing-policy li {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.nothing-policy li {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  .nothing-policy li i {
-    display: inline-block;
-    width: px2rem(5);
-    height: px2rem(5);
-    background: url('~@/assets/images/dot.png') no-repeat;
-    background-size: cover;
-    margin-right: px2rem(3);
-  }
+.nothing-policy li i {
+  display: inline-block;
+  width: px2rem(5);
+  height: px2rem(5);
+  background: url('~@/assets/images/dot.png') no-repeat;
+  background-size: cover;
+  margin-right: px2rem(3);
+}
 
-  .nothing-login {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    width: 100%;
-    left: 0;
-    top: px2rem(250);
-  }
+.nothing-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: px2rem(250);
+}
 
-  .nothing-cart-img {
-    width: px2rem(124);
-    height: px2rem(124);
-    background: url('~@/assets/images/cart_nothing.png') no-repeat;
-    background-size: cover;
-  }
+.nothing-cart-img {
+  width: px2rem(124);
+  height: px2rem(124);
+  background: url('~@/assets/images/cart_nothing.png') no-repeat;
+  background-size: cover;
+}
 
-  .nothing-login .login {
-    width: px2rem(240);
-    height: px2rem(46);
-    background-color: #b4282d;
-    color: #fff;
-    margin-top: px2rem(15);
-    border-radius: px2rem(3);
-    outline: none;
-  }
+.nothing-login .login {
+  width: px2rem(240);
+  height: px2rem(46);
+  background-color: #b4282d;
+  color: #fff;
+  margin-top: px2rem(15);
+  border-radius: px2rem(3);
+  outline: none;
+}
 </style>
 
 
