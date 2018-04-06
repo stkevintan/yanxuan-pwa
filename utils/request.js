@@ -1,8 +1,8 @@
-import axios from "axios";
+import Axios from 'axios';
 
-const _request = axios.create({
-  baseURL: "https://gbzhu.cn/api", 
-  // timeout: 1000
+const axios = Axios.create({
+    baseURL: 'https://gbzhu.cn/api'
+    // timeout: 1000
 });
 
 const checkStatus = res => {
@@ -18,13 +18,13 @@ const parseJSON = res => {
     return res.json();
 };
 
-const request = async (url, params = {}) => {
+const request = async (url, config = {}) => {
     try {
-        const res = await _request.get(url, { params });
+        const res = await axios.request({ url, ...config });
         checkStatus(res);
-      return await res.data;
+        return await res.data;
     } catch (err) {
-        console.error("request failed with error:", err);
+        console.error('request failed with error:', err);
     }
 };
 

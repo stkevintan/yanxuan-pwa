@@ -1,27 +1,47 @@
-const SHOWCOMMODITYDETAILKEY = 'SHOWCOMMODITYDETAILKEY'
-const CARTCOMMODITYKEY = 'CARTCOMMODITYKEY'
-const SHOWCARTCOMMODITYKEY = 'SHOWCARTCOMMODITYKEY'
-
+const SHOWCOMMODITYDETAILKEY = 'SHOWCOMMODITYDETAILKEY';
+const CARTCOMMODITYKEY = 'CARTCOMMODITYKEY';
+const SHOWCARTCOMMODITYKEY = 'SHOWCARTCOMMODITYKEY';
+const USERINFO = 'USERINFO';
 export const getCartCommodityFromLocalStorage = () => {
-  return JSON.parse(window.localStorage.getItem(CARTCOMMODITYKEY)) || []
-}
+    return JSON.parse(window.localStorage.getItem(CARTCOMMODITYKEY)) || [];
+};
 
-export const savCartCommodityrToLocalStorage = (commodities) => {
-  window.localStorage.setItem(CARTCOMMODITYKEY, JSON.stringify(commodities))
-}
+export const savCartCommodityrToLocalStorage = commodities => {
+    window.localStorage.setItem(CARTCOMMODITYKEY, JSON.stringify(commodities));
+};
 
 export const getShowCommodityDetail = () => {
-  return JSON.parse(window.sessionStorage.getItem(SHOWCOMMODITYDETAILKEY)) || {}
-}
+    return (
+        JSON.parse(window.sessionStorage.getItem(SHOWCOMMODITYDETAILKEY)) || {}
+    );
+};
 
-export const saveShowCommodityDetail = (commodity) => {
-  window.sessionStorage.setItem(SHOWCOMMODITYDETAILKEY, JSON.stringify(commodity))
-}
+export const saveShowCommodityDetail = commodity => {
+    window.sessionStorage.setItem(
+        SHOWCOMMODITYDETAILKEY,
+        JSON.stringify(commodity)
+    );
+};
 
-export const saveShowCartCommodity = (commodity) => {
-  window.sessionStorage.setItem(SHOWCARTCOMMODITYKEY, JSON.stringify(commodity))
-}
+export const saveShowCartCommodity = commodity => {
+    window.sessionStorage.setItem(
+        SHOWCARTCOMMODITYKEY,
+        JSON.stringify(commodity)
+    );
+};
 
-export const getShowCartCommodity = (commodity) => {
-  return JSON.parse(window.sessionStorage.getItem(SHOWCARTCOMMODITYKEY)) || {}
+export const getShowCartCommodity = commodity => {
+    return (
+        JSON.parse(window.sessionStorage.getItem(SHOWCARTCOMMODITYKEY)) || {}
+    );
+};
+
+export const getLoginUserInfo = () => {
+    return JSON.parse(window.sessionStorage.getItem(USERINFO));
+};
+export const setLoginUserInfo = user => {
+    return window.sessionStorage.setItem(USERINFO, JSON.stringify(user));
+};
+export const removeLoginUserInfo = () => {
+    window.sessionStorage.removeItem(USERINFO);
 }

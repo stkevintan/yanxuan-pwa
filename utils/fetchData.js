@@ -1,8 +1,8 @@
 // 获取首页的数据
-import request from "./request";
+import request from './request';
 
 export const fetchHome = () => {
-    const url = "/home";
+    const url = '/home';
     return request(url);
     // try {
     //   return request(url)
@@ -16,28 +16,28 @@ export const fetchHome = () => {
     // }
 };
 
-export const fetchUserInfo = () => {
-    const url = "/userInfo";
+export const fetchUserInfo = username => {
+    const url = `/user/${username}`;
     return request(url);
 };
 
 export const fetchManufacturers = () => {
-    const url = "/manufacturers";
+    const url = '/manufacturers';
     return request(url);
 };
 
 export const fetchRecommendItems = () => {
-    const url = "/itemRecommend";
+    const url = '/itemRecommend';
     return request(url);
 };
 
 export const fetchAllNewItems = () => {
-    const url = "/allNewItem";
+    const url = '/allNewItem';
     return request(url);
 };
 
 export const fetchCateList = () => {
-    const url = "/cateList";
+    const url = '/cateList';
     return request(url);
 };
 
@@ -52,21 +52,30 @@ export const fecthCategory = () => {
 };
 
 export const fetchCategoryCommodity = () => {
-    const url = "/categoryCommodity";
+    const url = '/categoryCommodity';
     return request(url);
 };
 
 export const fetchPinCommodity = () => {
-    const url = "/pinCommodity";
+    const url = '/pinCommodity';
     return request(url);
 };
 
 export const fetchCommodityFormat = () => {
-    const url = "/commodityFormat";
+    const url = '/commodityFormat';
     return request(url);
 };
 
 export const fetchTopicDetail = () => {
-    const url = "/topicDetail";
+    const url = '/topicDetail';
     return request(url);
+};
+
+export const fetchLogin = (username, password) => {
+    const url = '/login';
+    return request(url, { data: { username, password }, method: 'post' });
+};
+export const fetchLoginState = username => {
+    const url = '/islogin';
+    return request(url, { params: { username } });
 };

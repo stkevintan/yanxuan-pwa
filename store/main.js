@@ -1,11 +1,12 @@
-import * as TYPES from "@/constant/types";
+import * as TYPES from '@/constant/types';
+import Vue from 'vue';
 import {
     saveShowCommodityDetail,
     savCartCommodityrToLocalStorage,
     saveShowCartCommodity,
     getCartCommodityFromLocalStorage
-} from "@/utils/storage";
-import { getShowCommodityDetail, getShowCartCommodity } from "@/utils/storage";
+} from '@/utils/storage';
+import { getShowCommodityDetail, getShowCartCommodity } from '@/utils/storage';
 
 export const state = () => ({
     userInfo: null,
@@ -14,11 +15,11 @@ export const state = () => ({
     cartIsEdit: false,
     currentCartCommodity: getShowCartCommodity(),
     showCommodityDetail: getShowCommodityDetail(),
-    selectFormat: {}
+    selectFormat: {},
+    vBottomTabBar: true
 });
 
-
-const getters = {
+export const getters = {
     // 购物车的商品数量
     cartCommodityCount: state => {
         const totalCount = state.cartList.reduce((total, commodity) => {
@@ -82,10 +83,16 @@ export const actions = {
     },
     finishEditCartCommodity({ commit }) {
         commit(TYPES.FINISHEDITCARTCOMMODITY);
+    },
+    toggleBottomTabBar({ commit }, target) {
+        commit(TYPES.TOGGLEBOTTOMTABBAR, target);
     }
 };
 
 export const mutations = {
+    [TYPES.TOGGLEBOTTOMTABBAR](state, target) {
+        state.vBottomTabBar = target;
+    },
     [TYPES.ADDTOCART](state, commodity) {
         const count = commodity.count;
         const pId = commodity.pId;
@@ -134,6 +141,7 @@ export const mutations = {
     [TYPES.SELECTCARTCOMMODITY](state, commodity) {
         const index = state.cartList.indexOf(commodity);
         if (index === -1) return;
+        //设置对象的属性。如果对象是响应式的，确保属性被创建后也是响应式的，同时触发视图更新。这个方法主要用于避开 Vue 不能检测属性被添加的限制。
         Vue.set(state.cartList, index, {
             ...commodity,
             selected: !commodity.selected
@@ -166,7 +174,7 @@ export const mutations = {
         if (!selected) {
             state.removeCartList = [];
         } else {
-            console.log("cart list: ", state.cartList);
+            console.log('cart list: ', state.cartList);
             state.removeCartList = Object.assign([], state.cartList);
         }
     },

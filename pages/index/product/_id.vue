@@ -44,7 +44,7 @@
         </div>
         <div class="service">
           <div class="left">
-            <span>服务:</span>            
+            <span>服务:</span>
           </div>
           <div class="service-content">
             <span class="service-item" v-for="service in product.services">
@@ -91,8 +91,7 @@
       // ...mapState('main',['selectFormat'])
       selectFormat () {
         console.log('------')
-        console.log(this.$store.state['main/selectFormat'])
-        const selectFormat = this.$store.state['main/selectFormat']
+        const selectFormat = this.$store.state.main.selectFormat
         return selectFormat[this.$route.params.id] || {}
       },
       commentCountString () {
@@ -177,7 +176,7 @@
   }
   .pd-content {
     flex: 1;
-    overflow-y: auto;    
+    overflow-y: auto;
   }
 
   .carousel-wrapper {
@@ -200,10 +199,10 @@
   }
 
   .content {
-    padding: px2rem(20) px2rem(15);
+    // padding: px2rem(20) px2rem(15);
     padding-right: 0;
     background-color: #fff;
-    margin-bottom: px2rem(10);
+    // margin-bottom: px2rem(10);
     display: flex;
   }
 
@@ -359,7 +358,7 @@
     display: flex;
     flex-wrap: wrap;
   }
-  
+
   .service-item {
     color: #7f7f7f;
     padding-left: px2rem(8);

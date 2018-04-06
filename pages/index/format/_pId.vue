@@ -25,7 +25,7 @@
     components: { navbar, step, formatDetail },
     data () {
       return {
-        count: this.$store.state['main/selectFormat'].count || 1
+        count: this.$store.state.main.selectFormat.count || 1
       }
     },
     computed: {
@@ -44,7 +44,7 @@
     beforeRouteLeave (to, from, next) {
       if (this.selects.length !== this.commodity.formats.length) {
         this.changeSelectFormat({
-          pId: this.$route.params.pId, 
+          pId: this.$route.params.pId,
           format: [],
           count: 1
         })
@@ -98,7 +98,7 @@
           format: this.selects,
           count: currentVal
         })
-        this.count = currentVal        
+        this.count = currentVal
       }
     },
     mounted () {

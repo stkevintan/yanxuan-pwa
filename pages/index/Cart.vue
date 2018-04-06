@@ -167,7 +167,7 @@
     display: flex;
     flex-direction: column;
   }
-  
+
   .cart-content {
     flex: 1;
     display: flex;
@@ -217,7 +217,7 @@
     justify-content: center;
   }
 
-  .nothing-policy li i { 
+  .nothing-policy li i {
     display: inline-block;
     width: px2rem(5);
     height: px2rem(5);
@@ -250,7 +250,7 @@
     color: #fff;
     margin-top: px2rem(15);
     border-radius: px2rem(3);
-    out-line: none;
+    outline: none;
   }
 </style>
 

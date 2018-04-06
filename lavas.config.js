@@ -38,17 +38,6 @@ module.exports = {
                 // set default router
                 pattern: /\/(home|home\/recommend|pin\/commodity)$/,
                 alias: "/"
-            },
-            {
-                pattern: /\/profile/,
-                beforeEnter: (to, from, next) => {
-                    const isLogined = false;
-                    if (!isLogined) {
-                        next("/login");
-                    } else {
-                        next("/error");
-                    }
-                }
             }
         ]
     },

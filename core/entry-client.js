@@ -183,6 +183,11 @@ function handleAsyncData() {
         // [a, b]
         // [a, b, c, d]
         // => [c, d]
+
+        // [a,b,s]
+        // [c,b, s,d]
+        // => [c,b,s,d]
+        // 只要有一个differed= true，根据短路原则，后面全是true
         let diffed = false;
         let activated = matched.filter((c, i) => diffed || (diffed = (prevMatched[i] !== c)));
 

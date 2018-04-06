@@ -21,8 +21,8 @@
     components: { formatDetail },
     data () {
       return {
-        selects: this.$store.state['main/currentCartCommodity'].selectString.split(';'),
-        count: this.$store.state['main/currentCartCommodity'].count
+        selects: this.$store.state.main.currentCartCommodity.selectString.split(';'),
+        count: this.$store.state.main.currentCartCommodity.count
       }
     },
     computed: {

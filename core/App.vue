@@ -12,12 +12,14 @@
             </keep-alive>
         </transition>
         <update-toast></update-toast>
+        <offline-toast></offline-toast>
     </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
 import UpdateToast from "@/components/UpdateToast";
+import OfflineToast from "@/components/OfflineToast";
 import { keepAlivePages } from "@/.lavas/router";
 
 // 设置html的font-size
@@ -30,10 +32,13 @@ document.addEventListener("DOMContentLoaded", function() {
   html.style.fontSize = window.innerWidth / 10 + "px";
 });
 
+
+
 export default {
   name: "app",
   components: {
-    UpdateToast
+    UpdateToast,
+    OfflineToast
   },
   computed: {
     ...mapState("pageTransition", {
