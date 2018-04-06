@@ -1,6 +1,6 @@
 const send = require('koa-send');
 const logger = require('../util/logger');
-const { fileMap, push } = require('../util/helper');
+const { fileMap, push, acceptsHtml } = require('../util/helper');
 const depTree = require('../util/depTree');
 module.exports = (root = '') => {
     return async function serve(ctx, next) {
