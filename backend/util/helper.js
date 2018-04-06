@@ -45,15 +45,30 @@ exports.push = function(stream, file) {
             queryRet.headers ||
             getFileHeaders(file.filePath, file.fd);
     }
-    process.nextTick(() => {
-        const pushHeaders = { [HTTP2_HEADER_PATH]: file.relPath };
-        stream.pushStream(pushHeaders, (err, pushStream) => {
-            if (err) {
-                logger.error('server push error');
-                throw err;
-            }
-            logger.ok('Server Push Resource:', file.filePath);
-            pushStream.respondWithFD(file.fd, file.headers);
-        });
+    // process.nextTick(() => {
+    const pushHeaders = { [HTTP2_HEADER_PATH]: file.relPath };
+    stream.pushStream(pushHeaders, (err, pushStream) => {
+        if (err) {
+            logger.error('server push error');
+            throw err;
+        }
+        logger.ok('Server Push Resource:', file.filePath);
+        pushStream.respondWithFD(file.fd, file.headers);
     });
+    // });
+};
+
+exports.acceptsHtml = (header, options) => {
+    options.htmlAcceptHeaders = options.htmlAcceptHeaders || [
+        'text/html',
+        '*/*'
+    ];
+
+    for (let i = 0; i < options.htmlAcceptHeaders.length; i++) {
+        if (header.indexOf(options.htmlAcceptHeaders[i]) !== -1) {
+            return true;
+        }
+    }
+
+    return false;
 };

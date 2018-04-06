@@ -2,7 +2,7 @@ const Koa = require('koa');
 const fs = require('fs');
 const path = require('path');
 const http2 = require('http2');
-
+const koaBody = require('koa-body');
 const router = require('./middleware/router');
 const rewriter = require('./middleware/rewriter');
 const static = require('./middleware/static');
@@ -25,6 +25,8 @@ class KoaOnHttps extends Koa {
 }
 
 const app = new KoaOnHttps();
+
+app.use(koaBody());
 // x-response-time
 app.use(async function(ctx, next) {
     const start = new Date();
@@ -40,15 +42,20 @@ app.use(async function(ctx, next) {
     logger.info(`${ctx.method} ${ctx.url} - ${ms}`);
 });
 
-// set cors header
-app.use(async function(ctx, next) {
-    await next();
-    ctx.set({
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Credentials': true
-    });
-});
 
+if (process.argv[2] === 'dev') {
+    console.log(process.argv[2]);
+    // set cors header
+    app.use(async function(ctx, next) {
+        ctx.set({
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Credentials': true,
+            'Access-Control-Allow-Method': 'OPTIONS, GET, HEAD, POST, PUT',
+            'Access-Control-Allow-Headers': 'Content-Type'
+        });
+        await next();
+    });
+}
 app.use(rewriter({ whiteList: ['/api', '/mimg'] }));
 app.use(router.routes()).use(router.allowedMethods());
 if (process.argv[2] !== 'dev') {

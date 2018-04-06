@@ -10,14 +10,63 @@ const { push, fileMap } = require('../util/helper');
 const depTree = require('../util/depTree');
 const router = new Router();
 
+const userTpl = {
+    uId: '00000001',
+    name: 'm18682145280_1',
+    avatar: 'https://gbzhu.cn/mimg/8945ae63d940cc42406c3f67019c5cb6.png',
+    membership: 0
+};
+router.post('/api/login', async (ctx, next) => {
+    const { username, password } = ctx.request.body;
+    logger.info('user login:', username, password);
+    const userExist = db.has('userInfo').value();
+    if (!userExist) {
+        db.set('userInfo', []).write();
+    }
+    const userDb = db.get('userInfo');
+    if (!userExist || !userDb.find({ name: username }).value()) {
+        userDb
+            .push(Object.assign({}, userTpl, { name: username, password }))
+            .write();
+    }
+    ctx.body = { ok: true };
+});
+
+router.get('/api/user/:username', async (ctx, next) => {
+    const { username } = ctx.params;
+    const userExist = db.has('userInfo').value();
+    if (!userExist) {
+        db.set('userInfo', []).write();
+        return (ctx.body = null);
+    }
+    const user = db
+        .get('userInfo')
+        .find({ name: username })
+        .value();
+    if (!user) {
+        return (ctx.body = null);
+    }
+    const res = Object.assign({}, user);
+    delete res.password;
+    ctx.body = res;
+});
+
 router.get('/api/product/:id', (ctx, next) => {
-    const { id } = ctx.params;
+    let { id } = ctx.params;
     logger.info('Current Request id:', id);
-    const regRet = /([^_]+)/.exec(id);
-    if (regRet == null) ctx.throw(404);
+    id = /([^_]+)/.exec(id + '');
+    if (id == null) ctx.throw(404);
+    id = id[0];
+    if (
+        !db
+            .get('product')
+            .has(id)
+            .value()
+    )
+        id = 'p1000001';
     const ret = db
         .get('product')
-        .get(regRet[0])
+        .get(id)
         .value();
     if (ret == undefined) ctx.throw(404);
     ctx.body = ret;
@@ -70,7 +119,7 @@ router.get('/mimg/:filename', async (ctx, next) => {
 });
 
 router.get(/(\.html|\/[\w-]*|)$|\/sw-register/, async (ctx, next) => {
-    // disable cache
+    // disable html and sw-register cache
     ctx.set('Cache-Control', 'private, no-cache, no-store');
     await next();
 });

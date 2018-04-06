@@ -2,6 +2,7 @@
 
 const url = require("url");
 const logger = require('../util/logger');
+const { acceptsHtml } = require('../util/helper');
 module.exports = options => {
     options = options || {};
     return async (ctx, next) => {
@@ -99,20 +100,5 @@ function evaluateRewriteRule(parsedUrl, match, rule) {
         parsedUrl: parsedUrl,
         match: match
     });
-}
-
-function acceptsHtml(header, options) {
-    options.htmlAcceptHeaders = options.htmlAcceptHeaders || [
-        "text/html",
-        "*/*"
-    ];
-
-    for (let i = 0; i < options.htmlAcceptHeaders.length; i++) {
-        if (header.indexOf(options.htmlAcceptHeaders[i]) !== -1) {
-            return true;
-        }
-    }
-
-    return false;
 }
 

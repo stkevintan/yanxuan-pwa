@@ -7,9 +7,19 @@ module.exports = (root = '') => {
         let done = false;
         if (ctx.method === 'HEAD' || ctx.method === 'GET') {
             try {
-                logger.info('Send Path', ctx.path);
-                if (/(\.html|\/[\w-]*)([?#]\S*)?$/.test(ctx.path)) {
+                // 当希望收到html时，推送额外资源。
+                if (acceptsHtml(ctx.header.accept, options)) {
+                    logger.info('Send Path', ctx.path);
                     depTree.currentKey = ctx.path;
+                    //server push
+                    for (const dep of depTree.getDep()) {
+                        // server push must before response!
+                        //https://huangxuan.me/2017/07/12/upgrading-eleme-to-pwa/#fast-skeleton-painting-with-settimeout-hack
+                        push(ctx.res.stream, {
+                            relPath: dep.relPath,
+                            filePath: dep.filePath
+                        });
+                    }
                 }
                 done = await send(ctx, ctx.path, { root });
             } catch (err) {
@@ -21,16 +31,6 @@ module.exports = (root = '') => {
         }
         if (!done) {
             await next();
-        } else {
-            if (/(\.html|\/[\w-]*)([?#]\S*)?$/.test(ctx.path)) {
-                //server push
-                for (const dep of depTree.getDep()) {
-                    push(ctx.res.stream, {
-                        relPath: dep.relPath,
-                        filePath: dep.filePath
-                    });
-                }
-            }
         }
     };
 };
