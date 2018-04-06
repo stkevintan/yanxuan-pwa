@@ -2,6 +2,7 @@ const Router = require('koa-router');
 const low = require('lowdb');
 const FileSync = require('lowdb/adapters/FileSync');
 const logger = require('../util/logger');
+const image = require('../util/image');
 const fs = require('fs');
 const path = require('path');
 const adapter = new FileSync(require.resolve('../db.json'));
@@ -98,9 +99,9 @@ router.get(/\.(js|css)$/, async (ctx, next) => {
 
     if (/\/service-worker\.js/.test(filePath)) {
         // remove old service-worker from dep json
-    }
-    if (/^\/mimg\//.test(filePath)) filePath = filePath.substr(1);
-    else filePath = path.resolve('../dist', filePath.substr(1));
+    } else
+        // if (/^\/mimg\//.test(filePath)) filePath = filePath.substr(1);
+        filePath = path.resolve('../dist', filePath.substr(1));
     depTree.addDep({
         relPath: ctx.url,
         filePath
@@ -112,9 +113,17 @@ router.get('/mimg/:filename', async (ctx, next) => {
     const { filename } = ctx.params;
     const filepath = require.resolve(`../mimg/${filename}`);
     if (fs.existsSync(filepath)) {
-        ctx.body = fs.createReadStream(filepath);
-        const ext = path.extname(filepath) || '.jpg';
-        ctx.type = `image/${ext.substr(1)}`;
+        const stream = fs.createReadStream(filepath);
+        const thumbnail = ctx.query.thumbnail;
+        const ext = (path.extname(filepath) || '.jpg').substr(1);
+        if (thumbnail) {
+            const [width, height] = thumbnail.split('x');
+            const quality = ctx.query.quality;
+            ctx.body = image(stream, { width, height, quality });
+        } else {
+            ctx.body = image(stream);
+        }
+        ctx.type = `image/${ext}`;
         ctx.set('Cache-Control', 'public, max-age=31536000');
     } else {
         logger.error('Image not found:', filepath);
