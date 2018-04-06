@@ -1,11 +1,9 @@
 <template>
   <div :class="['tabbar', this.vshow?'':'bot-hide']">
-    <div v-bind:class="['tabbar-item', $route.path.indexOf(item.to) >= 0 ? 'selected-item' : '']" v-for="item in items">
-      <router-link v-bind:to="item.to">
+    <div v-bind:class="['tabbar-item', $route.path.indexOf(item.to) >= 0 ? 'selected-item' : '']"  @click="handleRouter(item.to)" v-for="item in items">
         <div class="tabbar-item-icon" v-bind:style="{backgroundPositionY: $route.path.indexOf(item.to) >= 0 ? item.selectedIcon : item.icon}">
           <i v-if="item.badge > 0" class="tabbar-item-badge">{{ item.badge }}</i>
         </div>
-      </router-link>
       <span>{{ item.title }}</span>
     </div>
   </div>
@@ -16,7 +14,12 @@ import { mapState } from 'vuex';
 export default {
   name: 'tabbar',
   props: ['items'],
-  computed: mapState('main', { vshow: 'vBottomTabBar' })
+  computed: mapState('main', { vshow: 'vBottomTabBar' }),
+  methods:{
+      handleRouter(to){
+          this.$router.push(to);
+      }
+  }
 };
 </script>
 

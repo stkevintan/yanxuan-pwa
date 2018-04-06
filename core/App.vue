@@ -21,7 +21,7 @@ import { mapState } from "vuex";
 import UpdateToast from "@/components/UpdateToast";
 import OfflineToast from "@/components/OfflineToast";
 import { keepAlivePages } from "@/.lavas/router";
-
+import FastClick from 'fastclick';
 // 设置html的font-size
 document.addEventListener("DOMContentLoaded", function() {
   const ratio = 375 / 10;
@@ -31,7 +31,8 @@ document.addEventListener("DOMContentLoaded", function() {
   html.classList.add(`env__dpr-${dpr}`);
   html.style.fontSize = window.innerWidth / 10 + "px";
 });
-
+// fastclick
+FastClick.attach(document.body);
 
 
 export default {

@@ -20,6 +20,7 @@
         "chalk": "^2.3.2",
         "cross-env": "^5.1.1",
         "es6-promise": "^4.1.1",
+        "fastclick": "^1.0.6",
         "koa": "^2.5.0",
         "koa-body": "^2.5.0",
         "koa-router": "^7.4.0",
