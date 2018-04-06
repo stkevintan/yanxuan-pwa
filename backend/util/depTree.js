@@ -32,13 +32,14 @@ module.exports = {
             return;
         }
 
-        const isInArr = keyDb.find({ relPath: item.relPath }).value();
+        const val = keyDb.find({ filePath: item.filePath });
 
-        if (!isInArr) {
+        if (!val.value()) {
             keyDb.push(item).write();
-            return true;
+        } else {
+            //re new relPath
+            val.assign(item);
         }
-        return false;
     },
     getDep(key = this.currentKey) {
         key = this.stripDot(key);
