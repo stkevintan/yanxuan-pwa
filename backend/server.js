@@ -20,6 +20,7 @@ class KoaOnHttps extends Koa {
     }
     listen() {
         const server = http2.createSecureServer(this.options, this.callback());
+        console.log(this.callback());
         return server.listen.apply(server, arguments);
     }
 }

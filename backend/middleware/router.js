@@ -17,6 +17,7 @@ const userTpl = {
     avatar: 'https://gbzhu.cn/mimg/8945ae63d940cc42406c3f67019c5cb6.png',
     membership: 0
 };
+
 router.post('/api/login', async (ctx, next) => {
     const { username, password } = ctx.request.body;
     logger.info('user login:', username, password);

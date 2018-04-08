@@ -33,7 +33,7 @@
           })
       }
     },
-    mounted () { 
+    mounted () {
       this.fetchData()
     }
   }

@@ -63,13 +63,11 @@ export default {
     },
     ...mapActions('main', ['toggleBottomTabBar'])
   },
-  created() {
+  mounted() {
     this.toggleBottomTabBar(false);
-    console.log('this created');
   },
   destroyed() {
     this.toggleBottomTabBar(true);
-    console.log('this.destroyed');
   },
   components: {
     tabbar
