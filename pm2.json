@@ -5,6 +5,7 @@
         "log_date_format": "YYYY-MM-DD:mm Z",
         "log_file": "server.log",
         "env":{
+            "NODE_NO_WRANINGS": true,
             "NODE_ENV": "production"
         },
         "cwd": "backend",

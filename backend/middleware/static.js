@@ -12,13 +12,10 @@ module.exports = (root = '') => {
                     logger.info('Send Path', ctx.path);
                     depTree.currentKey = ctx.path;
                     //server push
-                    for (const dep of depTree.getDep()) {
+                    for (const file of depTree.getDep()) {
                         // server push must before response!
                         //https://huangxuan.me/2017/07/12/upgrading-eleme-to-pwa/#fast-skeleton-painting-with-settimeout-hack
-                        push(ctx.res.stream, {
-                            relPath: dep.relPath,
-                            filePath: dep.filePath
-                        });
+                        push(ctx.res.stream, file);
                     }
                 }
                 done = await send(ctx, ctx.path, { root });

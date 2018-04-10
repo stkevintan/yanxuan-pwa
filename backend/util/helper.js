@@ -36,7 +36,7 @@ getFiles(baseDir);
 exports.fileMap = fileMap;
 
 exports.push = function(stream, file) {
-    if (!file || !file.filePath || !file.relPath) return;
+    if (!file || !file.filePath || !file.url) return;
     if (!file.fd || !file.headers) {
         const queryRet = fileMap.get(file.filePath) || {};
         file.fd = file.fd || queryRet.fd || fs.openSync(file.filePath, 'r');
@@ -45,8 +45,7 @@ exports.push = function(stream, file) {
             queryRet.headers ||
             getFileHeaders(file.filePath, file.fd);
     }
-    // process.nextTick(() => {
-    const pushHeaders = { [HTTP2_HEADER_PATH]: file.relPath };
+    const pushHeaders = { [HTTP2_HEADER_PATH]: file.url };
     stream.pushStream(pushHeaders, (err, pushStream) => {
         if (err) {
             logger.error('server push error');
@@ -55,7 +54,6 @@ exports.push = function(stream, file) {
         logger.ok('Server Push Resource:', file.filePath);
         pushStream.respondWithFD(file.fd, file.headers);
     });
-    // });
 };
 
 exports.acceptsHtml = (header, options = {}) => {

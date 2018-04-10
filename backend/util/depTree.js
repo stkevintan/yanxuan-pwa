@@ -14,27 +14,26 @@ module.exports = {
         if (!str) return '';
         return str.replace(/index\.html$/, '').replace(/\./g, '-');
     },
-    addDep(item, key = this.currentKey) {
+    addDep(filePath, url, key = this.currentKey) {
         if (!key) return;
         key = this.stripDot(key);
         if(!db.has(key)){
             db.set(key,new Map());
         }
-        const [relPath, filePath] = item;
         const keyDb = db.get(key);
         if (keyDb.size() >= 10) {
             logger.warning('Push resource limit exceeded');
             return;
         }
-        keyDb.set(filePath, relPath);
+        keyDb.set(filePath, url);
     },
     getDep(key = this.currentKey) {
         key = this.stripDot(key);
         const keyDb = db.get(key);
         if(keyDb == undefined) return [];
         const ret = [];
-        for(const [filePath,relPath] of keyDb.entries){
-            ret.push({filePath,relPath});
+        for(const [filePath,url] of keyDb.entries){
+            ret.push({filePath,url});
         }
         return ret;
     }
