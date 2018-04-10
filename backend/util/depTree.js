@@ -1,5 +1,3 @@
-const low = require('lowdb');
-const FileSync = require('lowdb/adapters/FileSync');
 const logger = require('./logger');
 
 const db = new Map();
