@@ -59,7 +59,7 @@ if (process.argv[2] === 'dev') {
 }
 app.use(rewriter({ whiteList: ['/api', '/mimg'] }));
 app.use(router.routes()).use(router.allowedMethods());
-if (process.env === 'production') {
+if (process.env.NODE_ENV === 'production') {
     app.use(static(path.resolve(__dirname, '../dist')));
 }
 
