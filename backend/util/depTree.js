@@ -1,9 +1,6 @@
-const low = require('lowdb');
-const FileSync = require('lowdb/adapters/FileSync');
-const adapter = new FileSync('./dep.json');
 const logger = require('./logger');
-const db = low(adapter);
 
+const db = new Map();
 let currentKey = '/';
 
 module.exports = {
@@ -17,32 +14,28 @@ module.exports = {
         if (!str) return '';
         return str.replace(/index\.html$/, '').replace(/\./g, '-');
     },
-    addDep(item, key = this.currentKey) {
+    addDep(filePath, url, key = this.currentKey) {
         if (!key) return;
         key = this.stripDot(key);
-        item = { relPath: item.relPath, filePath: item.filePath };
-        if (!db.has(key).value()) {
-            db.set(key, []).write();
+        if(!db.has(key)){
+            db.set(key,new Map());
         }
-
         const keyDb = db.get(key);
 
-        if (keyDb.size().value() >= 10) {
+        if (keyDb.size >= 10) {
             logger.warning('Push resource limit exceeded');
             return;
         }
-
-        const val = keyDb.find({ filePath: item.filePath });
-
-        if (!val.value()) {
-            keyDb.push(item).write();
-        } else {
-            //re new relPath
-            val.assign(item).write();
-        }
+        keyDb.set(filePath, url);
     },
     getDep(key = this.currentKey) {
         key = this.stripDot(key);
-        return db.get(key).value() || [];
+        const keyDb = db.get(key);
+        if(keyDb == undefined) return [];
+        const ret = [];
+        for(const [filePath,url] of keyDb.entries()){
+            ret.push({filePath,url});
+        }
+        return ret;
     }
 };
