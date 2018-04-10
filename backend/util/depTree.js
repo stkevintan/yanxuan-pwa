@@ -21,7 +21,8 @@ module.exports = {
             db.set(key,new Map());
         }
         const keyDb = db.get(key);
-        if (keyDb.size() >= 10) {
+
+        if (keyDb.size >= 10) {
             logger.warning('Push resource limit exceeded');
             return;
         }
