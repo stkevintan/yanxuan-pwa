@@ -33,7 +33,7 @@ module.exports = {
         const keyDb = db.get(key);
         if(keyDb == undefined) return [];
         const ret = [];
-        for(const [filePath,url] of keyDb.entries){
+        for(const [filePath,url] of keyDb.entries()){
             ret.push({filePath,url});
         }
         return ret;
