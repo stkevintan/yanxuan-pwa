@@ -1,14 +1,15 @@
 {
     "apps":[{
         "name": "yx-server",
-        "script":"backend/server",
+        "script":"server",
         "log_date_format": "YYYY-MM-DD:mm Z",
+        "log_file": "server.log",
         "env":{
             "NODE_ENV": "production"
         },
         "cwd": "backend",
         "exec_mode": "cluster",
-        "watch": "backend",
-        "ignore_watch": ["\\.json","backend/mimg"]
+        "watch": true,
+        "ignore_watch": ["\\.json","mimg"]
     }]
 }
