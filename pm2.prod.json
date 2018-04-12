@@ -1,11 +1,11 @@
 {
     "apps":[{
-        "name": "yx-server",
+        "name": "yx-server2",
         "script":"server.js",
         "log_date_format": "YYYY-MM-DD:mm Z",
         "log_file": "server.log",
         "env":{
-            "NODE_NO_WRANINGS": true,
+            "NODE_NO_WRANINGS": "true",
             "NODE_ENV": "production"
         },
         "cwd": "backend",

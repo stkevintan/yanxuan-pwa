@@ -1,0 +1,1738 @@
+{
+	"id": "bd020516-f1f4-dc1d-4b46-fd436a08dc00",
+	"name": "gbzhu",
+	"allTests": [],
+	"timestamp": 1523377261254,
+	"collection_id": "fd892458-bd03-1eb1-eae0-2cb0437a054b",
+	"folder_id": 0,
+	"target_type": "collection",
+	"environment_id": "0",
+	"data": [],
+	"delay": 0,
+	"count": 1,
+	"collection": {
+		"id": "fd892458-bd03-1eb1-eae0-2cb0437a054b",
+		"name": "gbzhu",
+		"description": null,
+		"order": [],
+		"folders": [
+			{
+				"name": "api",
+				"description": "",
+				"collectionId": "fd892458-bd03-1eb1-eae0-2cb0437a054b",
+				"collection": "fd892458-bd03-1eb1-eae0-2cb0437a054b",
+				"order": [
+					"97e9f0ba-204f-e0fe-5721-ade8e798bd74",
+					"fd5f52ad-f8a8-8f91-cf69-c9397edce06a",
+					"94d88157-375c-f1ac-35df-3c3936dabeb5",
+					"be82e2fc-0d9f-c9a1-a896-b31e779ec133",
+					"ab34a2c4-445e-b5aa-91ea-c59d67efabe8",
+					"f01c3ebb-c45b-aa71-6110-a98ce65c1b85",
+					"26f25ea9-a90a-0389-8a32-dedb045aec01"
+				],
+				"owner": "4115743",
+				"folders_order": [],
+				"createdAt": 1523377028956,
+				"updatedAt": 1523377028956,
+				"id": "479ccc99-4a60-38f3-1666-6191a40a9fc1",
+				"collection_id": "fd892458-bd03-1eb1-eae0-2cb0437a054b"
+			},
+			{
+				"owner": "4115743",
+				"lastUpdatedBy": "4115743",
+				"lastRevision": 3601853779,
+				"collection": "fd892458-bd03-1eb1-eae0-2cb0437a054b",
+				"folder": null,
+				"id": "24a0bae1-bd41-0ef2-30ff-dc4a87070436",
+				"name": "html",
+				"description": "",
+				"variables": null,
+				"auth": null,
+				"events": null,
+				"order": [
+					"1ea55d2b-a2d7-05c8-b02c-6766cdd35acd",
+					"1e6fb325-233b-c68d-686d-22baa44d7782",
+					"8e75bf75-12d8-7e02-dc97-f6ccb178b520"
+				],
+				"folders_order": [],
+				"createdAt": "2018-04-10T14:53:29.000Z",
+				"updatedAt": "2018-04-10T15:29:37.000Z",
+				"collection_id": "fd892458-bd03-1eb1-eae0-2cb0437a054b"
+			},
+			{
+				"name": "mimg",
+				"description": "",
+				"collectionId": "fd892458-bd03-1eb1-eae0-2cb0437a054b",
+				"collection": "fd892458-bd03-1eb1-eae0-2cb0437a054b",
+				"order": [
+					"72c0b660-048f-ce97-f2ac-55324b694631",
+					"15e9bf1b-bbfd-3998-faee-936f72af7b75",
+					"363920e9-11b4-42fb-1855-56e0f9999b88"
+				],
+				"owner": "4115743",
+				"folders_order": [],
+				"createdAt": 1523376430559,
+				"updatedAt": 1523376430559,
+				"id": "f2fd1c11-fafe-e510-fe12-bf1104b9ceb9",
+				"collection_id": "fd892458-bd03-1eb1-eae0-2cb0437a054b"
+			},
+			{
+				"name": "pwa",
+				"description": "",
+				"collectionId": "fd892458-bd03-1eb1-eae0-2cb0437a054b",
+				"collection": "fd892458-bd03-1eb1-eae0-2cb0437a054b",
+				"order": [
+					"988fcc1c-0627-4977-c127-87203be12568",
+					"d6fa54f4-7aca-5018-8276-ec23fa716ba1",
+					"a20be0aa-34c6-a1e9-d5d2-28571ed7cbc4",
+					"70a70a7d-e304-5f70-90b2-3c3ffb4f3978"
+				],
+				"owner": "4115743",
+				"folders_order": [],
+				"createdAt": 1523376549279,
+				"updatedAt": 1523376549279,
+				"id": "f8cf8457-fdb1-6120-1a59-8109de4e77ba",
+				"collection_id": "fd892458-bd03-1eb1-eae0-2cb0437a054b"
+			},
+			{
+				"name": "static",
+				"description": "",
+				"collectionId": "fd892458-bd03-1eb1-eae0-2cb0437a054b",
+				"collection": "fd892458-bd03-1eb1-eae0-2cb0437a054b",
+				"order": [
+					"f0876f26-ef68-94cd-f6c0-ea13b395121e",
+					"34b1b65c-c026-cff3-4187-e9d587d7a352",
+					"fc962d30-f63f-84e7-4b09-e654465c384c",
+					"3f57af74-3494-6392-1720-279473de5c58",
+					"52bc0f89-50e1-d0db-64fd-35aeeaed8acc"
+				],
+				"owner": "4115743",
+				"folders_order": [],
+				"createdAt": 1523377043575,
+				"updatedAt": 1523377043575,
+				"id": "e0a7c1d6-4c10-eb9f-d4a8-4f9269cda1e0",
+				"collection_id": "fd892458-bd03-1eb1-eae0-2cb0437a054b"
+			}
+		],
+		"folders_order": [
+			"24a0bae1-bd41-0ef2-30ff-dc4a87070436",
+			"f2fd1c11-fafe-e510-fe12-bf1104b9ceb9",
+			"f8cf8457-fdb1-6120-1a59-8109de4e77ba",
+			"479ccc99-4a60-38f3-1666-6191a40a9fc1",
+			"e0a7c1d6-4c10-eb9f-d4a8-4f9269cda1e0"
+		],
+		"requests": [
+			{
+				"owner": "4115743",
+				"lastUpdatedBy": "4115743",
+				"lastRevision": 3601786266,
+				"folder": "f2fd1c11-fafe-e510-fe12-bf1104b9ceb9",
+				"id": "15e9bf1b-bbfd-3998-faee-936f72af7b75",
+				"name": "https://gbzhu.cn/mimg/a5bbe1c9b55266090cf18d8a78ca5a0c.jpg",
+				"dataMode": "params",
+				"data": null,
+				"auth": null,
+				"events": null,
+				"rawModeData": null,
+				"descriptionFormat": "html",
+				"description": null,
+				"variables": null,
+				"headers": "",
+				"method": "GET",
+				"pathVariables": {},
+				"url": "https://gbzhu.cn/mimg/a5bbe1c9b55266090cf18d8a78ca5a0c.jpg",
+				"preRequestScript": null,
+				"tests": null,
+				"currentHelper": null,
+				"helperAttributes": null,
+				"queryParams": [],
+				"headerData": [],
+				"pathVariableData": [],
+				"createdAt": "2018-04-10T15:21:01.000Z",
+				"updatedAt": "2018-04-10T15:21:01.000Z",
+				"responses": [],
+				"collectionId": "fd892458-bd03-1eb1-eae0-2cb0437a054b"
+			},
+			{
+				"owner": "4115743",
+				"lastUpdatedBy": "4115743",
+				"lastRevision": 3601853682,
+				"folder": "24a0bae1-bd41-0ef2-30ff-dc4a87070436",
+				"id": "1e6fb325-233b-c68d-686d-22baa44d7782",
+				"name": "https://gbzhu.cn/home",
+				"dataMode": "params",
+				"data": null,
+				"auth": null,
+				"events": null,
+				"rawModeData": null,
+				"descriptionFormat": "html",
+				"description": null,
+				"variables": null,
+				"headers": "",
+				"method": "GET",
+				"pathVariables": {},
+				"url": "https://gbzhu.cn/home",
+				"preRequestScript": null,
+				"tests": null,
+				"currentHelper": null,
+				"helperAttributes": null,
+				"queryParams": [],
+				"headerData": [],
+				"pathVariableData": [],
+				"createdAt": "2018-04-10T15:15:34.000Z",
+				"updatedAt": "2018-04-10T15:29:37.000Z",
+				"responses": [],
+				"collectionId": "fd892458-bd03-1eb1-eae0-2cb0437a054b"
+			},
+			{
+				"id": "1ea55d2b-a2d7-05c8-b02c-6766cdd35acd",
+				"owner": "4115743",
+				"headers": "",
+				"headerData": [],
+				"url": "https://gbzhu.cn/mimg/667fedf6e76843c199f47e1dc6fdf077.png?imageView&quality=85&thumbnail=330x330",
+				"folder": "24a0bae1-bd41-0ef2-30ff-dc4a87070436",
+				"queryParams": [
+					{
+						"key": "imageView",
+						"value": "",
+						"equals": false,
+						"description": "",
+						"enabled": true
+					},
+					{
+						"key": "quality",
+						"value": "85",
+						"equals": true,
+						"description": "",
+						"enabled": true
+					},
+					{
+						"key": "thumbnail",
+						"value": "330x330",
+						"equals": true,
+						"description": "",
+						"enabled": true
+					}
+				],
+				"preRequestScript": null,
+				"pathVariables": {},
+				"pathVariableData": [],
+				"method": "GET",
+				"data": null,
+				"dataMode": "params",
+				"tests": null,
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1523376489332,
+				"name": "gbzhu",
+				"description": null,
+				"collectionId": "fd892458-bd03-1eb1-eae0-2cb0437a054b",
+				"responses": [],
+				"timestamp": null
+			},
+			{
+				"owner": "4115743",
+				"lastUpdatedBy": "4115743",
+				"lastRevision": 3601839076,
+				"id": "26f25ea9-a90a-0389-8a32-dedb045aec01",
+				"name": "https://gbzhu.cn/api/manufacturers",
+				"dataMode": "params",
+				"data": [
+					{
+						"key": "username",
+						"value": "kevin",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "password",
+						"value": "1234567",
+						"type": "text",
+						"enabled": true
+					}
+				],
+				"auth": null,
+				"events": null,
+				"rawModeData": null,
+				"descriptionFormat": "html",
+				"description": null,
+				"variables": null,
+				"headers": "",
+				"method": "GET",
+				"pathVariables": {},
+				"url": "https://gbzhu.cn/api/manufacturers",
+				"preRequestScript": null,
+				"tests": null,
+				"currentHelper": null,
+				"helperAttributes": null,
+				"queryParams": [],
+				"headerData": [],
+				"pathVariableData": [],
+				"createdAt": "2018-04-10T15:27:48.000Z",
+				"updatedAt": "2018-04-10T15:27:48.000Z",
+				"responses": [],
+				"collectionId": "fd892458-bd03-1eb1-eae0-2cb0437a054b",
+				"folder": "479ccc99-4a60-38f3-1666-6191a40a9fc1"
+			},
+			{
+				"id": "34b1b65c-c026-cff3-4187-e9d587d7a352",
+				"headers": "",
+				"headerData": [],
+				"url": "https://gbzhu.cn/static/js/index.9ba80633.js",
+				"queryParams": [],
+				"pathVariables": {},
+				"pathVariableData": [],
+				"preRequestScript": null,
+				"method": "GET",
+				"collectionId": "fd892458-bd03-1eb1-eae0-2cb0437a054b",
+				"data": null,
+				"dataMode": "params",
+				"name": "https://gbzhu.cn/static/js/index.9ba80633.js",
+				"description": "",
+				"descriptionFormat": "html",
+				"time": 1523377139005,
+				"version": 2,
+				"responses": [],
+				"tests": null,
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"folder": "e0a7c1d6-4c10-eb9f-d4a8-4f9269cda1e0"
+			},
+			{
+				"id": "363920e9-11b4-42fb-1855-56e0f9999b88",
+				"owner": "4115743",
+				"headers": "",
+				"headerData": [],
+				"url": "https://gbzhu.cn/mimg/667fedf6e76843c199f47e1dc6fdf077.png?imageView&quality=85&thumbnail=330x330",
+				"queryParams": [
+					{
+						"key": "imageView",
+						"value": "",
+						"equals": false,
+						"description": "",
+						"enabled": true
+					},
+					{
+						"key": "quality",
+						"value": "85",
+						"equals": true,
+						"description": "",
+						"enabled": true
+					},
+					{
+						"key": "thumbnail",
+						"value": "330x330",
+						"equals": true,
+						"description": "",
+						"enabled": true
+					}
+				],
+				"pathVariables": {},
+				"pathVariableData": [],
+				"preRequestScript": null,
+				"method": "GET",
+				"collectionId": "fd892458-bd03-1eb1-eae0-2cb0437a054b",
+				"data": null,
+				"dataMode": "params",
+				"name": "https://gbzhu.cn/mimg/667fedf6e76843c199f47e1dc6fdf077.png?imageView&quality=85&thumbnail=330x330",
+				"description": "",
+				"descriptionFormat": "html",
+				"time": 1523376522456,
+				"version": 2,
+				"responses": [],
+				"tests": null,
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"folder": "f2fd1c11-fafe-e510-fe12-bf1104b9ceb9",
+				"timestamp": null
+			},
+			{
+				"id": "3f57af74-3494-6392-1720-279473de5c58",
+				"headers": "",
+				"headerData": [],
+				"url": "https://gbzhu.cn/static/js/vue.38669167.js",
+				"queryParams": [],
+				"pathVariables": {},
+				"pathVariableData": [],
+				"preRequestScript": null,
+				"method": "GET",
+				"collectionId": "fd892458-bd03-1eb1-eae0-2cb0437a054b",
+				"data": null,
+				"dataMode": "params",
+				"name": "https://gbzhu.cn/static/js/vue.38669167.js",
+				"description": "",
+				"descriptionFormat": "html",
+				"time": 1523377185759,
+				"version": 2,
+				"responses": [],
+				"tests": null,
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"folder": "e0a7c1d6-4c10-eb9f-d4a8-4f9269cda1e0"
+			},
+			{
+				"id": "52bc0f89-50e1-d0db-64fd-35aeeaed8acc",
+				"headers": "",
+				"headerData": [],
+				"url": "https://gbzhu.cn/static/js/vendor.e2000e21.js",
+				"queryParams": [],
+				"pathVariables": {},
+				"pathVariableData": [],
+				"preRequestScript": null,
+				"method": "GET",
+				"collectionId": "fd892458-bd03-1eb1-eae0-2cb0437a054b",
+				"data": null,
+				"dataMode": "params",
+				"name": "https://gbzhu.cn/static/js/vendor.e2000e21.js",
+				"description": "",
+				"descriptionFormat": "html",
+				"time": 1523377201823,
+				"version": 2,
+				"responses": [],
+				"tests": null,
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"folder": "e0a7c1d6-4c10-eb9f-d4a8-4f9269cda1e0"
+			},
+			{
+				"id": "70a70a7d-e304-5f70-90b2-3c3ffb4f3978",
+				"owner": "4115743",
+				"headers": "",
+				"headerData": [],
+				"url": "https://gbzhu.cn/static/js/manifest.7253881e.js",
+				"queryParams": [],
+				"pathVariables": {},
+				"pathVariableData": [],
+				"preRequestScript": null,
+				"method": "GET",
+				"collectionId": "fd892458-bd03-1eb1-eae0-2cb0437a054b",
+				"data": null,
+				"dataMode": "params",
+				"name": "https://gbzhu.cn/static/js/manifest.7253881e.js",
+				"description": "",
+				"descriptionFormat": "html",
+				"time": 1523376698035,
+				"version": 2,
+				"responses": [],
+				"tests": null,
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"folder": "f8cf8457-fdb1-6120-1a59-8109de4e77ba",
+				"timestamp": null
+			},
+			{
+				"owner": "4115743",
+				"lastUpdatedBy": "4115743",
+				"lastRevision": 3601741547,
+				"folder": "f2fd1c11-fafe-e510-fe12-bf1104b9ceb9",
+				"id": "72c0b660-048f-ce97-f2ac-55324b694631",
+				"name": "https://gbzhu.cn/mimg/hd-s73530eadc0-9757196115.png",
+				"dataMode": "params",
+				"data": null,
+				"auth": null,
+				"events": null,
+				"rawModeData": null,
+				"descriptionFormat": "html",
+				"description": null,
+				"variables": null,
+				"headers": "",
+				"method": "GET",
+				"pathVariables": {},
+				"url": "https://gbzhu.cn/mimg/hd-s73530eadc0-9757196115.png",
+				"preRequestScript": null,
+				"tests": null,
+				"currentHelper": null,
+				"helperAttributes": null,
+				"queryParams": [],
+				"headerData": [],
+				"pathVariableData": [],
+				"createdAt": "2018-04-10T15:15:17.000Z",
+				"updatedAt": "2018-04-10T15:15:17.000Z",
+				"responses": [],
+				"collectionId": "fd892458-bd03-1eb1-eae0-2cb0437a054b"
+			},
+			{
+				"id": "8e75bf75-12d8-7e02-dc97-f6ccb178b520",
+				"owner": "4115743",
+				"headers": "",
+				"headerData": [],
+				"url": "https://gbzhu.cn/topic",
+				"queryParams": [],
+				"pathVariables": {},
+				"pathVariableData": [],
+				"preRequestScript": null,
+				"method": "GET",
+				"collectionId": "fd892458-bd03-1eb1-eae0-2cb0437a054b",
+				"data": null,
+				"dataMode": "params",
+				"name": "https://gbzhu.cn/topic",
+				"description": "",
+				"descriptionFormat": "html",
+				"time": 1523376404240,
+				"version": 2,
+				"responses": [],
+				"tests": null,
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"folder": "24a0bae1-bd41-0ef2-30ff-dc4a87070436",
+				"timestamp": null
+			},
+			{
+				"owner": "4115743",
+				"lastUpdatedBy": "4115743",
+				"lastRevision": 3601830830,
+				"id": "94d88157-375c-f1ac-35df-3c3936dabeb5",
+				"name": "https://gbzhu.cn/api/login",
+				"dataMode": "params",
+				"data": [
+					{
+						"key": "username",
+						"value": "kevin",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "password",
+						"value": "1234567",
+						"type": "text",
+						"enabled": true
+					}
+				],
+				"auth": null,
+				"events": null,
+				"rawModeData": null,
+				"descriptionFormat": "html",
+				"description": null,
+				"variables": null,
+				"headers": "",
+				"method": "POST",
+				"pathVariables": {},
+				"url": "https://gbzhu.cn/api/login",
+				"preRequestScript": null,
+				"tests": null,
+				"currentHelper": null,
+				"helperAttributes": null,
+				"queryParams": [],
+				"headerData": [],
+				"pathVariableData": [],
+				"createdAt": "2018-04-10T15:26:39.000Z",
+				"updatedAt": "2018-04-10T15:26:39.000Z",
+				"responses": [],
+				"collectionId": "fd892458-bd03-1eb1-eae0-2cb0437a054b",
+				"folder": "479ccc99-4a60-38f3-1666-6191a40a9fc1"
+			},
+			{
+				"owner": "4115743",
+				"lastUpdatedBy": "4115743",
+				"lastRevision": 3601806808,
+				"id": "97e9f0ba-204f-e0fe-5721-ade8e798bd74",
+				"name": "https://gbzhu.cn/api/home",
+				"dataMode": "params",
+				"data": null,
+				"auth": null,
+				"events": null,
+				"rawModeData": null,
+				"descriptionFormat": "html",
+				"description": null,
+				"variables": null,
+				"headers": "",
+				"method": "GET",
+				"pathVariables": {},
+				"url": "https://gbzhu.cn/api/home",
+				"preRequestScript": null,
+				"tests": null,
+				"currentHelper": null,
+				"helperAttributes": null,
+				"queryParams": [],
+				"headerData": [],
+				"pathVariableData": [],
+				"createdAt": "2018-04-10T15:23:38.000Z",
+				"updatedAt": "2018-04-10T15:23:38.000Z",
+				"responses": [],
+				"collectionId": "fd892458-bd03-1eb1-eae0-2cb0437a054b",
+				"isFromCollection": true,
+				"folder": "479ccc99-4a60-38f3-1666-6191a40a9fc1"
+			},
+			{
+				"id": "988fcc1c-0627-4977-c127-87203be12568",
+				"owner": "4115743",
+				"headers": "",
+				"headerData": [],
+				"url": "https://gbzhu.cn/sw-register.js?v=1523376302557",
+				"queryParams": [
+					{
+						"key": "v",
+						"value": "1523376302557",
+						"equals": true,
+						"description": "",
+						"enabled": true
+					}
+				],
+				"pathVariables": {},
+				"pathVariableData": [],
+				"preRequestScript": null,
+				"method": "GET",
+				"collectionId": "fd892458-bd03-1eb1-eae0-2cb0437a054b",
+				"data": null,
+				"dataMode": "params",
+				"name": "https://gbzhu.cn/sw-register.js?v=1523376302557",
+				"description": "",
+				"descriptionFormat": "html",
+				"time": 1523376586463,
+				"version": 2,
+				"responses": [],
+				"tests": null,
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"folder": "f8cf8457-fdb1-6120-1a59-8109de4e77ba",
+				"timestamp": null
+			},
+			{
+				"id": "a20be0aa-34c6-a1e9-d5d2-28571ed7cbc4",
+				"owner": "4115743",
+				"headers": "",
+				"headerData": [],
+				"url": "https://gbzhu.cn/static/js/workbox-sw.prod.v2.1.3.js",
+				"queryParams": [],
+				"pathVariables": {},
+				"pathVariableData": [],
+				"preRequestScript": null,
+				"method": "GET",
+				"collectionId": "fd892458-bd03-1eb1-eae0-2cb0437a054b",
+				"data": null,
+				"dataMode": "params",
+				"name": "https://gbzhu.cn/static/js/workbox-sw.prod.v2.1.3.js",
+				"description": "",
+				"descriptionFormat": "html",
+				"time": 1523376626124,
+				"version": 2,
+				"responses": [],
+				"tests": null,
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"folder": "f8cf8457-fdb1-6120-1a59-8109de4e77ba",
+				"timestamp": null
+			},
+			{
+				"owner": "4115743",
+				"lastUpdatedBy": "4115743",
+				"lastRevision": 3601833020,
+				"id": "ab34a2c4-445e-b5aa-91ea-c59d67efabe8",
+				"name": "https://gbzhu.cn/api/section",
+				"dataMode": "params",
+				"data": [
+					{
+						"key": "username",
+						"value": "kevin",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "password",
+						"value": "1234567",
+						"type": "text",
+						"enabled": true
+					}
+				],
+				"auth": null,
+				"events": null,
+				"rawModeData": null,
+				"descriptionFormat": "html",
+				"description": null,
+				"variables": null,
+				"headers": "",
+				"method": "GET",
+				"pathVariables": {},
+				"url": "https://gbzhu.cn/api/section",
+				"preRequestScript": null,
+				"tests": null,
+				"currentHelper": null,
+				"helperAttributes": null,
+				"queryParams": [],
+				"headerData": [],
+				"pathVariableData": [],
+				"createdAt": "2018-04-10T15:26:57.000Z",
+				"updatedAt": "2018-04-10T15:26:57.000Z",
+				"responses": [],
+				"collectionId": "fd892458-bd03-1eb1-eae0-2cb0437a054b",
+				"folder": "479ccc99-4a60-38f3-1666-6191a40a9fc1"
+			},
+			{
+				"id": "be82e2fc-0d9f-c9a1-a896-b31e779ec133",
+				"headers": "",
+				"headerData": [],
+				"url": "https://gbzhu.cn/static/js/vendor.e2000e21.js",
+				"folder": "479ccc99-4a60-38f3-1666-6191a40a9fc1",
+				"queryParams": [],
+				"preRequestScript": null,
+				"pathVariables": {},
+				"pathVariableData": [],
+				"method": "GET",
+				"data": null,
+				"dataMode": "params",
+				"tests": null,
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1523377217009,
+				"name": "https://gbzhu.cn/api/user/kevin",
+				"description": null,
+				"collectionId": "fd892458-bd03-1eb1-eae0-2cb0437a054b",
+				"responses": []
+			},
+			{
+				"id": "d6fa54f4-7aca-5018-8276-ec23fa716ba1",
+				"owner": "4115743",
+				"headers": "",
+				"headerData": [],
+				"url": "https://gbzhu.cn/service-worker.js?v=20180410235751",
+				"queryParams": [
+					{
+						"key": "v",
+						"value": "20180410235751",
+						"equals": true,
+						"description": "",
+						"enabled": true
+					}
+				],
+				"pathVariables": {},
+				"pathVariableData": [],
+				"preRequestScript": null,
+				"method": "GET",
+				"collectionId": "fd892458-bd03-1eb1-eae0-2cb0437a054b",
+				"data": null,
+				"dataMode": "params",
+				"name": "https://gbzhu.cn/service-worker.js?v=20180410235751",
+				"description": "",
+				"descriptionFormat": "html",
+				"time": 1523376609797,
+				"version": 2,
+				"responses": [],
+				"tests": null,
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"folder": "f8cf8457-fdb1-6120-1a59-8109de4e77ba",
+				"timestamp": null
+			},
+			{
+				"owner": "4115743",
+				"lastUpdatedBy": "4115743",
+				"lastRevision": 3601836421,
+				"id": "f01c3ebb-c45b-aa71-6110-a98ce65c1b85",
+				"name": "https://gbzhu.cn/api/allNewItem",
+				"dataMode": "params",
+				"data": [
+					{
+						"key": "username",
+						"value": "kevin",
+						"type": "text",
+						"enabled": true
+					},
+					{
+						"key": "password",
+						"value": "1234567",
+						"type": "text",
+						"enabled": true
+					}
+				],
+				"auth": null,
+				"events": null,
+				"rawModeData": null,
+				"descriptionFormat": "html",
+				"description": null,
+				"variables": null,
+				"headers": "",
+				"method": "GET",
+				"pathVariables": {},
+				"url": "https://gbzhu.cn/api/allNewItem",
+				"preRequestScript": null,
+				"tests": null,
+				"currentHelper": null,
+				"helperAttributes": null,
+				"queryParams": [],
+				"headerData": [],
+				"pathVariableData": [],
+				"createdAt": "2018-04-10T15:27:26.000Z",
+				"updatedAt": "2018-04-10T15:27:26.000Z",
+				"responses": [],
+				"collectionId": "fd892458-bd03-1eb1-eae0-2cb0437a054b",
+				"folder": "479ccc99-4a60-38f3-1666-6191a40a9fc1"
+			},
+			{
+				"owner": "4115743",
+				"lastUpdatedBy": "4115743",
+				"lastRevision": 3601749889,
+				"folder": "e0a7c1d6-4c10-eb9f-d4a8-4f9269cda1e0",
+				"id": "f0876f26-ef68-94cd-f6c0-ea13b395121e",
+				"name": "https://gbzhu.cn/favicon.ico",
+				"dataMode": "params",
+				"data": null,
+				"auth": null,
+				"events": null,
+				"rawModeData": null,
+				"descriptionFormat": "html",
+				"description": null,
+				"variables": null,
+				"headers": "",
+				"method": "GET",
+				"pathVariables": {},
+				"url": "https://gbzhu.cn/favicon.ico",
+				"preRequestScript": null,
+				"tests": null,
+				"currentHelper": null,
+				"helperAttributes": null,
+				"queryParams": [],
+				"headerData": [],
+				"pathVariableData": [],
+				"createdAt": "2018-04-10T15:16:25.000Z",
+				"updatedAt": "2018-04-10T15:16:25.000Z",
+				"responses": [],
+				"collectionId": "fd892458-bd03-1eb1-eae0-2cb0437a054b",
+				"isFromCollection": true
+			},
+			{
+				"id": "fc962d30-f63f-84e7-4b09-e654465c384c",
+				"headers": "",
+				"headerData": [],
+				"url": "https://gbzhu.cn/static/css/index.e1f6d488.css",
+				"queryParams": [],
+				"pathVariables": {},
+				"pathVariableData": [],
+				"preRequestScript": null,
+				"method": "GET",
+				"collectionId": "fd892458-bd03-1eb1-eae0-2cb0437a054b",
+				"data": null,
+				"dataMode": "params",
+				"name": "https://gbzhu.cn/static/css/index.e1f6d488.css",
+				"description": "",
+				"descriptionFormat": "html",
+				"time": 1523377158238,
+				"version": 2,
+				"responses": [],
+				"tests": null,
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"folder": "e0a7c1d6-4c10-eb9f-d4a8-4f9269cda1e0"
+			},
+			{
+				"owner": "4115743",
+				"lastUpdatedBy": "4115743",
+				"lastRevision": 3601808902,
+				"id": "fd5f52ad-f8a8-8f91-cf69-c9397edce06a",
+				"name": "https://gbzhu.cn/api/product/p1000002",
+				"dataMode": "params",
+				"data": null,
+				"auth": null,
+				"events": null,
+				"rawModeData": null,
+				"descriptionFormat": "html",
+				"description": null,
+				"variables": null,
+				"headers": "",
+				"method": "GET",
+				"pathVariables": {},
+				"url": "https://gbzhu.cn/api/product/p1000002",
+				"preRequestScript": null,
+				"tests": null,
+				"currentHelper": null,
+				"helperAttributes": null,
+				"queryParams": [],
+				"headerData": [],
+				"pathVariableData": [],
+				"createdAt": "2018-04-10T15:23:55.000Z",
+				"updatedAt": "2018-04-10T15:23:55.000Z",
+				"responses": [],
+				"collectionId": "fd892458-bd03-1eb1-eae0-2cb0437a054b",
+				"isLastRequest": true,
+				"folder": "479ccc99-4a60-38f3-1666-6191a40a9fc1"
+			}
+		],
+		"timestamp": 0,
+		"synced": true,
+		"syncedFilename": "",
+		"remote_id": "0",
+		"remoteLink": null,
+		"remoteLinkUpdatedAt": null,
+		"public": false,
+		"owner": "4115743",
+		"subscribed": false,
+		"createdAt": "2018-04-10T14:51:37.000Z",
+		"updatedAt": 1523377201863,
+		"write": true,
+		"published": false,
+		"favorite": false,
+		"permissions": {},
+		"syncedPermissions": {},
+		"sharedWithTeam": false
+	},
+	"folder": null,
+	"environment": null,
+	"globals": [],
+	"results": [
+		{
+			"id": "1ea55d2b-a2d7-05c8-b02c-6766cdd35acd",
+			"name": "gbzhu",
+			"url": "https://gbzhu.cn/mimg/667fedf6e76843c199f47e1dc6fdf077.png?imageView&quality=85&thumbnail=330x330",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				85
+			],
+			"allTests": [
+				{}
+			],
+			"time": 85,
+			"totalRequestTime": 85,
+			"iterationResults": {}
+		},
+		{
+			"id": "1e6fb325-233b-c68d-686d-22baa44d7782",
+			"name": "https://gbzhu.cn/home",
+			"url": "https://gbzhu.cn/home",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				17
+			],
+			"allTests": [
+				{}
+			],
+			"time": 17,
+			"totalRequestTime": 17,
+			"iterationResults": {}
+		},
+		{
+			"id": "8e75bf75-12d8-7e02-dc97-f6ccb178b520",
+			"name": "https://gbzhu.cn/topic",
+			"url": "https://gbzhu.cn/topic",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				12
+			],
+			"allTests": [
+				{}
+			],
+			"time": 12,
+			"totalRequestTime": 12,
+			"iterationResults": {}
+		},
+		{
+			"id": "72c0b660-048f-ce97-f2ac-55324b694631",
+			"name": "https://gbzhu.cn/mimg/hd-s73530eadc0-9757196115.png",
+			"url": "https://gbzhu.cn/mimg/hd-s73530eadc0-9757196115.png",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				34
+			],
+			"allTests": [
+				{}
+			],
+			"time": 34,
+			"totalRequestTime": 34,
+			"iterationResults": {}
+		},
+		{
+			"id": "15e9bf1b-bbfd-3998-faee-936f72af7b75",
+			"name": "https://gbzhu.cn/mimg/a5bbe1c9b55266090cf18d8a78ca5a0c.jpg",
+			"url": "https://gbzhu.cn/mimg/a5bbe1c9b55266090cf18d8a78ca5a0c.jpg",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				13
+			],
+			"allTests": [
+				{}
+			],
+			"time": 13,
+			"totalRequestTime": 13,
+			"iterationResults": {}
+		},
+		{
+			"id": "363920e9-11b4-42fb-1855-56e0f9999b88",
+			"name": "https://gbzhu.cn/mimg/667fedf6e76843c199f47e1dc6fdf077.png?imageView&quality=85&thumbnail=330x330",
+			"url": "https://gbzhu.cn/mimg/667fedf6e76843c199f47e1dc6fdf077.png?imageView&quality=85&thumbnail=330x330",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				101
+			],
+			"allTests": [
+				{}
+			],
+			"time": 101,
+			"totalRequestTime": 101,
+			"iterationResults": {}
+		},
+		{
+			"id": "988fcc1c-0627-4977-c127-87203be12568",
+			"name": "https://gbzhu.cn/sw-register.js?v=1523376302557",
+			"url": "https://gbzhu.cn/sw-register.js?v=1523376302557",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				11
+			],
+			"allTests": [
+				{}
+			],
+			"time": 11,
+			"totalRequestTime": 11,
+			"iterationResults": {}
+		},
+		{
+			"id": "d6fa54f4-7aca-5018-8276-ec23fa716ba1",
+			"name": "https://gbzhu.cn/service-worker.js?v=20180410235751",
+			"url": "https://gbzhu.cn/service-worker.js?v=20180410235751",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				6
+			],
+			"allTests": [
+				{}
+			],
+			"time": 6,
+			"totalRequestTime": 6,
+			"iterationResults": {}
+		},
+		{
+			"id": "a20be0aa-34c6-a1e9-d5d2-28571ed7cbc4",
+			"name": "https://gbzhu.cn/static/js/workbox-sw.prod.v2.1.3.js",
+			"url": "https://gbzhu.cn/static/js/workbox-sw.prod.v2.1.3.js",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				7
+			],
+			"allTests": [
+				{}
+			],
+			"time": 7,
+			"totalRequestTime": 7,
+			"iterationResults": {}
+		},
+		{
+			"id": "70a70a7d-e304-5f70-90b2-3c3ffb4f3978",
+			"name": "https://gbzhu.cn/static/js/manifest.7253881e.js",
+			"url": "https://gbzhu.cn/static/js/manifest.7253881e.js",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				3
+			],
+			"allTests": [
+				{}
+			],
+			"time": 3,
+			"totalRequestTime": 3,
+			"iterationResults": {}
+		},
+		{
+			"id": "97e9f0ba-204f-e0fe-5721-ade8e798bd74",
+			"name": "https://gbzhu.cn/api/home",
+			"url": "https://gbzhu.cn/api/home",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				17
+			],
+			"allTests": [
+				{}
+			],
+			"time": 17,
+			"totalRequestTime": 17,
+			"iterationResults": {}
+		},
+		{
+			"id": "fd5f52ad-f8a8-8f91-cf69-c9397edce06a",
+			"name": "https://gbzhu.cn/api/product/p1000002",
+			"url": "https://gbzhu.cn/api/product/p1000002",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				9
+			],
+			"allTests": [
+				{}
+			],
+			"time": 9,
+			"totalRequestTime": 9,
+			"iterationResults": {}
+		},
+		{
+			"id": "94d88157-375c-f1ac-35df-3c3936dabeb5",
+			"name": "https://gbzhu.cn/api/login",
+			"url": "https://gbzhu.cn/api/login",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				17
+			],
+			"allTests": [
+				{}
+			],
+			"time": 17,
+			"totalRequestTime": 17,
+			"iterationResults": {}
+		},
+		{
+			"id": "be82e2fc-0d9f-c9a1-a896-b31e779ec133",
+			"name": "https://gbzhu.cn/api/user/kevin",
+			"url": "https://gbzhu.cn/static/js/vendor.e2000e21.js",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				5
+			],
+			"allTests": [
+				{}
+			],
+			"time": 5,
+			"totalRequestTime": 5,
+			"iterationResults": {}
+		},
+		{
+			"id": "ab34a2c4-445e-b5aa-91ea-c59d67efabe8",
+			"name": "https://gbzhu.cn/api/section",
+			"url": "https://gbzhu.cn/api/section",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				10
+			],
+			"allTests": [
+				{}
+			],
+			"time": 10,
+			"totalRequestTime": 10,
+			"iterationResults": {}
+		},
+		{
+			"id": "f01c3ebb-c45b-aa71-6110-a98ce65c1b85",
+			"name": "https://gbzhu.cn/api/allNewItem",
+			"url": "https://gbzhu.cn/api/allNewItem",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				8
+			],
+			"allTests": [
+				{}
+			],
+			"time": 8,
+			"totalRequestTime": 8,
+			"iterationResults": {}
+		},
+		{
+			"id": "26f25ea9-a90a-0389-8a32-dedb045aec01",
+			"name": "https://gbzhu.cn/api/manufacturers",
+			"url": "https://gbzhu.cn/api/manufacturers",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				9
+			],
+			"allTests": [
+				{}
+			],
+			"time": 9,
+			"totalRequestTime": 9,
+			"iterationResults": {}
+		},
+		{
+			"id": "f0876f26-ef68-94cd-f6c0-ea13b395121e",
+			"name": "https://gbzhu.cn/favicon.ico",
+			"url": "https://gbzhu.cn/favicon.ico",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				8
+			],
+			"allTests": [
+				{}
+			],
+			"time": 8,
+			"totalRequestTime": 8,
+			"iterationResults": {}
+		},
+		{
+			"id": "34b1b65c-c026-cff3-4187-e9d587d7a352",
+			"name": "https://gbzhu.cn/static/js/index.9ba80633.js",
+			"url": "https://gbzhu.cn/static/js/index.9ba80633.js",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4
+			],
+			"allTests": [
+				{}
+			],
+			"time": 4,
+			"totalRequestTime": 4,
+			"iterationResults": {}
+		},
+		{
+			"id": "fc962d30-f63f-84e7-4b09-e654465c384c",
+			"name": "https://gbzhu.cn/static/css/index.e1f6d488.css",
+			"url": "https://gbzhu.cn/static/css/index.e1f6d488.css",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				6
+			],
+			"allTests": [
+				{}
+			],
+			"time": 6,
+			"totalRequestTime": 6,
+			"iterationResults": {}
+		},
+		{
+			"id": "3f57af74-3494-6392-1720-279473de5c58",
+			"name": "https://gbzhu.cn/static/js/vue.38669167.js",
+			"url": "https://gbzhu.cn/static/js/vue.38669167.js",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4
+			],
+			"allTests": [
+				{}
+			],
+			"time": 4,
+			"totalRequestTime": 4,
+			"iterationResults": {}
+		},
+		{
+			"id": "52bc0f89-50e1-d0db-64fd-35aeeaed8acc",
+			"name": "https://gbzhu.cn/static/js/vendor.e2000e21.js",
+			"url": "https://gbzhu.cn/static/js/vendor.e2000e21.js",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				13
+			],
+			"allTests": [
+				{}
+			],
+			"time": 13,
+			"totalRequestTime": 13,
+			"iterationResults": {}
+		}
+	],
+	"totalPass": 0,
+	"totalFail": 0,
+	"totalTime": 399,
+	"lifecycle": "done",
+	"willStop": false,
+	"requests": [
+		{
+			"name": "gbzhu",
+			"id": "1ea55d2b-a2d7-05c8-b02c-6766cdd35acd",
+			"url": "https://gbzhu.cn/mimg/667fedf6e76843c199f47e1dc6fdf077.png?imageView&quality=85&thumbnail=330x330",
+			"time": 85,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {},
+			"gridTitles": [],
+			"gridData": [
+				[]
+			],
+			"tests": {}
+		},
+		{
+			"name": "https://gbzhu.cn/home",
+			"id": "1e6fb325-233b-c68d-686d-22baa44d7782",
+			"url": "https://gbzhu.cn/home",
+			"time": 17,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {},
+			"gridTitles": [],
+			"gridData": [
+				[]
+			],
+			"tests": {}
+		},
+		{
+			"name": "https://gbzhu.cn/topic",
+			"id": "8e75bf75-12d8-7e02-dc97-f6ccb178b520",
+			"url": "https://gbzhu.cn/topic",
+			"time": 12,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {},
+			"gridTitles": [],
+			"gridData": [
+				[]
+			],
+			"tests": {}
+		},
+		{
+			"name": "https://gbzhu.cn/mimg/hd-s73530eadc0-9757196115.png",
+			"id": "72c0b660-048f-ce97-f2ac-55324b694631",
+			"url": "https://gbzhu.cn/mimg/hd-s73530eadc0-9757196115.png",
+			"time": 34,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {},
+			"gridTitles": [],
+			"gridData": [
+				[]
+			],
+			"tests": {}
+		},
+		{
+			"name": "https://gbzhu.cn/mimg/a5bbe1c9b55266090cf18d8a78ca5a0c.jpg",
+			"id": "15e9bf1b-bbfd-3998-faee-936f72af7b75",
+			"url": "https://gbzhu.cn/mimg/a5bbe1c9b55266090cf18d8a78ca5a0c.jpg",
+			"time": 13,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {},
+			"gridTitles": [],
+			"gridData": [
+				[]
+			],
+			"tests": {}
+		},
+		{
+			"name": "https://gbzhu.cn/mimg/667fedf6e76843c199f47e1dc6fdf077.png?imageView&quality=85&thumbnail=330x330",
+			"id": "363920e9-11b4-42fb-1855-56e0f9999b88",
+			"url": "https://gbzhu.cn/mimg/667fedf6e76843c199f47e1dc6fdf077.png?imageView&quality=85&thumbnail=330x330",
+			"time": 101,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {},
+			"gridTitles": [],
+			"gridData": [
+				[]
+			],
+			"tests": {}
+		},
+		{
+			"name": "https://gbzhu.cn/sw-register.js?v=1523376302557",
+			"id": "988fcc1c-0627-4977-c127-87203be12568",
+			"url": "https://gbzhu.cn/sw-register.js?v=1523376302557",
+			"time": 11,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {},
+			"gridTitles": [],
+			"gridData": [
+				[]
+			],
+			"tests": {}
+		},
+		{
+			"name": "https://gbzhu.cn/service-worker.js?v=20180410235751",
+			"id": "d6fa54f4-7aca-5018-8276-ec23fa716ba1",
+			"url": "https://gbzhu.cn/service-worker.js?v=20180410235751",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {},
+			"gridTitles": [],
+			"gridData": [
+				[]
+			],
+			"tests": {}
+		},
+		{
+			"name": "https://gbzhu.cn/static/js/workbox-sw.prod.v2.1.3.js",
+			"id": "a20be0aa-34c6-a1e9-d5d2-28571ed7cbc4",
+			"url": "https://gbzhu.cn/static/js/workbox-sw.prod.v2.1.3.js",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {},
+			"gridTitles": [],
+			"gridData": [
+				[]
+			],
+			"tests": {}
+		},
+		{
+			"name": "https://gbzhu.cn/static/js/manifest.7253881e.js",
+			"id": "70a70a7d-e304-5f70-90b2-3c3ffb4f3978",
+			"url": "https://gbzhu.cn/static/js/manifest.7253881e.js",
+			"time": 3,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {},
+			"gridTitles": [],
+			"gridData": [
+				[]
+			],
+			"tests": {}
+		},
+		{
+			"name": "https://gbzhu.cn/api/home",
+			"id": "97e9f0ba-204f-e0fe-5721-ade8e798bd74",
+			"url": "https://gbzhu.cn/api/home",
+			"time": 17,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {},
+			"gridTitles": [],
+			"gridData": [
+				[]
+			],
+			"tests": {}
+		},
+		{
+			"name": "https://gbzhu.cn/api/product/p1000002",
+			"id": "fd5f52ad-f8a8-8f91-cf69-c9397edce06a",
+			"url": "https://gbzhu.cn/api/product/p1000002",
+			"time": 9,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {},
+			"gridTitles": [],
+			"gridData": [
+				[]
+			],
+			"tests": {}
+		},
+		{
+			"name": "https://gbzhu.cn/api/login",
+			"id": "94d88157-375c-f1ac-35df-3c3936dabeb5",
+			"url": "https://gbzhu.cn/api/login",
+			"time": 17,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {},
+			"gridTitles": [],
+			"gridData": [
+				[]
+			],
+			"tests": {}
+		},
+		{
+			"name": "https://gbzhu.cn/api/user/kevin",
+			"id": "be82e2fc-0d9f-c9a1-a896-b31e779ec133",
+			"url": "https://gbzhu.cn/static/js/vendor.e2000e21.js",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {},
+			"gridTitles": [],
+			"gridData": [
+				[]
+			],
+			"tests": {}
+		},
+		{
+			"name": "https://gbzhu.cn/api/section",
+			"id": "ab34a2c4-445e-b5aa-91ea-c59d67efabe8",
+			"url": "https://gbzhu.cn/api/section",
+			"time": 10,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {},
+			"gridTitles": [],
+			"gridData": [
+				[]
+			],
+			"tests": {}
+		},
+		{
+			"name": "https://gbzhu.cn/api/allNewItem",
+			"id": "f01c3ebb-c45b-aa71-6110-a98ce65c1b85",
+			"url": "https://gbzhu.cn/api/allNewItem",
+			"time": 8,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {},
+			"gridTitles": [],
+			"gridData": [
+				[]
+			],
+			"tests": {}
+		},
+		{
+			"name": "https://gbzhu.cn/api/manufacturers",
+			"id": "26f25ea9-a90a-0389-8a32-dedb045aec01",
+			"url": "https://gbzhu.cn/api/manufacturers",
+			"time": 9,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {},
+			"gridTitles": [],
+			"gridData": [
+				[]
+			],
+			"tests": {}
+		},
+		{
+			"name": "https://gbzhu.cn/favicon.ico",
+			"id": "f0876f26-ef68-94cd-f6c0-ea13b395121e",
+			"url": "https://gbzhu.cn/favicon.ico",
+			"time": 8,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {},
+			"gridTitles": [],
+			"gridData": [
+				[]
+			],
+			"tests": {}
+		},
+		{
+			"name": "https://gbzhu.cn/static/js/index.9ba80633.js",
+			"id": "34b1b65c-c026-cff3-4187-e9d587d7a352",
+			"url": "https://gbzhu.cn/static/js/index.9ba80633.js",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {},
+			"gridTitles": [],
+			"gridData": [
+				[]
+			],
+			"tests": {}
+		},
+		{
+			"name": "https://gbzhu.cn/static/css/index.e1f6d488.css",
+			"id": "fc962d30-f63f-84e7-4b09-e654465c384c",
+			"url": "https://gbzhu.cn/static/css/index.e1f6d488.css",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {},
+			"gridTitles": [],
+			"gridData": [
+				[]
+			],
+			"tests": {}
+		},
+		{
+			"name": "https://gbzhu.cn/static/js/vue.38669167.js",
+			"id": "3f57af74-3494-6392-1720-279473de5c58",
+			"url": "https://gbzhu.cn/static/js/vue.38669167.js",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {},
+			"gridTitles": [],
+			"gridData": [
+				[]
+			],
+			"tests": {}
+		},
+		{
+			"name": "https://gbzhu.cn/static/js/vendor.e2000e21.js",
+			"id": "52bc0f89-50e1-d0db-64fd-35aeeaed8acc",
+			"url": "https://gbzhu.cn/static/js/vendor.e2000e21.js",
+			"time": 13,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {},
+			"gridTitles": [],
+			"gridData": [
+				[]
+			],
+			"tests": {}
+		}
+	],
+	"synced": false
+}

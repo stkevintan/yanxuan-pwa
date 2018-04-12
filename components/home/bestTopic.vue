@@ -2,14 +2,14 @@
   <div class="bt-container" v-if="topic">
     <header><h3 v-on:click="handleClickTitle">专题精选</h3><i /></header>
     <router-link class="bt-item" v-bind:to="toPath">
-      <img class="bt-pic" v-bind:src="topic.pic" />
+      <img class="bt-pic" v-lazy="topic.pic" />
       <div class="bt-title-container">
         <span class="bt-title">{{ topic.title }}</span>
         <span class="bt-price">{{ topic.lowestPrice }}元起</span>
       </div>
       <p class="bt-subtitle">{{ topic.description }}</p>
     </router-link>
-    
+
   </div>
 </template>
 

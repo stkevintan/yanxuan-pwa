@@ -2,7 +2,7 @@
   <router-link v-bind:to="'/product/' + commodity.pId" class="commodity">
     <div class="wrapper">
       <div class="specification" v-if="commodity.specification">{{ commodity.specification }}</div>
-      <img v-bind:src="commodity.pic" /><p>{{ commodity.description }}</p>
+      <img v-lazy="commodity.pic" /><p>{{ commodity.description }}</p>
     </div>
     <div class="content">
       <tag v-bind:activities="commodity.activity" />

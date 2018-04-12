@@ -7,4 +7,5 @@ yarn-debug.log*
 yarn-error.log*
 .lavas/
 .nyc_output
-server.log
+*.log
+unifycode.js

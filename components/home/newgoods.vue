@@ -1,7 +1,7 @@
 <template>
   <router-link class="ng-item" v-bind:to="toPath">
     <div class="ng-item-specification" v-if="good.specification">{{ good.specification }}</div>
-    <img class="ng-item-pic" v-bind:src="good.pic" />
+    <img class="ng-item-pic" v-lazy="good.pic" />
     <div class="ng-item-tag" v-if="good.activity">
       <p v-for="ac in good.activity" v-bind:class="ac.type ? 'hot' : 'forsale' ">{{ ac.tag }}</p>
     </div>

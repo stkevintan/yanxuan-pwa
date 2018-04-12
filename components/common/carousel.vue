@@ -1,9 +1,9 @@
 <template>
   <div class="carousel-container">
     <div class="carousel-swiper" ref="swiper" v-on:click="onPicClick(currentIndex)" v-on:touchmove="handleMove" v-on:touchend="handleEnd" v-on:touchstart="handleStart">
-      <img class="carousel-img" v-bind:src="pics[preIndex]" />
-      <img class="carousel-img" v-bind:src="pics[currentIndex]" />
-      <img class="carousel-img" v-bind:src="pics[nextIndex]" />
+      <img class="carousel-img" v-lazy="pics[preIndex]" />
+      <img class="carousel-img" v-lazy="pics[currentIndex]" />
+      <img class="carousel-img" v-lazy="pics[nextIndex]" />
     </div>
     <div v-if="!hideIndicator" class="carousel-indicator-container">
       <span v-bind:class="['carousel-indicator', index === currentIndex && 'indicator-current']" v-for="(item, index) in pics"></span>
@@ -83,7 +83,7 @@
         this.dragDelta = delta
         if (Math.abs(delta) >= width) {
           this.dragDelta = width
-          return 
+          return
         }
         this.$refs.swiper && (this.$refs.swiper.style = `transition-duration: 0ms; transform: translate(${delta - width}px, 0px) translateZ(0px);`)
       },
@@ -106,7 +106,7 @@
           // 这里的复制顺序要注意。 preIndex要在currentIndex之后
           this.currentIndex = this.preIndex
           this.nextIndex = this.currentIndex
-          this.preIndex = this.preIndex === 0 ? this.pics.length - 1 : this.preIndex - 1          
+          this.preIndex = this.preIndex === 0 ? this.pics.length - 1 : this.preIndex - 1
         }, duration)
       },
       rightAnimate (delta) {
@@ -181,4 +181,3 @@
     opacity: 1.0;
   }
 </style>
- 

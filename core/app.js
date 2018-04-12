@@ -11,6 +11,18 @@ import {createStore} from '@/.lavas/store';
 import AppComponent from './App.vue';
 
 Vue.use(Meta);
+import VueLazyload from 'vue-lazyload';
+
+Vue.use(VueLazyload);
+
+// or with options
+Vue.use(VueLazyload, {
+    preLoad: 1.3,
+    error: '/static/img/error.png',
+    loading: '/static/img/loading.gif',
+    attempt: 1
+});
+
 
 Vue.config.productionTip = false;
 

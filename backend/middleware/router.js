@@ -99,8 +99,10 @@ router.get(/\.(js|css)$/, async (ctx, next) => {
     if (/\/sw-register\.js/.test(filePath)) return await next();
     // if (/^\/mimg\//.test(filePath)) filePath = filePath.substr(1);
     filePath = path.resolve('../dist', filePath.substr(1));
-    depTree.addDep(filePath, ctx.url);
     await next();
+    if (ctx.status === 200||ctx.status === 304) {
+        depTree.addDep(filePath, ctx.url);
+    }
 });
 
 router.get('/mimg/:filename', async (ctx, next) => {

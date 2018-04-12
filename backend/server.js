@@ -2,8 +2,10 @@ const Koa = require('koa');
 const fs = require('fs');
 const path = require('path');
 const http2 = require('http2');
+const http = require('http');
 const koaBody = require('koa-body');
 const router = require('./middleware/router');
+const sslify = require('./middleware/sslify');
 const rewriter = require('./middleware/rewriter');
 const static = require('./middleware/static');
 const logger = require('./util/logger');
@@ -20,13 +22,13 @@ class KoaOnHttps extends Koa {
     }
     listen() {
         const server = http2.createSecureServer(this.options, this.callback());
-        console.log(this.callback());
         return server.listen.apply(server, arguments);
     }
 }
 
 const app = new KoaOnHttps();
 
+app.use(sslify());
 app.use(koaBody());
 // x-response-time
 app.use(async function(ctx, next) {
@@ -43,9 +45,7 @@ app.use(async function(ctx, next) {
     logger.info(`${ctx.method} ${ctx.url} - ${ms}`);
 });
 
-
-if (process.argv[2] === 'dev') {
-    console.log(process.argv[2]);
+if (process.env.NODE_ENV === 'development') {
     // set cors header
     app.use(async function(ctx, next) {
         ctx.set({
@@ -62,6 +62,12 @@ app.use(router.routes()).use(router.allowedMethods());
 if (process.env.NODE_ENV === 'production') {
     app.use(static(path.resolve(__dirname, '../dist')));
 }
+
+//receive all the http request, redirect them to https
+http.createServer(app.callback()).listen(80, () => {
+    logger.ok('http redirect server start at', `http://gbzhu.cn`);
+});
+
 
 app.listen(443, () => {
     logger.ok('app start at:', `https://gbzhu.cn`);

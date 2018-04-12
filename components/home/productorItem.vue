@@ -5,7 +5,7 @@
       <p class="price">{{ productor.lowestPrice }}元起</p>
       <i class="new" v-if="productor.hasNew" />
     </div>
-    <img v-bind:src="productor.pic" />
+    <img v-lazy="productor.pic" />
   </router-link>
 </template>
 
