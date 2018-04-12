@@ -13,8 +13,6 @@ import AppComponent from './App.vue';
 Vue.use(Meta);
 import VueLazyload from 'vue-lazyload';
 
-Vue.use(VueLazyload);
-
 // or with options
 Vue.use(VueLazyload, {
     preLoad: 1.3,
