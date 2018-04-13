@@ -1,6 +1,6 @@
 <template>
   <div class="category-item">
-    <img class="category-pic" v-bind:src="category.pic" />
+    <img class="category-pic" v-lazy="category.pic" />
     <p class="category-title">{{ category.title }}</p>
   </div>
 </template>

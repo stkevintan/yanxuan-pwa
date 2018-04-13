@@ -2,7 +2,7 @@
   <div class="cart-commodity" v-on:click="_handlePush">
     <i v-if="isEdit" class="edit-select" v-bind:class="[selected ? 'cart-select' : '']" v-on:click="handleRemoveSelect" />
     <i v-else class="select-icon" v-bind:class="[commodity.selected ? 'cart-select' : '']" v-on:click.stop="_handleSelect" />
-    <img class="commodity-pic" v-bind:src="commodity.pic" />
+    <img class="commodity-pic" v-lazy="commodity.pic" />
     <div class="cart-commodity-content">
       <div v-if="isEdit">
         <div class="cart-commodity-edit-select" v-on:click="handleToFormat(commodity)">
@@ -143,7 +143,7 @@
   }
 
   .cart-commodity-edit-select span {
-    width: px2rem(220);    
+    width: px2rem(220);
     color: $text_color;
     font-size: px2rem(12);
     @include ellipsis;
