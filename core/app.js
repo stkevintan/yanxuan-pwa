@@ -25,7 +25,7 @@ Vue.use(VueLazyload, {
       let url = listener.src.replace(/\?.*$/, '');
       // console.log(url);
       url += '?quality=80';
-      if (el.width || el.height) url += `&thumbnail=${el.width}x${el.height}`;
+      if (el.width || el.height) url += `&thumbnail=${el.width}x0`;
       listener.src = url;
     }
   }

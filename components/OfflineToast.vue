@@ -56,7 +56,7 @@ $close-btn-height = 28px
     color #ffffff
     span,i
         color: #fff
-    font-size 16px
+    font-size 4vw
     height $height
     line-height $height
     padding 0 13px
