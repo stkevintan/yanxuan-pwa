@@ -21,11 +21,9 @@ import { mapState } from "vuex";
 import UpdateToast from "@/components/UpdateToast";
 import OfflineToast from "@/components/OfflineToast";
 import { keepAlivePages } from "@/.lavas/router";
-import FastClick from 'fastclick';
 
-// fastclick
-FastClick.attach(document.body);
 
+import(/* webpackChunkName: "fastclick" */ 'fastclick').then(FastClick => FastClick.attach(document.body));
 
 export default {
   name: "app",

@@ -20,9 +20,13 @@ class KoaOnHttps extends Koa {
             cert: fs.readFileSync(require.resolve('./keys/www.gbzhu.cn.crt'))
         };
     }
-    listen() {
+    listen(...args) {
         const server = http2.createSecureServer(this.options, this.callback());
-        return server.listen.apply(server, arguments);
+        return server.listen(...args);
+    }
+    redirect(...args) {
+        const server = http.createServer(this.callback());
+        return server.listen(...args);
     }
 }
 
@@ -63,12 +67,11 @@ if (process.env.NODE_ENV === 'production') {
     app.use(static(path.resolve(__dirname, '../dist')));
 }
 
-//receive all the http request, redirect them to https
-http.createServer(app.callback()).listen(80, () => {
-    logger.ok('http redirect server start at', `http://gbzhu.cn`);
-});
-
-
 app.listen(443, () => {
     logger.ok('app start at:', `https://gbzhu.cn`);
+});
+
+//receive all the http request, redirect them to https
+app.redirect(80, () => {
+    logger.ok('http redirect server start at', `http://gbzhu.cn`);
 });
