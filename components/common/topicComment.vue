@@ -3,7 +3,7 @@
     <div class="header">
       <div class="profile-container">
         <div class="profile">
-          <img v-bind:src="topicComment.avatar" />
+          <img v-lazy="topicComment.avatar" />
           <span>{{ topicComment.name }}</span>
           <i />
         </div>

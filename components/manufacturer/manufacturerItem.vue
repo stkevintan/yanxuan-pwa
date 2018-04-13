@@ -14,7 +14,7 @@
       <p class="desc">{{ manufacturer.description }}</p>  
     </div>      
     <div class="img-container">
-      <img v-for="pic in manufacturer.pics" v-bind:src="pic" />
+      <img v-for="pic in manufacturer.pics" v-lazy="pic" />
     </div>    
   </div>
 </template>

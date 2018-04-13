@@ -1,6 +1,6 @@
 <template>
   <div class="base-container">
-    <img class="banner" v-bind:src="bannerPic" />
+    <img class="banner" v-lazy="bannerPic" />
     <div class="content">
       <div class="content-item" v-for="item in allItems">
         <div class="item-header">

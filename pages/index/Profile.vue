@@ -1,7 +1,7 @@
 <template>
   <div class="profile-page">
     <div class="header">
-      <img class="avatar" v-bind:src="user.avatar" />
+      <img class="avatar" v-lazy="user.avatar" />
       <div class="userInfo">
         <p class="userName">{{ user.name }}</p>
         <p class="userMembership">{{ user.membership === 0 ? '普通用户' : 'VIP' + user.membership + '级'}}</p>

@@ -1,7 +1,7 @@
 <template>
   <div class="single-manufacturer-page">
     <div class="single-manufacturer-info">
-      <img v-bind:src="manufacturer.pic" />
+      <img v-lazy="manufacturer.pic" />
       <div class="title-container">
         <span class="title">{{ manufacturer.title }}</span>
         <div class="notificationBtn">上新提醒</div>

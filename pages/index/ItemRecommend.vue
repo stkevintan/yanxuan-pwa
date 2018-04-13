@@ -3,7 +3,7 @@
     <navbar />
     <div class="item-recommend-container">
       <div class="item-recommend-header">
-        <img v-bind:src="recommend.pic" />
+        <img v-lazy="recommend.pic" />
         <h3 class="title">大家都在买的严选好物</h3>        
       </div>
       <div class="item-recommend-condition">

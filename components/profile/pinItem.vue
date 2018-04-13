@@ -1,6 +1,6 @@
 <template>
   <div class="pin-item-container">
-    <img class="pin-item-pic" v-bind:src="commodity.pic" />
+    <img class="pin-item-pic" v-lazy="commodity.pic" />
     <div class="pin-item-content">
       <h4 class="title">{{ commodity.title }}</h4>
       <div class="bottom">

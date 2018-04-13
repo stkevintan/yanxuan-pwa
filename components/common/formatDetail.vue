@@ -2,7 +2,7 @@
   <div class="format-container">
         <div class="commodity-info">
           <div class="img-wrapper">
-            <img v-bind:src="commodity.pic" />          
+            <img v-lazy="commodity.pic" />          
           </div>
           <div class="commodity-info-content">
             <p class="price">价格：¥{{ commodity.price }}</p>

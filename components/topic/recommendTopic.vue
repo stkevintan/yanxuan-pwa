@@ -1,6 +1,6 @@
 <template>
   <div class="recommend-topic-container">
-    <img v-bind:src="recommend.pic" />
+    <img v-lazy="recommend.pic" />
     <p>{{ recommend.title }}</p>
   </div>
 </template>

@@ -64,7 +64,7 @@
       <attribute-container />
       <div class="product-detail">
         <p v-for="detailPic in product.detailPics">
-          <img v-bind:src="detailPic" />
+          <img v-lazy="detailPic" />
         </p>
       </div>
       <common-issue />

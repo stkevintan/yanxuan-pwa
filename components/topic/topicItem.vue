@@ -1,7 +1,7 @@
 <template>
   <div class="topic-item">
     <header class="item-header">
-      <img v-bind:src="topic.avatar" />
+      <img v-lazy="topic.avatar" />
       <span>{{ topic.author }}</span>
     </header>
     <div class="item-content">

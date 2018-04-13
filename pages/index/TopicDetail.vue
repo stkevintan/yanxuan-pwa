@@ -2,10 +2,10 @@
   <div class="topic-detail-page">
     <navbar />
     <div class="topic-detail-content" v-if="details.title">
-      <img class="topic-pic" v-bind:src="details.pic" />
+      <img class="topic-pic" v-lazy="details.pic" />
       <h3 class="topic-title">{{ details.title }}</h3>
       <div class="topic-user">
-        <img v-bind:src="details.user.avatar" />
+        <img v-lazy="details.user.avatar" />
         <span>{{ details.user.author }}</span>
       </div>
       <div class="topic-desc">

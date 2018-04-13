@@ -2,7 +2,7 @@
   <div class="comment-item">
     <div class="header">
       <div class="profile">
-        <img v-bind:src="avatar" />
+        <img v-lazy="avatar" />
         <span>{{ name }}</span>
         <i />
       </div>
@@ -11,7 +11,7 @@
     <div class="content">{{ content }}</div>
     <div class="img-container">
         <div class="comment-img" v-for="(pic, index) in pics">
-          <img v-bind:src="pic" v-bind:key="index" />
+          <img v-lazy="pic" v-bind:key="index" />
         </div>
       </div>
     <div class="bottom">{{ norm }}</div>

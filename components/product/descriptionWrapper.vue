@@ -1,7 +1,7 @@
 <template>
   <div class="pd-description-container">
     <div class="pd-description-item" v-for="characteristic in characteristics" >
-      <img v-bind:src="characteristic.pic" />
+      <img v-lazy="characteristic.pic" />
       <div class="pd-item-content">
         <p>{{ characteristic.items[0] }}</p>
         <p>{{ characteristic.items[1] }}</p>
