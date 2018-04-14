@@ -23,7 +23,6 @@
 @import '~@/assets/styles/mixin.scss';
 .topic-list {
   height: px2rem(96);
-  // width: 100%;
   margin-bottom: px2rem(10);
   background-color: #fff;
   white-space: nowrap;
@@ -44,6 +43,8 @@
     position: relative;
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
   p {
     position: absolute;

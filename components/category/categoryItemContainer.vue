@@ -1,6 +1,6 @@
 <template>
   <div class="category-item-container">
-    <div class="cic-header-pic" v-bind:style="{backgroundImage: 'url(' + section.section.pic + ')'}"></div>
+    <img class="cic-header-pic" v-lazy="section.section.pic"/>
     <div class="cic-separator">
       <span>{{ section.section.name }}分类</span>
     </div>
@@ -35,11 +35,11 @@
   }
 
   .cic-header-pic {
+    display:block;
     width: 100%;
     height: px2rem(96);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    object-fit: cover;
+    object-position: center;
   }
 
   .cic-separator {

@@ -110,9 +110,10 @@ router.get('/mimg/:filename', async (ctx, next) => {
   const filepath = require.resolve(`../mimg/${filename}`);
   if (fs.existsSync(filepath)) {
     const stream = fs.createReadStream(filepath);
-    const fomart = ctx.query.format || 'png';
-    const quality = ctx.query.quality || 75;
-    const thumbnail = ctx.query.thumbnail || '0x0';
+    const query = ctx.query || {};
+    const fomart = query.format || 'png';
+    const quality = query.quality || 75;
+    const thumbnail = query.thumbnail || '0x0';
     const [width, height] = thumbnail.split('x');
     ctx.body = stream.pipe(imageTweak({ width, height, format, quality }));
     ctx.type = `image/${fomart}`;
