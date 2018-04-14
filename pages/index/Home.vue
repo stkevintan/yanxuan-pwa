@@ -28,7 +28,7 @@
       return {
         titles: ['推荐', '居家', '餐厨', '配件', '服装', '洗护', '婴童', '杂货', '饮食', '志趣'],
         categoryId: ['', '1000001', '1000002', '1000003', '1000004', '1000005', '1000006', '1000007', '1000008', '1000009'],
-        imgs: ['https://gbzhu.cn/mimg/2a1259567d45f6d56cd377b9f6e8f4fd.jpg', 'https://gbzhu.cn/mimg/615e5f7727d1d2831e24a3453eeac4ca.jpg', 'https://gbzhu.cn/mimg/0ad986128e62d4f16a385de809f23dca.jpg', 'https://gbzhu.cn/mimg/8869a3d10800efca5670432bc0070707.jpg', 'https://gbzhu.cn/mimg/dda365946a8d8b09adebbd74e9cfb830.jpg'],
+        imgs: ['https://ols1thqnl.qnssl.com/2a1259567d45f6d56cd377b9f6e8f4fd.jpg', 'https://ols1thqnl.qnssl.com/615e5f7727d1d2831e24a3453eeac4ca.jpg', 'https://ols1thqnl.qnssl.com/0ad986128e62d4f16a385de809f23dca.jpg', 'https://ols1thqnl.qnssl.com/8869a3d10800efca5670432bc0070707.jpg', 'https://ols1thqnl.qnssl.com/dda365946a8d8b09adebbd74e9cfb830.jpg'],
         data: {}
       }
     },
@@ -76,7 +76,7 @@
   .home-page .search-input .logo {
     width: px2rem(69);
     height: px2rem(20);
-    background: url('~@/assets/images/logo.png') no-repeat 0 0;
+    background: url('https://ols1thqnl.qnssl.com/assets/logo.png') no-repeat 0 0;
     background-size: cover;
     margin-right: px2rem(10);
     text-indent: -999px;

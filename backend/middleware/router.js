@@ -14,7 +14,7 @@ const router = new Router();
 const userTpl = {
   uId: '00000001',
   name: 'm18682145280_1',
-  avatar: 'https://gbzhu.cn/mimg/8945ae63d940cc42406c3f67019c5cb6.png',
+  avatar: 'https://ols1thqnl.qnssl.com/8945ae63d940cc42406c3f67019c5cb6.png',
   membership: 0
 };
 
@@ -111,7 +111,7 @@ router.get('/mimg/:filename', async (ctx, next) => {
   if (fs.existsSync(filepath)) {
     const stream = fs.createReadStream(filepath);
     const fomart = ctx.query.format || 'png';
-    const quality = (ctx.query.quality || 75);
+    const quality = ctx.query.quality || 75;
     const thumbnail = ctx.query.thumbnail || '0x0';
     const [width, height] = thumbnail.split('x');
     ctx.body = stream.pipe(imageTweak({ width, height, format, quality }));

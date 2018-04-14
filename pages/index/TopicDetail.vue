@@ -163,7 +163,7 @@ export default {
 .write-comment {
   width: px2rem(17.5);
   height: px2rem(17);
-  background: url('~@/assets/images/write.png') no-repeat;
+  background: url('https://ols1thqnl.qnssl.com/assets/write.png') no-repeat;
   background-size: cover;
 }
 

@@ -118,7 +118,7 @@
 
   .suggest-item-content i {
     display: inline-block;
-    background: url('~@/assets/images/comma.png') no-repeat;
+    background: url('https://ols1thqnl.qnssl.com/assets/comma.png') no-repeat;
     width: px2rem(12);
     height: px2rem(11.5);
     background-size: cover;

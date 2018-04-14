@@ -68,7 +68,7 @@
   .profile i {
     display: inline-block;
     vertical-align: middle;
-    background-image: url(https://gbzhu.cn/mimg/membership-sc86699d936-cc4229a2e5.png);
+    background-image: url(https://ols1thqnl.qnssl.com/membership-sc86699d936-cc4229a2e5.png);
     background-repeat: no-repeat;
     background-position: 0 px2rem(-2636);
     background-size: px2rem(60) px2rem(2671);
@@ -91,7 +91,7 @@
   .like i {
     width: px2rem(22);
     height: px2rem(22);
-    background: url('~@/assets/images/like.png') no-repeat;
+    background: url('https://ols1thqnl.qnssl.com/assets/like.png') no-repeat;
     background-size: cover;
   }
 

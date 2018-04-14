@@ -30,7 +30,7 @@
   .ng-header {
     width: 100%;
     height: px2rem(130);
-    background: url('~@/assets/images/new_bg.png') no-repeat 0 0;
+    background: url('https://ols1thqnl.qnssl.com/assets/new_bg.png') no-repeat 0 0;
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -60,7 +60,7 @@
     display: inline-block;
     width: px2rem(5);
     height: px2rem(10);
-    background: url('~@/assets/images/showmore.png') no-repeat 0 0;
+    background: url('https://ols1thqnl.qnssl.com/assets/showmore.png') no-repeat 0 0;
     background-size: cover;
   }
 

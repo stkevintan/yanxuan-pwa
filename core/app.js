@@ -32,14 +32,6 @@ Vue.use(VueLazyload, {
   loading: 'https://ols1thqnl.qnssl.com/loading.svg',
   attempt: 1,
   filter: {
-    cdn(listener, options) {
-      const el = listener.el;
-      const url = listener.src.replace(
-        'https://gbzhu.cn/mimg/',
-        'https://ols1thqnl.qnssl.com/'
-      );
-      listener.src = url;
-    },
     delQuery(listener) {
       listener.src = listener.src.replace(/\?.*$/, '');
     },

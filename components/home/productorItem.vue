@@ -48,7 +48,7 @@
 
   .productor-item .new {
     display: inline-block;
-    background: url('~@/assets/images/new.png') no-repeat 0 0;
+    background: url('https://ols1thqnl.qnssl.com/assets/new.png') no-repeat 0 0;
     background-size: cover;
     width: px2rem(32);
     height: px2rem(16);

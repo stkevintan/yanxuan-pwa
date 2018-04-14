@@ -49,7 +49,7 @@
     height: px2rem(15);
     width: px2rem(15);
     margin-left: px2rem(5);
-    background: url('~@/assets/images/arrow.png');
+    background: url('https://ols1thqnl.qnssl.com/assets/arrow.png');
     background-size: cover;
   }
 

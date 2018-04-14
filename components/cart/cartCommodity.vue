@@ -98,13 +98,13 @@
   .cart-commodity .select-icon, .cart-commodity .edit-select {
     width: px2rem(19);
     height:  px2rem(19);
-    background: url('~@/assets/images/unselect.png') no-repeat;
+    background: url('https://ols1thqnl.qnssl.com/assets/unselect.png') no-repeat;
     background-size: cover;
     margin: 0 px2rem(15);
   }
 
   .cart-commodity .cart-select {
-    background-image: url('~@/assets/images/select.png');
+    background-image: url('https://ols1thqnl.qnssl.com/assets/select.png');
   }
 
   .commodity-pic {
@@ -156,7 +156,7 @@
     display: inline-block;
     width: px2rem(6);
     height: px2rem(10);
-    background: url('~@/assets/images/to.png') no-repeat;
+    background: url('https://ols1thqnl.qnssl.com/assets/to.png') no-repeat;
     background-size: cover;
   }
 

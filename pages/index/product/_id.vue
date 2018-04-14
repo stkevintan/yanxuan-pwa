@@ -288,7 +288,7 @@
   .tag i {
     width: px2rem(5);
     height: px2rem(9);
-    background: url('~@/assets/images/yellow_arrow.png') no-repeat;
+    background: url('https://ols1thqnl.qnssl.com/assets/yellow_arrow.png') no-repeat;
     background-size: cover;
     vertical-align: middle;
     margin-left: px2rem(4);
@@ -304,7 +304,7 @@
     display: inline-block;
     width: px2rem(25);
     height: px2rem(25);
-    background: url('~@/assets/images/more.png') no-repeat;
+    background: url('https://ols1thqnl.qnssl.com/assets/more.png') no-repeat;
     background-size: cover;
     margin-right: pxrem(8);
   }
@@ -425,7 +425,7 @@
     display: inline-block;
     width: px2rem(30);
     height: px2rem(30);
-    background: url('~@/assets/images/kefu.png') no-repeat;
+    background: url('https://ols1thqnl.qnssl.com/assets/kefu.png') no-repeat;
     background-size: cover;
   }
 

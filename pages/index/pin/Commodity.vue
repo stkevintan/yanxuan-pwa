@@ -1,6 +1,6 @@
 <template>
   <div class="pin-commodity-container">
-    <img src="~@/assets/images/pin_bg.jpg" />
+    <img src="https://ols1thqnl.qnssl.com/assets/pin_bg.jpg" />
     <div class="pin-commodity-content">
       <h3>最新推荐</h3>
       <div class="pin-commodity-list">

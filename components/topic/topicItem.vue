@@ -5,12 +5,12 @@
       <span>{{ topic.author }}</span>
     </header>
     <div class="item-content">
-      <div v-if="topic.pics.length === 1" class="fullImg" v-bind:style="{ backgroundImage: 'url(' + topic.pics[0] + ')' }" />
+      <img v-if="topic.pics.length === 1" class="fullImg" v-lazy="topic.pics[0]" />
       <div v-if="topic.pics.length > 2" class="imgs-container">
-        <div class="bigImg" v-bind:style="{ backgroundImage: 'url(' + topic.pics[0] + ')' }" />
+        <img class="bigImg" v-lazy="topic.pics[0]" />
         <div class="smallImg-container">
-          <div class="smallImg-first" v-bind:style="{ backgroundImage: 'url(' + topic.pics[1] + ')' }" />
-          <div v-bind:style="{ backgroundImage: 'url(' + topic.pics[2] + ')' }" />
+          <img class="smallImg-first" v-lazy="topic.pics[1]" />
+          <img v-lazy="topic.pics[2]" />
         </div>
       </div>
       <div class="viewcount"><i />{{ topic.viewcount }}</div>
@@ -86,7 +86,7 @@
     display: inline-block;
     width: px2rem(10.5);
     height: px2rem(7);
-    background: url('~@/assets/images/eye.png') no-repeat;
+    background: url('https://ols1thqnl.qnssl.com/assets/eye.png') no-repeat;
     background-size: cover;
     margin-right: px2rem(2);
   }
@@ -109,14 +109,14 @@
     height: 100%;
   }
 
-  .item-content .smallImg-container div{
+  .item-content .smallImg-container img{
     @include centerImage;
     width: 100%;
     height: px2rem(104);
   }
 
   .smallImg-first {
-    margin-bottom: px2rem(2);          
+    margin-bottom: px2rem(2);
   }
 
   .item-footer {

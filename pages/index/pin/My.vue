@@ -35,7 +35,7 @@
   }
 
   .my-pin-void .voidImg {
-    background: url('~@/assets/images/voidpin.png') no-repeat;
+    background: url('https://ols1thqnl.qnssl.com/assets/voidpin.png') no-repeat;
     background-size: cover;
     height: px2rem(124);
     width: px2rem(124);

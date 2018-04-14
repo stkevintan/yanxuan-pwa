@@ -76,7 +76,7 @@
   }
 
   .more i {
-    background: url('~@/assets/images/homemore.png') no-repeat;
+    background: url('https://ols1thqnl.qnssl.com/assets/homemore.png') no-repeat;
     width: px2rem(33.5);
     height: px2rem(33.5);
     background-size: cover;

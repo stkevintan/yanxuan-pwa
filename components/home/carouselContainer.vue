@@ -42,7 +42,7 @@
   }
 
   .cc-bottom li i {
-    background: url('~@/assets/images/checkbox.png');
+    background: url('https://ols1thqnl.qnssl.com/assets/checkbox.png');
     background-size: cover;
     width: px2rem(16);
     height: px2rem(16);

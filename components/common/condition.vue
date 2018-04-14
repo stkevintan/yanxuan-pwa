@@ -45,16 +45,16 @@
     margin-left: px2rem(4);
     width: px2rem(8);
     height: px2rem(10);
-    background: url('https://gbzhu.cn/mimg/no-648460126c.png') no-repeat;
+    background: url('https://ols1thqnl.qnssl.com/no-648460126c.png') no-repeat;
     background-size: cover;
   }
 
   .condition-container .condition-item i.up-arrow {
-    background-image: url('https://gbzhu.cn/mimg/up-f22085ade1.png');
+    background-image: url('https://ols1thqnl.qnssl.com/up-f22085ade1.png');
   }
 
   .condition-container .condition-item i.down-arrow {
-    background-image: url('https://gbzhu.cn/mimg/down-a40f8bd193.png');
+    background-image: url('https://ols1thqnl.qnssl.com/down-a40f8bd193.png');
   }
 
   .condition-select-item span {

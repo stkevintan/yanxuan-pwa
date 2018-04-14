@@ -236,7 +236,7 @@ export default {
   display: inline-block;
   width: px2rem(5);
   height: px2rem(5);
-  background: url('~@/assets/images/dot.png') no-repeat;
+  background: url('https://ols1thqnl.qnssl.com/assets/dot.png') no-repeat;
   background-size: cover;
   margin-right: px2rem(3);
 }
@@ -254,7 +254,7 @@ export default {
 .nothing-cart-img {
   width: px2rem(124);
   height: px2rem(124);
-  background: url('~@/assets/images/cart_nothing.png') no-repeat;
+  background: url('https://ols1thqnl.qnssl.com/assets/cart_nothing.png') no-repeat;
   background-size: cover;
 }
 

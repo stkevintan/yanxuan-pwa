@@ -51,13 +51,13 @@
         manufacturer: {
           title: 'MUJI制造商',
           description: ['严选精选了MUJI制造商和生产原料，', '用几乎零利润的价格，剔除品牌溢价，', '让用户享受原品牌的品质生活。'],
-          pic: 'https://gbzhu.cn/mimg/f13a5e85a83e10153fd31560adec254c.png',
+          pic: 'https://ols1thqnl.qnssl.com/f13a5e85a83e10153fd31560adec254c.png',
           products: [
              {
               "title": "奢华植鞣头层水牛皮席三件套",
               "description": "三峡水牛头层皮，高端夏凉必备",
               "price": "2499",
-              "pic": "https://gbzhu.cn/mimg/56e72b84a9bb66687c003ecdaba73816.png?imageView&quality=85&thumbnail=330x330",
+              "pic": "https://ols1thqnl.qnssl.com/56e72b84a9bb66687c003ecdaba73816.png?imageView&quality=85&thumbnail=330x330",
               "specification": "4色可选",
               "activity": [{ "type": 0, "tag": "618人气款"}, { "type": 1, "tag": "满赠" }],
               "pId": "p1000001"
@@ -66,7 +66,7 @@
               "title": "黑凤梨 20寸PC膜拉链登机箱",
               "description": "热卖9万只，网易人手1只",
               "price": "228",
-              "pic": "https://gbzhu.cn/mimg/3108aaae80416b1cf27c3d7cc5661cea.png?imageView&quality=85&thumbnail=330x330",
+              "pic": "https://ols1thqnl.qnssl.com/3108aaae80416b1cf27c3d7cc5661cea.png?imageView&quality=85&thumbnail=330x330",
               "specification": "黑凤梨",
               "pId": "p1000002"
             },
@@ -74,7 +74,7 @@
               "title": "日式蝴蝶结通勤女鞋",
               "description": "细腻羊反绒，清甜制造",
               "price": "169",
-              "pic": "https://gbzhu.cn/mimg/c70ef66f7c2251a47f0a2cdf8ebd83b7.png?imageView&quality=85&thumbnail=330x330",
+              "pic": "https://ols1thqnl.qnssl.com/c70ef66f7c2251a47f0a2cdf8ebd83b7.png?imageView&quality=85&thumbnail=330x330",
               "specification": "3色可选",
               "activity": [{ "type": 1, "tag": "限时购" }],
               "pId": "p1000001"
@@ -83,7 +83,7 @@
               "title": "Walking Juice破壁料理机套装",
               "description": "会榨汁的杯子，15秒带走",
               "price": "239",
-              "pic": "https://gbzhu.cn/mimg/569539637653da2c635212847f322e7a.png?imageView&quality=85&thumbnail=330x330",
+              "pic": "https://ols1thqnl.qnssl.com/569539637653da2c635212847f322e7a.png?imageView&quality=85&thumbnail=330x330",
               "activity": [{ "type": 0, "tag": "爆品"}],
               "pId": "p1000001"
             },
@@ -91,14 +91,14 @@
               "title": "日式和风声波式电动牙刷",
               "description": "进口刷毛，专利技术",
               "price": "129",
-              "pic": "https://gbzhu.cn/mimg/e5474a8f4fd5748079e2ba2ead806b51.png?imageView&quality=85&thumbnail=330x330",
+              "pic": "https://ols1thqnl.qnssl.com/e5474a8f4fd5748079e2ba2ead806b51.png?imageView&quality=85&thumbnail=330x330",
               "pId": "p1000002"
             },
             {
               "title": "小龙虾 4-6钱/只 净虾850克",
               "description": "好水好虾，鲜香弹润",
               "price": "75",
-              "pic": "https://gbzhu.cn/mimg/a2cf3b86ecfd35b2d270cd17ff264cbd.png?imageView&quality=85&thumbnail=330x330",
+              "pic": "https://ols1thqnl.qnssl.com/a2cf3b86ecfd35b2d270cd17ff264cbd.png?imageView&quality=85&thumbnail=330x330",
               "activity": [{ "type": 0, "tag": "爆品"}],
               "pId": "p1000001"
             },
@@ -106,7 +106,7 @@
               "title": "两带式男/女款拖鞋",
               "description": "鞋杯随脚型而变，舒适呵护",
               "price": "69.9",
-              "pic": "https://gbzhu.cn/mimg/7d1c130c7d80edf824e4218c6829b7c8.png?imageView&quality=85&thumbnail=330x330",
+              "pic": "https://ols1thqnl.qnssl.com/7d1c130c7d80edf824e4218c6829b7c8.png?imageView&quality=85&thumbnail=330x330",
               "specification": "2色可选",
               "activity": [{ "type": 0, "tag": "爆品" }],
               "pId": "p1000001"
@@ -115,7 +115,7 @@
               "title": "暗格简约钢笔",
               "description": "铱金暗尖，300超长书写",
               "price": "39",
-              "pic": "https://gbzhu.cn/mimg/97ad483a94ed88216a989df83e39cbf0.png?imageView&quality=85&thumbnail=330x330",
+              "pic": "https://ols1thqnl.qnssl.com/97ad483a94ed88216a989df83e39cbf0.png?imageView&quality=85&thumbnail=330x330",
               "specification": "4色可选",
               "pId": "p1000002"
             }
@@ -188,7 +188,7 @@
     margin-left: px2rem(4);
     width: px2rem(8);
     height: px2rem(10);
-    background: url('https://gbzhu.cn/mimg/no-648460126c.png') no-repeat;
+    background: url('https://ols1thqnl.qnssl.com/no-648460126c.png') no-repeat;
     background-size: cover;
   }
 

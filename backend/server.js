@@ -11,6 +11,8 @@ const rewriter = require('./middleware/rewriter');
 const static = require('./middleware/static');
 const logger = require('./util/logger');
 
+console.log(process.env.NODE_NO_WARNINGS);
+
 class KoaOnHttps extends Koa {
   constructor() {
     super();

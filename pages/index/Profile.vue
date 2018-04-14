@@ -89,7 +89,7 @@ export default {
 .header {
   height: px2rem(135);
   width: 100%;
-  background: url('~@/assets/images/profile_header.jpg') no-repeat;
+  background: url('https://ols1thqnl.qnssl.com/assets/profile_header.jpg') no-repeat;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -151,7 +151,7 @@ export default {
   display: inline-block;
   width: px2rem(25);
   height: px2rem(25);
-  background-image: url('https://gbzhu.cn/mimg/ucenter-s75fa4432cf-c67f6f862a.png');
+  background-image: url('https://ols1thqnl.qnssl.com/ucenter-s75fa4432cf-c67f6f862a.png');
   background-repeat: no-repeat;
   background-size: px2rem(25) px2rem(381);
   margin-bottom: px2rem(8);

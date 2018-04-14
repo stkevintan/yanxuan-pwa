@@ -30,7 +30,7 @@ function handleFile(filePath) {
         }).then(res => {
             res.data.pipe(fs.createWriteStream(savePath));
         });
-        return `https://gbzhu.cn/mimg/${basename}`;
+        return `https://ols1thqnl.qnssl.com/${basename}`;
     });
     fs.writeFileSync(filePath, newContent);
 }

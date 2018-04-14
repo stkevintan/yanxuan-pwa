@@ -8,7 +8,7 @@
       <p class="fs-next">下一场 18:00 开始</p>
     </div>
     <div class="fs-right">
-      <img v-lazy="'https://gbzhu.cn/mimg/cfb2c1b12cbd752424709480e48ede1a.png?imageView&quality=85&thumbnail=330x330'" />
+      <img v-lazy="'https://ols1thqnl.qnssl.com/cfb2c1b12cbd752424709480e48ede1a.png?imageView&quality=85&thumbnail=330x330'" />
       <div class="fs-price">
         <p class="saleprice">¥15</p>
         <p class="preprice">¥19</p>

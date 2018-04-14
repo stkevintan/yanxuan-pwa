@@ -43,11 +43,11 @@
     },
     data () {
       return {
-        imgs: ['https://gbzhu.cn/mimg/2a1259567d45f6d56cd377b9f6e8f4fd.jpg',
-         'https://gbzhu.cn/mimg/615e5f7727d1d2831e24a3453eeac4ca.jpg',
-         'https://gbzhu.cn/mimg/0ad986128e62d4f16a385de809f23dca.jpg',
-         'https://gbzhu.cn/mimg/8869a3d10800efca5670432bc0070707.jpg',
-         'https://gbzhu.cn/mimg/dda365946a8d8b09adebbd74e9cfb830.jpg'],
+        imgs: ['https://ols1thqnl.qnssl.com/2a1259567d45f6d56cd377b9f6e8f4fd.jpg',
+         'https://ols1thqnl.qnssl.com/615e5f7727d1d2831e24a3453eeac4ca.jpg',
+         'https://ols1thqnl.qnssl.com/0ad986128e62d4f16a385de809f23dca.jpg',
+         'https://ols1thqnl.qnssl.com/8869a3d10800efca5670432bc0070707.jpg',
+         'https://ols1thqnl.qnssl.com/dda365946a8d8b09adebbd74e9cfb830.jpg'],
         urls: [
             'https://gbzhu.cn/category/1008000/subcat/1008003',
             'https://gbzhu.cn/category/1043000/subcat/1011003',
@@ -117,7 +117,7 @@
   .productor-header i {
     width: px2rem(15);
     height: px2rem(15);
-    background: url('~@/assets/images/arrow.png') no-repeat 0 0;
+    background: url('https://ols1thqnl.qnssl.com/assets/arrow.png') no-repeat 0 0;
     background-size: cover;
   }
 

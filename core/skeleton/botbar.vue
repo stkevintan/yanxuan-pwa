@@ -66,7 +66,7 @@ body {
 .tabbar-item-icon {
   width: px2rem(20);
   height: px2rem(20);
-  background: url('~@/assets/images/tabbar.png') no-repeat 0 0;
+  background: url('https://ols1thqnl.qnssl.com/assets/tabbar.png') no-repeat 0 0;
   background-size: cover;
   position: relative;
 }
