@@ -20,12 +20,37 @@ Vue.use(VueLazyload, {
   loading: '/static/img/loading.gif',
   attempt: 1,
   filter: {
-    resize(listener, options) {
+    cdn(listener, options) {
       const el = listener.el;
-      let url = listener.src.replace(/\?.*$/, '');
+      const url = listener.src.replace(
+        'https://gbzhu.cn/mimg/',
+        'https://ols1thqnl.qnssl.com/'
+      );
+      listener.src = url;
+    },
+    delQuery(listener) {
+      listener.src = listener.src.replace(/\?.*$/, '');
+    },
+    qiniu(listener, options) {
+      if (!/qnssl/.test(listener.src)) return;
+      // imageMogr2/auto-orient/thumbnail/200x/format/png/blur/1x0/quality/75|imageslim
+      const el = listener.el;
+      url += '?imageMogr2';
+      url += '/auto-orient';
+      if (el.width) {
+        url += `/thumbnail/${el.width}x`;
+      }
+      url += '/format/png';
+      url += '/blur/1x0';
+      url += '/quality/75|imageslim';
+      listener.src = url;
+    },
+    local(listener, options) {
+      if (/qnssl/.test(listener.src)) return;
+      const el = listener.el;
       // console.log(url);
       url += '?quality=80';
-      if (el.width || el.height) url += `&thumbnail=${el.width}x0`;
+      if (el.width) url += `&thumbnail=${el.width}x0`;
       listener.src = url;
     }
   }
