@@ -13,11 +13,23 @@ import AppComponent from './App.vue';
 Vue.use(Meta);
 import VueLazyload from 'vue-lazyload';
 
+function canUseWebP() {
+  var elem = document.createElement('canvas');
+
+  if (!!(elem.getContext && elem.getContext('2d'))) {
+    // was able or not to get WebP representation
+    return elem.toDataURL('image/webp').indexOf('data:image/webp') == 0;
+  } else {
+    // very old browser like IE 8, canvas not supported
+    return false;
+  }
+}
+const useWebp = canUseWebP();
 // or with options
 Vue.use(VueLazyload, {
   preLoad: 1.3,
-  error: '/static/img/error.png',
-  loading: '/static/img/loading.gif',
+  error: 'https://ols1thqnl.qnssl.com/error.png',
+  loading: 'https://ols1thqnl.qnssl.com/loading.svg',
   attempt: 1,
   filter: {
     cdn(listener, options) {
@@ -41,7 +53,7 @@ Vue.use(VueLazyload, {
       if (el.width) {
         url += `/thumbnail/${el.width}x`;
       }
-      url += '/format/png';
+      url += `/format/${useWebp ? 'webp' : 'png'}`;
       url += '/blur/1x0';
       url += '/quality/75|imageslim';
       listener.src = url;
@@ -50,8 +62,9 @@ Vue.use(VueLazyload, {
       if (/qnssl/.test(listener.src)) return;
       const el = listener.el;
       let url = listener.src;
-      url += '?quality=80';
+      url += '?quality=75';
       if (el.width) url += `&thumbnail=${el.width}x0`;
+      url += `&format=${useWebp? 'webp': 'png'}`
       listener.src = url;
     }
   }

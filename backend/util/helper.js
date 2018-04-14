@@ -68,9 +68,3 @@ exports.acceptsHtml = (header, options = {}) => {
 
   return false;
 };
-
-exports.isApple = ctx => {
-  const ua = ctx.request.header['user-agent'];
-  if (ua == null) return false;
-  return /ipad|ipod|iphone|safari/i.test(ua);
-};

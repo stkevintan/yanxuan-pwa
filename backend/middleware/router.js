@@ -3,7 +3,6 @@ const low = require('lowdb');
 const FileSync = require('lowdb/adapters/FileSync');
 const logger = require('../util/logger');
 const imageTweak = require('../util/imageTweak');
-const { isApple } = require('../util/helper');
 const fs = require('fs');
 const path = require('path');
 const adapter = new FileSync(require.resolve('../db.json'));
@@ -111,17 +110,12 @@ router.get('/mimg/:filename', async (ctx, next) => {
   const filepath = require.resolve(`../mimg/${filename}`);
   if (fs.existsSync(filepath)) {
     const stream = fs.createReadStream(filepath);
-    const thumbnail = ctx.query.thumbnail;
-    const ext = (path.extname(filepath) || '.jpg').substr(1);
-    const enableWebp = !isApple(ctx);
-    if (thumbnail) {
-      const [width, height] = thumbnail.split('x');
-      const quality = ctx.query.quality;
-      ctx.body = stream.pipe(imageTweak(enableWebp, { width, height, quality }));
-    } else {
-      ctx.body = stream.pipe(imageTweak(enableWebp));
-    }
-    ctx.type = `image/${ext}`;
+    const fomart = ctx.query.format || 'png';
+    const quality = (ctx.query.quality || 75);
+    const thumbnail = ctx.query.thumbnail || '0x0';
+    const [width, height] = thumbnail.split('x');
+    ctx.body = stream.pipe(imageTweak({ width, height, format, quality }));
+    ctx.type = `image/${fomart}`;
     ctx.set('Cache-Control', 'public, max-age=31536000');
   } else {
     logger.error('Image not found:', filepath);

@@ -41,7 +41,7 @@ workboxSW.precache([]);
 // );
 
 workboxSW.router.registerRoute(
-    /^https:\/\/gbzhu\.cn\/mimg\//,
+    /^https:\/\/(gbzhu\.cn\/mimg\/|ols1thqnl\.qnssl\.com\/)/,
     workboxSW.strategies.cacheFirst({
         cacheName: 'images',
         cacheExpiration: {
