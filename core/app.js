@@ -35,6 +35,7 @@ Vue.use(VueLazyload, {
       if (!/qnssl/.test(listener.src)) return;
       // imageMogr2/auto-orient/thumbnail/200x/format/png/blur/1x0/quality/75|imageslim
       const el = listener.el;
+      let url = listener.src;
       url += '?imageMogr2';
       url += '/auto-orient';
       if (el.width) {
@@ -48,7 +49,7 @@ Vue.use(VueLazyload, {
     local(listener, options) {
       if (/qnssl/.test(listener.src)) return;
       const el = listener.el;
-      // console.log(url);
+      let url = listener.src;
       url += '?quality=80';
       if (el.width) url += `&thumbnail=${el.width}x0`;
       listener.src = url;
