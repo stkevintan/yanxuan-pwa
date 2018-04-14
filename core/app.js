@@ -33,11 +33,10 @@ Vue.use(VueLazyload, {
   attempt: 3,
   filter: {
     delQuery(listener,options) {
-      if (!listener.src) return;
-      listener.src = listener.src.replace(/\?.*$/, '');
+      if (!listener.src) listener.src = 'https://ols1thqnl.qnssl.com/error.png';
+      else listener.src = listener.src.replace(/\?.*$/, '');
     },
     qiniu(listener, options) {
-      if (!listener.src) return;
       if (!/qnssl/.test(listener.src)) return;
       // imageMogr2/auto-orient/thumbnail/200x/format/png/blur/1x0/quality/75|imageslim
       const el = listener.el;
@@ -53,7 +52,6 @@ Vue.use(VueLazyload, {
       listener.src = url;
     },
     local(listener, options) {
-      if (!listener.src) return;
       if (/qnssl/.test(listener.src)) return;
       const el = listener.el;
       let url = listener.src;
