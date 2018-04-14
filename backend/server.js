@@ -11,8 +11,6 @@ const rewriter = require('./middleware/rewriter');
 const static = require('./middleware/static');
 const logger = require('./util/logger');
 
-console.log(process.env.NODE_NO_WARNINGS);
-
 class KoaOnHttps extends Koa {
   constructor() {
     super();
@@ -58,7 +56,7 @@ app.use(
     filter: function(content_type) {
       return /text|javascript|json/i.test(content_type);
     },
-    // threshold: 2048,
+    // threshold: 100,
     flush: require('zlib').Z_SYNC_FLUSH
   })
 );

@@ -106,7 +106,8 @@ module.exports = {
       {
         pattern: /\/search/,
         chunkname: 'search'
-      }, {
+      },
+      {
         pattern: /\/topic-detail/,
         chunkname: 'topicDetail'
       }

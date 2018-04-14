@@ -39,10 +39,14 @@
             function setRemUnit() {
                 var dpr = window.devicePixelRatio || 1;
                 var scale = 1 / dpr;
-                document.querySelector('meta[name="viewport"]').setAttribute('content','initial-scale='+ scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+                var viewport = document.querySelector('meta[name="viewport"]');
+                if(viewport) {
+                  viewport.setAttribute('content', 'initial-scale='+ scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+                }
                 var html = document.querySelector("html");
                 var width = html.getBoundingClientRect().width;//获取html的宽度
-                if (width / dpr > 540) {//判断屏幕逻辑像素大于540时，取540
+                 //判断屏幕逻辑像素大于540时，取540
+                if (width / dpr > 540) {
                     width = 540 * dpr;
                 }
                 window.remUnit = width / 10;
@@ -53,7 +57,9 @@
         </script>
     </head>
     <body>
+
         <noscript>javascript被禁用！为了正常加载页面，请开启javascript支持！</noscript>
+
         <div id="app"></div>
     </body>
 </html>
