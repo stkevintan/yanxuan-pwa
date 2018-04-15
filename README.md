@@ -42,3 +42,7 @@ pm2 start pm2.prod.json
 ```
 sudo setcap 'cap_net_bind_service=+ep' `which node`
 ```
+
+### Lighthouse Report
+
+![lighthouse](https://raw.githubusercontent.com/stkevintan/yx-pwa/master/resources/LighthouseReposrt.png)
