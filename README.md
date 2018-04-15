@@ -2,38 +2,43 @@
 
 > 网易严选 PWA
 
-## npm 相关命令
+仿网易严选的 PWA 应用，后端服务器使用 HTTP/2 协议。
 
-``` bash
-# 安装工程依赖
-npm install
+## install
 
-# 在本地启动调试 server
-npm run dev
-
-# 构建线上生产环境产物
-npm run build
-
-# 启动编译后的代码，注意，需要在 dist 目录中启动，仅 SSR 模式下有效
-npm run start
-
-# 检查代码是否符合规范
-npm run lint
+```bash
+npm i
+npm i -g pm2 lavas
 ```
 
+## dev
 
-allow bind 443: 
+### add hosts
+
+```
+127.0.0.1 gbzhu.cn
+```
+
+### start servers
+
+```bash
+npm run dev
+pm2 start pm2.dev.json
+```
+
+## prod
+
+### start servers
+
+```bash
+npm run build
+pm2 start pm2.prod.json
+```
+
+## Note
+
+### enable 443 port(Linux)
+
 ```
 sudo setcap 'cap_net_bind_service=+ep' `which node`
 ```
-
-cat log
-```
-node server >log 2>&1 &
-```
-Lavas 工程模版基于 [vue-template-vue](https://github.com/lavas-project/lavas-template-vue/) 模版的 `release-*` 分支创建。
-如果想要了解具体如何玩转整个 Lavas 创建的 PWA 工程, 请查看[Lavas 官网教程](https://lavas.baidu.com/guide)。
-
-## Changelog
-
-详细的 Changelog 请看 [Release Notes](https://github.com/lavas-project/lavas-template-vue/releases)
