@@ -111,12 +111,12 @@ router.get('/mimg/:filename', async (ctx, next) => {
   if (fs.existsSync(filepath)) {
     const stream = fs.createReadStream(filepath);
     const query = ctx.query || {};
-    const fomart = query.format || 'png';
+    const format = query.format || 'png';
     const quality = query.quality || 75;
     const thumbnail = query.thumbnail || '0x0';
     const [width, height] = thumbnail.split('x');
     ctx.body = stream.pipe(imageTweak({ width, height, format, quality }));
-    ctx.type = `image/${fomart}`;
+    ctx.type = `image/${format}`;
     ctx.set('Cache-Control', 'public, max-age=31536000');
   } else {
     logger.error('Image not found:', filepath);
