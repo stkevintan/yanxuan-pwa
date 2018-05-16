@@ -1,0 +1,509 @@
+写这个项目主要是为了实践一下目前比较或的PWA与HTTP/2。
+- 项目地址: <https://github.com/stkevintan/yx-pwa>
+- 测试地址：<https://gbzhu.cn>
+ 
+## 效果截图
+
+<img src="https://user-gold-cdn.xitu.io/2018/4/15/162c7e53af1c422f?w=480&h=1920&f=jpeg&s=82353"/>
+<img src="https://user-gold-cdn.xitu.io/2018/4/15/162c7e5781b4e862?w=480&h=1920&f=jpeg&s=115948"/>
+
+## 网易严选PWA
+关于PWA部分，采用的是百度lavas提供的解决方案，具体思想可以先参考一下百度与黄玄的几篇文章。
+- [Service Worker注册](https://zhuanlan.zhihu.com/p/28161855)
+- [App Shell - SSR的PWA方案](https://xiaoiver.github.io/coding/2017/10/24/SSR-%E4%B8%AD%E7%9A%84%E7%A6%BB%E7%BA%BF%E5%8F%AF%E7%94%A8-%E4%B8%80.html)
+- [Skeleton - SPA的PWA方案](https://xiaoiver.github.io/coding/2017/07/30/%E4%B8%BAvue%E9%A1%B9%E7%9B%AE%E6%B7%BB%E5%8A%A0%E9%AA%A8%E6%9E%B6%E5%B1%8F.html)
+- [饿了么的PWA升级](https://huangxuan.me/2017/07/12/upgrading-eleme-to-pwa/#fast-skeleton-painting-with-settimeout-hack)
+
+主体项目使用了Vue + Vuex + VueRouter构建（: 因为笔者太懒惰，大部分业务代码和数据都copy自一非常优秀的开源项目[Vue2-yanxuan](https://github.com/luoshi0429/vue2-yanxuan)，在此感谢！
+
+### 骨架
+针对不同的布局，分别实现了三种不同的骨架：
+![](https://user-gold-cdn.xitu.io/2018/4/15/162c817001aaff61?w=898&h=483&f=png&s=19586)
+通过如下逻辑来展示：
+```js
+var skeletons = [
+  { id: 'topbar', el: document.querySelector('#topbar') },
+  { id: 'botbar', el: document.querySelector('#botbar') },
+  { id: 'welcome', el: document.querySelector('#welcome') }
+];
+var pattern = [
+  /\/(login|topic-detial|cate-list|product|category-commodity|pin)/i,
+  /\/(home|topic|profile|manufacturer|category|search|cart|cart-format)/i,
+  /^.*$/
+];
+function isMatched(reg, mode) {
+  if ('hash' === mode) {
+    return reg.test(hash.replace('#', ''));
+  }
+  if ('history' === mode) {
+    return reg.test(pathname);
+  }
+};
+function showSkeleton(id) {
+  for (var o = 0; o < skeletons.length; o++) {
+    var t = skeletons[o];
+    if (id === t.id) {
+      t.el.style = 'display:block;';
+    } else {
+      t.el.style = 'display:none;';
+    }
+  }
+};
+if (isMatched(pattern[0], 'history')) {
+  showSkeleton('topbar');
+} else if (isMatched(pattern[1], 'history')) {
+  showSkeleton('botbar');
+} else if (isMatched(pattern[2], 'history')) {
+  showSkeleton('welcome');
+} else {
+  console.error('Url is invalid');
+}
+```
+逻辑其实很简单，三种不同的布局分别对应的id为topbar\botbar\welcome的三个div，也对应着pattern数组中的三个正则，然后将三个正则分别与当前URL路径匹配，显示匹配成功的那个骨架。
+
+### 异步css
+异步CSS，主要是为了让项目的css不阻塞骨架屏的渲染，如果浏览器支持，可以直接使用`rel=preload`属性加载，如果不支持，则需要一个比较hack的方式来实现：
+```js
+function poly(){
+    const links = document.getElementsByTagName('link');
+    for (let i = 0; i < links.length; i++) {
+        const link = links[i];
+        if (
+          link.rel === 'preload' &&
+          link.getAttribute('as') === 'style' &&
+          !link.getAttribute('data-loadcss')
+        ) {
+          link.setAttribute('data-loadcss', true);
+          this.bindMediaToggle(link);
+        }
+    }
+}
+function bindMediaToggle(link) {
+  const media = link.media || 'all';
+  const setMedia = () => (link.media = media);
+    link.addEventListener('load', setMedia);
+    setTimeout(() => {
+    link.rel = 'stylesheet';
+    link.media = 'only x';
+  });
+  setTimout(setMedia, 3000);
+}
+```
+即，将link的media先设为`only x`，等待加载完成之后再切换会原来的media，这样就不会阻塞当前骨架屏内容的渲染了。
+
+### 懒加载
+
+懒加载主要使用vue-lazyload实现，通过这个组件的filter接口，还能实现动态修改图片链接的功能：
+
+```js
+Vue.use(VueLazyload, {
+  preLoad: 1.3,
+  error: 'https://ols1thqnl.qnssl.com/error.png',
+  // 推荐使用svg动画图片作为loading图标，体积小，放大不失真
+  loading: 'https://ols1thqnl.qnssl.com/loading.svg',
+  attempt: 3,
+  filter: {
+    // 去除图片上原有的query参数
+    delQuery(listener,options) {
+      if (!listener.src) listener.src = 'https://ols1thqnl.qnssl.com/error.png';
+      else listener.src = listener.src.replace(/\?.*$/, '');
+    },
+    // 为七牛云cdn的图片链接动态加入图片压缩参数
+    qiniu(listener, options) {
+      if (!/qnssl/.test(listener.src)) return;
+      // imageMogr2/auto-orient/thumbnail/200x/format/png/blur/1x0/quality/75|imageslim
+      const el = listener.el;
+      let url = listener.src;
+      url += '?imageMogr2';
+      // 自动旋转
+      url += '/auto-orient';
+      // 设置图片宽度
+      if (el.width) {
+        url += `/thumbnail/${el.width}x`;
+      }
+      // 根据浏览器决定使用webp或者png
+      url += `/format/${useWebp ? 'webp' : 'png'}`;
+      // 高斯模糊， 不懂为啥也设置这个 :(
+      url += '/blur/1x0';
+      // 图片压缩质量以及启用图片瘦身
+      url += '/quality/75|imageslim';
+      listener.src = url;
+    },
+    // 传递给本地服务器的图片选项
+    local(listener, options) {
+      if (/qnssl/.test(listener.src)) return;
+      const el = listener.el;
+      let url = listener.src;
+      // 图片质量
+      url += '?quality=75';
+      // 图片宽度，高度为0代表自适应
+      if (el.width) url += `&thumbnail=${el.width}x0`;
+      // 根浏览器决定使用webp或者png
+      url += `&format=${useWebp? 'webp': 'png'}`
+      listener.src = url;
+    }
+  }
+});
+```
+然后，判断webp的支持可以用如下代码：
+
+```js
+function canUseWebP() {
+  var elem = document.createElement('canvas');
+  if (!!(elem.getContext && elem.getContext('2d'))) {
+    return elem.toDataURL('image/webp').indexOf('data:image/webp') == 0;
+  } else {
+    return false;
+  }
+}
+const useWebp = canUseWebP();
+```
+
+### 图片轮播
+图片轮播，主要是要维持一个三个元素的队列`queue`，主要代码是：
+```html
+<template>
+  <div class="carousel-container">
+    <div class="carousel-swiper" ref="swiper" v-on:touchmove="handleMove" v-on:touchend="handleEnd" v-on:touchstart="handleStart">
+      <img class="carousel-img" v-for="i in queue" v-lazy="pics[i]" :key="i" />
+    </div>
+  </div>
+</template>
+```
+
+
+```js
+export default {
+  props: {
+    pics: Array,
+  },
+  data() {
+    return {
+      animationDuration: 2500,
+      lastPosition: 0,
+      queue: [0, 1, 2],
+      timeId: 0,
+      dragFrom: 0,
+      dragDelta: 0
+    };
+  },
+  mounted() {
+    // 显示队列中间的图片，无动画
+    this.transition();
+    this.initAnimate();
+  },
+  beforeDestroy() {
+    clearTimeout(this.timeId);
+  },
+  methods: {
+    normalize(index) {
+      return (index + this.pics.length) % this.pics.length;
+    },
+    handleEnd(e) {
+      const width = this.$el.clientWidth;
+      if (this.dragDelta > width / 3) {
+        // 手势向右，队列往左移
+        this.turn(this.dragDelta, -1);
+      } else if (this.dragDelta < -width / 3) {
+        // 手势向左，队列往右移
+        this.turn(-this.dragDelta, 1);
+      } else {
+        this.animate(600);
+      }
+      this.initAnimate();
+    },
+    handleStart(e) {
+      clearTimeout(this.timeId);
+      this.dragFrom = e.targetTouches[0].clientX;
+    },
+    handleMove(e) {
+      const current = e.touches[0].clientX;
+      const width = this.$el.clientWidth;
+      const delta = current - this.dragFrom;
+      this.dragDelta = delta;
+      if (Math.abs(delta) >= width) {
+        this.dragDelta = width;
+        return;
+      }
+      this.transition(0, delta - width);
+    },
+    
+    initAnimate() {
+      var startAnim = () => {
+        this.timeId = setTimeout(() => {
+          const width = this.$el.clientWidth;
+          this.turn(width, 1);
+          startAnim.call(this);
+        }, this.animationDuration);
+      };
+      // 开始定时自动向左翻页
+      startAnim();
+    },
+    transition(duration = 0, offsetX = -this.$el.clientWidth) {
+      const transitionStr =
+        duration > 0
+          ? `transition: transform ${duration}ms linear`
+          : `transition:none`;
+      if (this.$refs.swiper) {
+        this.$refs.swiper.style = `${transitionStr}; transform:translateX(${offsetX}px);`;
+      }
+    },
+    transitionEnd(direction){
+        if (direction < 0) {
+        //队列往左移，左进右出
+          this.queue.unshift(this.normalize(this.queue[0] - 1));
+          this.queue.pop();
+        } else {
+        // 队列往右移，右进左出
+          this.queue.push(this.normalize(this.queue[2] + 1));
+          this.queue.shift();
+        }
+        // 更新完毕后，显示队列中间的图片，无动画
+        this.transition();
+    }
+    /**
+     * @param delta 需移动距离
+     * @param direction 方向 -1:left, 1:right
+     */
+    turn(delta, direction = 1) {
+      const width = this.$el.clientWidth;
+      const offsetX = direction < 0 ? 0 : -2 * width;
+      const duration = delta / width * 300; // 需移动的距离除以总距离。
+      this.transition(duration, offsetX);
+      // 等待duration时间后，动画完成，调用transitionEnd方法
+      setTimeout(() => {
+        this.transitionEnd(direction);
+      }, duration);
+    }
+  }
+};
+```
+其中队列更新过程如下：
+```js
+pics:   0 1 2 3 4 5 6 7 8 9 
+queue:  0 1 2
+==========轮播从右往左滚，queue往右移=========
+pics:   0 1 2 3 4 5 6 7 8 9 
+queue:    0 1 2
+==========轮播从左往右滚，queue往左移=========
+pics:   0 1 2 3 4 5 6 7 8 9 
+queue:  0 1 2
+==========轮播再从左往右滚，queue再往左移=========
+==第一个元素超出边界则通过normalize方法重定位到9==
+pics:   0 1 2 3 4 5 6 7 8 9 
+queue:  1 2               0
+```
+
+
+__一个问题__ ： 如果`this.transitionEnd`方法直接监听元素的transitionEnd事件调用而不是通过`setTimeout(...,duration)`调用，则其中queue的更新无法即时的更新到视图中，即使使用了`this.$forceUpdate()`也不行，也许跟EventLoop有关。 
+
+
+__一个想法__ ： 这种实现每次更新img标签的url都可能造成图片的重新加载，特别使用vue-lazload之后，加载总会出现loading动画，能否有更好的实现。
+
+
+## HTTP/2服务器
+
+对于版本高于9的node来说，http2模块已经内置，因此不需要额外安`spdy`或`node-htp2`等模块了。本项目中使用的框架为koa，并通过继承的方法让koa创建HTTP/2服务器:
+```js
+
+class KoaOnHttps extends Koa {
+  constructor() {
+    super();
+  }
+  get options() {
+    return {
+      key: ...
+      cert: ...
+    };
+  }
+  listen(...args) {
+    const server = http2.createSecureServer(this.options, this.callback());
+    return server.listen(...args);
+  }
+  redirect(...args) {
+    const server = http.createServer((req,res)=>{
+        // 自动重定向到https
+    });
+    return server.listen(...args);
+  }
+}
+// ...
+
+// http2 服务器
+app.listen(443, () => {
+  logger.ok('app start at:', `https://gbzhu.cn`);
+});
+
+//http重定向服务
+app.redirect(80, () => {
+  logger.ok('http redirect server start at', `http://gbzhu.cn`);
+});
+```
+
+### Server Push
+
+服务器推送还是需要使用原生的api：
+```js
+const http2 = require('http2');
+const { HTTP2_HEADER_PATH } = http2.constants;
+// ...
+
+function getFileHeaders(path, fd) {
+  const stat = fs.fstatSync(fd);
+  const contentType = mime.getType(path);
+  return {
+    'content-length': stat.size,
+    'last-modified': stat.mtime.toUTCString(),
+    'content-type': contentType
+  };
+}
+
+function push(stream, file) {
+  if (!file || !file.filePath || !file.url) return;
+  if (!file.fd || !file.headers) {
+    file.fd = file.fd || fs.openSync(file.filePath, 'r');
+    file.headers = file.headers || getFileHeaders(file.filePath, file.fd);
+  }
+  const pushHeaders = { [HTTP2_HEADER_PATH]: file.url };
+  stream.pushStream(pushHeaders, (err, pushStream) => {
+    if (err) throw err;
+    pushStream.respondWithFD(file.fd, file.headers);
+  });
+};
+```
+但服务器推送有两个问题，第一何时推送，第二是推送什么。  
+- 对于第一个问题很好解答，为了避免资源请求的竞争，服务器推送的资源一般要先于该请求主要资源返回之前推送。  
+- 第二个问题则需要根据业务具体分析，没有明确的答案，下面是本项目的推送策略。
+
+### 依赖收集
+主要思想：当对于同一个浏览器当请求完html之后，接下来它将会继续请求项对应的css、js等依赖资源。因此如果我们在服务器上把这些依赖资源记录下来，那么当该浏览器再次请求同样的html时，我们就可以将之前记录的依赖资源自动推送给浏览器了。
+
+```js
+const db = new Map();
+let currentKey = '/'; 当的html路径
+
+module.exports = {
+    get currentKey() {
+        return currentKey;
+    },
+    set currentKey(key = '') {
+        currentKey = this.stripDot(key);
+    },
+    // 一致化所有意义相的页面
+    stripDot(str) {
+        if (!str) return '';
+        return str.replace(/index\.html$/, '').replace(/\./g, '-');
+    },
+    // 将资源添加到依赖表中的页面key之下
+    addDep(filePath, url, key = this.currentKey) {
+        if (!key) return;
+        key = this.stripDot(key);
+        if(!db.has(key)){
+            db.set(key,new Map());
+        }
+        const keyDb = db.get(key);
+        // 依赖不宜太多， 否则反而会影响性能
+        if (keyDb.size >= 10) {
+            logger.warning('Push resource limit exceeded');
+            return;
+        }
+        keyDb.set(filePath, url);
+    },
+    // 返回当前页面key所有依赖
+    getDep(key = this.currentKey) {
+        key = this.stripDot(key);
+        const keyDb = db.get(key);
+        if(keyDb == undefined) return [];
+        const ret = [];
+        for(const [filePath,url] of keyDb.entries()){
+            ret.push({filePath,url});
+        }
+        return ret;
+    }
+};
+```
+添加依赖：
+```js
+router.get(/\.(js|css)$/, async (ctx, next) => {
+  let filePath = ctx.path;
+  // 前端添加sw-register的请求参数是new Date()， 不能添加进依赖
+  if (/\/sw-register\.js/.test(filePath)) return await next();
+  filePath = path.resolve('../dist', filePath.substr(1));
+  await next();
+  // 如果资源存在，则添加到依赖中
+  if (ctx.status === 200 || ctx.status === 304) {
+    depTree.addDep(filePath, ctx.url);
+  }
+});
+```
+
+当浏览器访问页面时取出依赖并推送回浏览器：
+```js
+ //如果当前浏览器请求的是html页面，根据依赖记录，推送它的依赖资源
+if (acceptsHtml(ctx.header) || /(\.html|\/[\w-]*)$/.test(ctx.path)) {
+    logger.info('Send Path', ctx.path);
+    depTree.currentKey = ctx.path;
+    for (const file of depTree.getDep()) {
+        push(ctx.res.stream, file);
+    }
+}
+// 推送完毕，再使用koa-send返回静态资源
+await send(ctx, ctx.path, { root: '../dist' })
+```
+
+### 图片处理
+起初我图片都存放在本地服务器上，然后通过stream的方读取、处理的，代码如下：  
+
+Router:
+```js
+router.get('/mimg/:filename', async (ctx, next) => {
+  const { filename } = ctx.params;
+  const filepath = require.resolve(`../mimg/${filename}`);
+  if (fs.existsSync(filepath)) {
+    const stream = fs.createReadStream(filepath);
+    const query = ctx.query || {};
+    const fomart = query.format || 'png';
+    const quality = query.quality || 75;
+    const thumbnail = query.thumbnail || '0x0';
+    const [width, height] = thumbnail.split('x');
+    ctx.body = stream.pipe(imageTweak({ width, height, format, quality }));
+    ctx.type = `image/${fomart}`;
+  } else {
+    logger.error('Image not found:', filepath);
+    await next();
+  }
+});
+```
+
+imageTweak:
+```js
+const sharp = require('sharp');
+
+function parse(x) {
+  return x * 1 || null;
+}
+module.exports = (
+  options = { width: 0, height: 0, quality: 0, fomart: 'png' }
+) => {
+  const s = sharp();
+  if (options.width || options.height) {
+    s.resize(parse(options.width), parse(options.height));
+  }
+  if (options.fomart === 'webp') {
+    return s.webp({ quality: parse(options.quality) });
+  }
+  return s.png({ quality: parse(options.quality) });
+};
+
+```
+实现起来，感觉没有太的问题，但实际访问的时候，发现页面图片加载真是太慢了，简直不能忍受Orz。。。  
+想了想，我的腾讯云学生服务器才1Mbps带宽，真是太小了。木有办法，还是用cdn吧=_=
+
+## Lighthouse
+关于LightHous评分最好的一次如下：
+
+![](https://user-gold-cdn.xitu.io/2018/4/15/162c87321d0bf2c4?w=796&h=864&f=png&s=127741)
+
+提高Lighthouse性能评分的两大“飞刀”：  
+1. 务必使快速的cdn
+2. 务必停用所有无关的chrome插件或脚本（或直接开隐身模式 xD
