@@ -4,7 +4,7 @@ const path = require('path');
 const mime = require('mime');
 
 const logger = require('./logger');
-const { HTTP2_HEADER_PATH } = http2.constants;
+const {HTTP2_HEADER_PATH} = http2.constants;
 const baseDir = './mimg';
 const fileMap = new Map();
 
@@ -19,15 +19,15 @@ function getFileHeaders(path, fd) {
 }
 
 function getFiles(baseDir) {
-  fs.readdirSync(baseDir).forEach(fileName => {
-    const filePath = path.join(baseDir, fileName);
-    const fd = fs.openSync(filePath, 'r');
-    fileMap.set(filePath, {
-      fd,
-      headers: getFileHeaders(filePath, fd)
+  try {
+    fs.readdirSync(baseDir).forEach(fileName => {
+      const filePath = path.join(baseDir, fileName);
+      const fd = fs.openSync(filePath, 'r');
+      fileMap.set(filePath, {fd, headers: getFileHeaders(filePath, fd)});
     });
-  });
-
+  } catch (e) {
+    logger.warning('image directory is missing.');
+  }
   return fileMap;
 }
 
@@ -40,12 +40,10 @@ exports.push = function(stream, file) {
   if (!file.fd || !file.headers) {
     const queryRet = fileMap.get(file.filePath) || {};
     file.fd = file.fd || queryRet.fd || fs.openSync(file.filePath, 'r');
-    file.headers =
-      file.headers ||
-      queryRet.headers ||
-      getFileHeaders(file.filePath, file.fd);
+    file.headers = file.headers || queryRet.headers ||
+        getFileHeaders(file.filePath, file.fd);
   }
-  const pushHeaders = { [HTTP2_HEADER_PATH]: file.url };
+  const pushHeaders = {[HTTP2_HEADER_PATH]: file.url};
   stream.pushStream(pushHeaders, (err, pushStream) => {
     if (err) {
       logger.error('server push error');
