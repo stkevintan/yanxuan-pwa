@@ -78,7 +78,7 @@ app.use(router.routes()).use(router.allowedMethods());
 if (process.env.NODE_ENV === 'production') {
   app.use(static(path.resolve(__dirname, '../dist')));
 }
-
+try{
 app.listen(443, () => {
   logger.ok('app start at:', `https://you.keyin.cn`);
 });
@@ -87,3 +87,6 @@ app.listen(443, () => {
 app.redirect(80, () => {
   logger.ok('http redirect server start at', `http://you.keyin.me`);
 });
+} catch (e) {
+  logger.error(`${e}\n`, "try: sudo setcap 'cap_net_bind_service=+ep' `which node`");
+}

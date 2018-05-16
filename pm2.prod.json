@@ -3,7 +3,6 @@
         "name": "yx-prod-server",
         "script":"server.js",
         "log_date_format": "YYYY-MM-DD:mm Z",
-        "log_file": "server.log",
         "env":{
             "NODE_NO_WARNINGS": 1,
             "NODE_ENV": "production"
