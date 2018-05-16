@@ -19,21 +19,17 @@ function getFileHeaders(path, fd) {
 }
 
 function getFiles(baseDir) {
-  try {
+  if (fs.existsSync(baseDir)) {
     fs.readdirSync(baseDir).forEach(fileName => {
       const filePath = path.join(baseDir, fileName);
       const fd = fs.openSync(filePath, 'r');
       fileMap.set(filePath, {fd, headers: getFileHeaders(filePath, fd)});
     });
-  } catch (e) {
-    logger.warning('image directory is missing.');
   }
   return fileMap;
 }
 
-getFiles(baseDir);
-
-exports.fileMap = fileMap;
+exports.fileMap = getFiles(baseDir);
 
 exports.push = function(stream, file) {
   if (!file || !file.filePath || !file.url) return;
