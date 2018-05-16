@@ -16,7 +16,7 @@ npm i -g pm2 lavas
 ### add hosts
 
 ```
-127.0.0.1 gbzhu.cn
+127.0.0.1 you.keyin.me
 ```
 
 ### start servers

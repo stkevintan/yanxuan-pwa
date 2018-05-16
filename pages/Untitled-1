@@ -1,7 +1,7 @@
 写这个项目主要是为了实践一下目前比较或的PWA与HTTP/2。
 - 项目地址: <https://github.com/stkevintan/yx-pwa>
-- 测试地址：<https://gbzhu.cn>
- 
+- 测试地址：<https://you.keyin.me>
+
 ## 效果截图
 
 <img src="https://user-gold-cdn.xitu.io/2018/4/15/162c7e53af1c422f?w=480&h=1920&f=jpeg&s=82353"/>
@@ -227,7 +227,7 @@ export default {
       }
       this.transition(0, delta - width);
     },
-    
+
     initAnimate() {
       var startAnim = () => {
         this.timeId = setTimeout(() => {
@@ -280,22 +280,22 @@ export default {
 ```
 其中队列更新过程如下：
 ```js
-pics:   0 1 2 3 4 5 6 7 8 9 
+pics:   0 1 2 3 4 5 6 7 8 9
 queue:  0 1 2
 ==========轮播从右往左滚，queue往右移=========
-pics:   0 1 2 3 4 5 6 7 8 9 
+pics:   0 1 2 3 4 5 6 7 8 9
 queue:    0 1 2
 ==========轮播从左往右滚，queue往左移=========
-pics:   0 1 2 3 4 5 6 7 8 9 
+pics:   0 1 2 3 4 5 6 7 8 9
 queue:  0 1 2
 ==========轮播再从左往右滚，queue再往左移=========
 ==第一个元素超出边界则通过normalize方法重定位到9==
-pics:   0 1 2 3 4 5 6 7 8 9 
+pics:   0 1 2 3 4 5 6 7 8 9
 queue:  1 2               0
 ```
 
 
-__一个问题__ ： 如果`this.transitionEnd`方法直接监听元素的transitionEnd事件调用而不是通过`setTimeout(...,duration)`调用，则其中queue的更新无法即时的更新到视图中，即使使用了`this.$forceUpdate()`也不行，也许跟EventLoop有关。 
+__一个问题__ ： 如果`this.transitionEnd`方法直接监听元素的transitionEnd事件调用而不是通过`setTimeout(...,duration)`调用，则其中queue的更新无法即时的更新到视图中，即使使用了`this.$forceUpdate()`也不行，也许跟EventLoop有关。
 
 
 __一个想法__ ： 这种实现每次更新img标签的url都可能造成图片的重新加载，特别使用vue-lazload之后，加载总会出现loading动画，能否有更好的实现。
@@ -331,12 +331,12 @@ class KoaOnHttps extends Koa {
 
 // http2 服务器
 app.listen(443, () => {
-  logger.ok('app start at:', `https://gbzhu.cn`);
+  logger.ok('app start at:', `https://you.keyin.me`);
 });
 
 //http重定向服务
 app.redirect(80, () => {
-  logger.ok('http redirect server start at', `http://gbzhu.cn`);
+  logger.ok('http redirect server start at', `http://you.keyin.me`);
 });
 ```
 
@@ -371,8 +371,8 @@ function push(stream, file) {
   });
 };
 ```
-但服务器推送有两个问题，第一何时推送，第二是推送什么。  
-- 对于第一个问题很好解答，为了避免资源请求的竞争，服务器推送的资源一般要先于该请求主要资源返回之前推送。  
+但服务器推送有两个问题，第一何时推送，第二是推送什么。
+- 对于第一个问题很好解答，为了避免资源请求的竞争，服务器推送的资源一般要先于该请求主要资源返回之前推送。
 - 第二个问题则需要根据业务具体分析，没有明确的答案，下面是本项目的推送策略。
 
 ### 依赖收集
@@ -452,7 +452,7 @@ await send(ctx, ctx.path, { root: '../dist' })
 ```
 
 ### 图片处理
-起初我图片都存放在本地服务器上，然后通过stream的方读取、处理的，代码如下：  
+起初我图片都存放在本地服务器上，然后通过stream的方读取、处理的，代码如下：
 
 Router:
 ```js
@@ -496,7 +496,7 @@ module.exports = (
 };
 
 ```
-实现起来，感觉没有太的问题，但实际访问的时候，发现页面图片加载真是太慢了，简直不能忍受Orz。。。  
+实现起来，感觉没有太的问题，但实际访问的时候，发现页面图片加载真是太慢了，简直不能忍受Orz。。。
 想了想，我的腾讯云学生服务器才1Mbps带宽，真是太小了。木有办法，还是用cdn吧=_=
 
 ## Lighthouse
@@ -504,6 +504,6 @@ module.exports = (
 
 ![](https://user-gold-cdn.xitu.io/2018/4/15/162c87321d0bf2c4?w=796&h=864&f=png&s=127741)
 
-提高Lighthouse性能评分的两大“飞刀”：  
+提高Lighthouse性能评分的两大“飞刀”：
 1. 务必使快速的cdn
 2. 务必停用所有无关的chrome插件或脚本（或直接开隐身模式 xD

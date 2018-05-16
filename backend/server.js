@@ -17,8 +17,8 @@ class KoaOnHttps extends Koa {
   }
   get options() {
     return {
-      key: fs.readFileSync(require.resolve('./keys/www.gbzhu.cn.key')),
-      cert: fs.readFileSync(require.resolve('./keys/www.gbzhu.cn.crt'))
+      key: fs.readFileSync(require.resolve('./keys/you.keyin.me.key')),
+      cert: fs.readFileSync(require.resolve('./keys/you.keyin.me.crt'))
     };
   }
   listen(...args) {
@@ -80,10 +80,10 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.listen(443, () => {
-  logger.ok('app start at:', `https://gbzhu.cn`);
+  logger.ok('app start at:', `https://you.keyin.cn`);
 });
 
 //receive all the http request, redirect them to https
 app.redirect(80, () => {
-  logger.ok('http redirect server start at', `http://gbzhu.cn`);
+  logger.ok('http redirect server start at', `http://you.keyin.me`);
 });

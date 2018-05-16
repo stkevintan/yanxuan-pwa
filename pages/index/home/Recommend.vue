@@ -49,10 +49,10 @@
          'https://ols1thqnl.qnssl.com/8869a3d10800efca5670432bc0070707.jpg',
          'https://ols1thqnl.qnssl.com/dda365946a8d8b09adebbd74e9cfb830.jpg'],
         urls: [
-            'https://gbzhu.cn/category/1008000/subcat/1008003',
-            'https://gbzhu.cn/category/1043000/subcat/1011003',
-            'https://gbzhu.cn/category/1043000/subcat/1011003',
-            'https://gbzhu.cn/category/1002000/subcat/1021003'
+            'https://you.keyin.me/category/1008000/subcat/1008003',
+            'https://you.keyin.me/category/1043000/subcat/1011003',
+            'https://you.keyin.me/category/1043000/subcat/1011003',
+            'https://you.keyin.me/category/1002000/subcat/1021003'
         ],
         data: {}
       }

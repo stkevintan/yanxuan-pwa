@@ -1,7 +1,7 @@
 import Axios from 'axios';
 
 const axios = Axios.create({
-    baseURL: 'https://gbzhu.cn/api'
+    baseURL: 'https://you.keyin.me/api'
     // timeout: 1000
 });
 
