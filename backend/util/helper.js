@@ -26,10 +26,9 @@ function getFiles(baseDir) {
       fileMap.set(filePath, {fd, headers: getFileHeaders(filePath, fd)});
     });
   }
-  return fileMap;
 }
 
-exports.fileMap = getFiles(baseDir);
+getFiles(baseDir);
 
 exports.push = function(stream, file) {
   if (!file || !file.filePath || !file.url) return;
