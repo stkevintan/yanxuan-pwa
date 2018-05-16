@@ -61,6 +61,7 @@ app.use(
   })
 );
 
+logger.info('current node env is :', process.env.NODE_ENV);
 if (process.env.NODE_ENV === 'development') {
   // set cors header
   app.use(async function(ctx, next) {
