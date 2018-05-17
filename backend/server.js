@@ -4,7 +4,7 @@ const path = require('path');
 const http2 = require('http2');
 const http = require('http');
 const koaBody = require('koa-body');
-const compress = require('koa-compress');
+const compress = require('./middleware/compress');
 const router = require('./middleware/router');
 const sslify = require('./middleware/sslify');
 const rewriter = require('./middleware/rewriter');
@@ -51,15 +51,7 @@ app.use(async function(ctx, next) {
   logger.info(`${ctx.method} ${ctx.url} - ${ms}`);
 });
 
-app.use(
-  compress({
-    filter: function(content_type) {
-      return /text|javascript|json/i.test(content_type);
-    },
-    // threshold: 100,
-    flush: require('zlib').Z_SYNC_FLUSH
-  })
-);
+app.use(compress());
 
 logger.info('current node env is :', process.env.NODE_ENV);
 if (process.env.NODE_ENV === 'development') {
@@ -74,21 +66,22 @@ if (process.env.NODE_ENV === 'development') {
     await next();
   });
 }
-app.use(rewriter({ whiteList: ['/api', '/mimg'] }));
+app.use(rewriter({whiteList: ['/api', '/mimg']}));
 
 app.use(router.routes()).use(router.allowedMethods());
 if (process.env.NODE_ENV === 'production') {
   app.use(static(path.resolve(__dirname, '../dist')));
 }
-try{
-app.listen(443, () => {
-  logger.ok('app start at:', `https://you.keyin.cn`);
-});
+try {
+  app.listen(443, () => {
+    logger.ok('app start at:', `https://you.keyin.cn`);
+  });
 
-//receive all the http request, redirect them to https
-app.redirect(80, () => {
-  logger.ok('http redirect server start at', `http://you.keyin.me`);
-});
+  // receive all the http request, redirect them to https
+  app.redirect(80, () => {
+    logger.ok('http redirect server start at', `http://you.keyin.me`);
+  });
 } catch (e) {
-  logger.error(`${e}\n`, "try: sudo setcap 'cap_net_bind_service=+ep' `which node`");
+  logger.error(
+      `${e}\n`, 'try: sudo setcap \'cap_net_bind_service=+ep\' `which node`');
 }

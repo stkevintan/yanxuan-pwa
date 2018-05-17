@@ -7,7 +7,6 @@ const fs = require('fs');
 const path = require('path');
 const adapter = new FileSync(require.resolve('../db.json'));
 const db = low(adapter);
-const { push } = require('../util/helper');
 const depTree = require('../util/depTree');
 const router = new Router();
 

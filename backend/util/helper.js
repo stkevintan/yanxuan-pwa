@@ -2,7 +2,8 @@ const http2 = require('http2');
 const fs = require('fs');
 const path = require('path');
 const mime = require('mime');
-
+const zlib = require('zlib');
+const {encodingMethods, compressOptions} = require('./compressConf');
 const logger = require('./logger');
 const {HTTP2_HEADER_PATH} = http2.constants;
 const baseDir = './mimg';
@@ -30,7 +31,7 @@ function getFiles(baseDir) {
 
 getFiles(baseDir);
 
-exports.push = function(stream, file) {
+exports.push = function(stream, file, encoding) {
   if (!file || !file.filePath || !file.url) return;
   if (!file.fd || !file.headers) {
     const queryRet = fileMap.get(file.filePath) || {};
@@ -38,14 +39,33 @@ exports.push = function(stream, file) {
     file.headers = file.headers || queryRet.headers ||
         getFileHeaders(file.filePath, file.fd);
   }
+
   const pushHeaders = {[HTTP2_HEADER_PATH]: file.url};
+  const {filter, threshold} = compressOptions;
+  const shouldCompress = encoding !== 'identity' && encoding != null &&
+      filter(file.headers['content-type']) &&
+      file.headers['content-length'] >= threshold;
+
   stream.pushStream(pushHeaders, (err, pushStream) => {
     if (err) {
       logger.error('server push error');
       throw err;
     }
     logger.ok('Server Push Resource:', file.filePath);
-    pushStream.respondWithFD(file.fd, file.headers);
+    if (shouldCompress) {
+      logger.ok(encoding, 'compress resource!');
+      const header = Object.assign({}, file.headers);
+      header['content-encoding'] = encoding;
+      delete header['content-length'];
+      pushStream.respond(header);
+      // the first parameters of createReadStream can be just null, because fd
+      // is provided.
+      const fileStream = fs.createReadStream(null, {fd: file.fd});
+      const compressTransformer = encodingMethods[encoding](compressOptions);
+      fileStream.pipe(compressTransformer).pipe(pushStream);
+    } else {
+      pushStream.respondWithFD(file.fd, file.headers);
+    }
   });
 };
 
