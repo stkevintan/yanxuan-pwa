@@ -17,8 +17,8 @@ class KoaOnHttps extends Koa {
   }
   get options() {
     return {
-      key: fs.readFileSync(require.resolve('./keys/yx.key')),
-      cert: fs.readFileSync(require.resolve('./keys/yx.crt'))
+      key: fs.readFileSync(require.resolve('/etc/letsencrypt/live/legacy.keyin.me/privkey.pem')),
+      cert: fs.readFileSync(require.resolve('/etc/letsencrypt/live/legacy.keyin.me/fullchain.pem'))
     };
   }
   listen(...args) {

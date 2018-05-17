@@ -5,7 +5,6 @@
     "author": "stkevintan <stkevintan@zju.edu.cn>",
     "private": true,
     "scripts": {
-        "preinstall": "npm install -g pm2 lavas",
         "dev": "lavas dev",
         "server": "lavas build && pm2 start pm2.prod.json",
         "build": "lavas build",
