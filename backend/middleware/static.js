@@ -3,9 +3,7 @@ const logger = require('../util/logger');
 const {push, acceptsHtml} = require('../util/helper');
 const depTree = require('../util/depTree');
 module.exports = (root = '') => {
-  console.log('root', root);
   return async function serve(ctx, next) {
-    console.log('static', ctx.method);
     let done = false;
     if (ctx.method === 'HEAD' || ctx.method === 'GET') {
       try {
