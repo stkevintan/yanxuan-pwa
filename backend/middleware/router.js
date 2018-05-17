@@ -7,8 +7,6 @@ const fs = require('fs');
 const path = require('path');
 const adapter = new FileSync(require.resolve('../db.json'));
 const db = low(adapter);
-const { push } = require('../util/helper');
-const depTree = require('../util/depTree');
 const router = new Router();
 
 const userTpl = {
@@ -92,17 +90,6 @@ router.get('/api/:domain/:type', (ctx, next) => {
     .value();
   if (ret == undefined) ctx.status = 404;
   else ctx.body = ret;
-});
-
-router.get(/\.(js|css)$/, async (ctx, next) => {
-  let filePath = ctx.path;
-  if (/\/sw-register\.js/.test(filePath)) return await next();
-  // if (/^\/mimg\//.test(filePath)) filePath = filePath.substr(1);
-  filePath = path.resolve('../dist', filePath.substr(1));
-  await next();
-  if (ctx.status === 200 || ctx.status === 304) {
-    depTree.addDep(filePath, ctx.url);
-  }
 });
 
 router.get('/mimg/:filename', async (ctx, next) => {

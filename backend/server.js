@@ -1,7 +1,7 @@
 const Koa = require('koa');
 const fs = require('fs');
 const path = require('path');
-const http2 = require('http2');
+const https = require('https');
 const http = require('http');
 const koaBody = require('koa-body');
 const compress = require('koa-compress');
@@ -22,7 +22,7 @@ class KoaOnHttps extends Koa {
     };
   }
   listen(...args) {
-    const server = http2.createSecureServer(this.options, this.callback());
+    const server = https.createServer(this.options, this.callback());
     return server.listen(...args);
   }
   redirect(...args) {
