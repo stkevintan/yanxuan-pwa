@@ -18,13 +18,13 @@ module.exports = {
     ssrCopy: isDev
       ? []
       : [
-        {
-          src: 'server.prod.js'
-        },
-        {
-          src: 'package.json'
-        }
-      ]
+          {
+            src: 'server.prod.js'
+          },
+          {
+            src: 'package.json'
+          }
+        ]
   },
   router: {
     mode: 'history',
@@ -38,78 +38,6 @@ module.exports = {
         // set default router
         pattern: /\/(home|home\/recommend|pin\/commodity)$/,
         alias: '/'
-      },
-      {
-        pattern: /\/home\/other/,
-        chunkname: 'home-other'
-      },
-      {
-        pattern: /\/topic/,
-        chunkname: 'topic'
-      },
-      {
-        pattern: /\/category/,
-        chunkname: 'category'
-      },
-      {
-        pattern: /\/format/,
-        chunkname: 'format'
-      },
-      {
-        pattern: /\/manufacturer/,
-        chunkname: 'manufacturer'
-      },
-      {
-        pattern: /\/pin/,
-        chunkname: 'pin'
-      },
-      {
-        pattern: /\/product/,
-        chunkname: 'product'
-      },
-      {
-        pattern: /\/cart/,
-        chunkname: 'cart'
-      },
-      {
-        pattern: /\/cart-format/,
-        chunkname: 'cartFormat'
-      },
-      {
-        pattern: /\/category-commodity/,
-        chunkname: 'categoryCommodity'
-      },
-      {
-        pattern: /\/comment/,
-        chunkname: 'comment'
-      },
-      {
-        pattern: /\/item-recommend/,
-        chunkname: 'itemRecommend'
-      },
-      {
-        pattern: /\/login/,
-        chunkname: 'login'
-      },
-      {
-        pattern: /\/manufacturer-list/,
-        chunkname: 'manufacturerList'
-      },
-      {
-        pattern: /\/new-item/,
-        chunkname: 'newItem'
-      },
-      {
-        pattern: /\/profile/,
-        chunkname: 'profile'
-      },
-      {
-        pattern: /\/search/,
-        chunkname: 'search'
-      },
-      {
-        pattern: /\/topic-detail/,
-        chunkname: 'topicDetail'
       }
     ]
   },

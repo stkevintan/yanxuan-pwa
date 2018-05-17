@@ -96,7 +96,7 @@ export default {
           startAnim.call(this);
         }, this.animationDuration);
       };
-      startAnim();
+      // startAnim();
     },
     animate(duration, offsetX = -this.$el.clientWidth) {
       const transition =
