@@ -75,6 +75,7 @@ if (process.env.NODE_ENV === 'development') {
   });
 }
 app.use(rewriter({ whiteList: ['/api', '/mimg'] }));
+
 app.use(router.routes()).use(router.allowedMethods());
 if (process.env.NODE_ENV === 'production') {
   app.use(static(path.resolve(__dirname, '../dist')));

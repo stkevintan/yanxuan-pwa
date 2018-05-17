@@ -85,7 +85,7 @@ module.exports = options => {
         logger.ok("Rewriting", ctx.method, ctx.url, "to", rewriteTarget);
         ctx.url = rewriteTarget;
 
-        await next();
+        return next();
     };
 };
 
