@@ -2,7 +2,7 @@
 
 > 网易严选 PWA
 
-仿网易严选的 PWA 应用，后端服务器使用 HTTP/2 协议。
+仿网易严选的 PWA 应用 以及一个高性能的HTTP/2服务器
 
 ## install
 
@@ -13,8 +13,17 @@ npm i -g pm2 lavas
 
 ## dev
 
-### add hosts
 
+### generate ssl certificates
+generate a ssl certificate using [Let's Encrypt](https://letsencrypt.org/).
+```shell
+sudo certbot certonly --standalone --preferred-challenges tls-sni -d you.keyin.me
+```
+then move the key in the dir `/etc/letsencrypt/keys/xxx.pem` to `backend/keys/you.keyin.me.pem`
+
+
+### add hosts
+append following lines to the `/etc/hosts` file.
 ```
 127.0.0.1 you.keyin.me
 ```

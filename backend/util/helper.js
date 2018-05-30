@@ -41,7 +41,8 @@ exports.push = function(stream, file, encoding) {
   }
 
   const pushHeaders = {[HTTP2_HEADER_PATH]: file.url};
-  const {filter, threshold} = compressOptions;
+  const { filter, threshold } = compressOptions;
+
   const shouldCompress = encoding !== 'identity' && encoding != null &&
       filter(file.headers['content-type']) &&
       file.headers['content-length'] >= threshold;
@@ -63,6 +64,9 @@ exports.push = function(stream, file, encoding) {
       const fileStream = fs.createReadStream(null, {fd: file.fd});
       const compressTransformer = encodingMethods[encoding](compressOptions);
       fileStream.pipe(compressTransformer).pipe(pushStream);
+      pushStream.on('close', e => {
+        fileStream.destroy();
+      })
     } else {
       pushStream.respondWithFD(file.fd, file.headers);
     }

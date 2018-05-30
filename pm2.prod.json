@@ -4,7 +4,7 @@
         "script":"server.js",
         "log_date_format": "YYYY-MM-DD:mm Z",
         "env":{
-            "NODE_NO_WARNINGS": 1,
+            "NODE_NO_WARNINGS": "1",
             "NODE_ENV": "production"
         },
         "cwd": "backend",

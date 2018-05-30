@@ -17,8 +17,8 @@ class KoaOnHttps extends Koa {
   }
   get options() {
     return {
-      key: fs.readFileSync(require.resolve('./keys/you.keyin.me.key')),
-      cert: fs.readFileSync(require.resolve('./keys/you.keyin.me.crt'))
+      key: fs.readFileSync(require.resolve('./keys/you.keyin.me.pem')),
+      cert: fs.readFileSync(require.resolve('./keys/you.keyin.me.pem'))
     };
   }
   listen(...args) {
