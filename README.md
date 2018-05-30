@@ -19,8 +19,6 @@ generate a ssl certificate using [Let's Encrypt](https://letsencrypt.org/).
 ```shell
 sudo certbot certonly --standalone --preferred-challenges tls-sni -d you.keyin.me
 ```
-then move the key in the dir `/etc/letsencrypt/keys/xxx.pem` to `backend/keys/you.keyin.me.pem`
-
 
 ### add hosts
 append following lines to the `/etc/hosts` file.
